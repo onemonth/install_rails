@@ -31,6 +31,7 @@ a {
   }
   img {
     display: block;
+    @extend .img-polaroid;
   }
 }
 
@@ -38,8 +39,17 @@ a {
   padding-top: 40px;
   padding-bottom: 300px;
   .options {
+    padding-top: 20px;
   }
   .option {
     text-align: center;
+    input[type="submit"], a {
+      @extend .btn;
+      @extend .btn-large;
+    }
   }
+}
+
+.debug_dump {
+
 }

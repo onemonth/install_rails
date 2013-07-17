@@ -11,9 +11,9 @@ class InstallStepsController < ApplicationController
   def update
     @user = current_user
     case step
-    when :choose_operating_system
+    when :choose_os
       @user.os = params[:os]
-    when :mac
+    when :choose_os_version
       @user.os_version = params[:os_version]
     end
     render_wizard @user
@@ -31,10 +31,10 @@ class InstallStepsController < ApplicationController
     end
 
     def mac_steps
-      [:choose_operating_system, :mac, :os_version]
+      [:choose_os, :choose_mac_os_version, :railsinstaller, :update_rails, :sublime_text]
     end
 
     def windows_steps
-      [:choose_operating_system, :pc]
+      [:choose_os, :choose_win_os_version]
     end
 end

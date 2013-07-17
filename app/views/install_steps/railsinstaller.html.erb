@@ -1,0 +1,18 @@
+<section class="instructions">
+  <h1>RailsInstaller</h1>
+  <ol>
+    <li>Go to <%= link_to "RailsInstaller.com", "http://railsinstaller.com", target: "_blank" %></li>
+    <li>
+      Download the installer for
+      <strong><%= current_user.os %> <%= current_user.os_version %></strong>
+    </li>
+    <%= image_tag "railsinstaller.png" %>
+    <li>Run the installer and follow the instructions</li>
+  </ol>
+</section>
+
+<section class="prompt">
+  <div class="option">
+    <%= link_to "Next Step", next_wizard_path %>
+  </div>
+</section>

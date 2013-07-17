@@ -1,0 +1,11 @@
+<section class="prompt">
+<h1>Mac or Windows?</h1>
+  <div class="options row-fluid">
+    <div class="option span6">
+      <%= button_to "Mac", wizard_path, name: :os, method: :put %>
+    </div>
+    <div class="option span6">
+      <%= button_to "Windows", wizard_path, name: :os, method: :put  %>
+    </div>
+  </div>
+</section>
