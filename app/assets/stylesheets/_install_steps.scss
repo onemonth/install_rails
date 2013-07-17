@@ -1,0 +1,45 @@
+// Place all the styles related to the install_steps controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+header {
+  padding-bottom: 20px;
+  background-color: #db522f;
+  .nav {
+    margin-top: 34px;
+  }
+  a {
+    color: white;
+  }
+}
+
+a {
+  color: #db522f;
+  &:hover {
+    color: darken(#db522f, 10%);
+  }
+}
+
+
+.instructions {
+  padding-top: 100px;
+  li {
+    font-size: 20px;
+    line-height: 20px;
+    padding-top: 30px;
+    padding-bottom: 10px;
+  }
+  img {
+    display: block;
+  }
+}
+
+.prompt {
+  padding-top: 40px;
+  padding-bottom: 300px;
+  .options {
+  }
+  .option {
+    text-align: center;
+  }
+}

@@ -10,8 +10,15 @@
 </head>
 <body>
 
+<%= yield(:header) %>
 
-<%= yield %>
+<% if content_for? :container_override? %>
+  <%= yield %>
+<% else %>
+  <%= content_tag :div, yield, class: "container" %>
+<% end %>
+
+<%= yield(:footer) %>
 
 </body>
 </html>

@@ -1,0 +1,27 @@
+<section class="instructions">
+  <h1>Let's figure out what version of Mac OS you have</h1>
+  <ol>
+    <li>Click on the Apple icon in the top left of your screen.</li>
+    <%= image_tag "mac_steps/click_on_the_apple_icon.png", class: "img-polaroid" %>
+    <li>Select "About This Mac"</li>
+    <%= image_tag "mac_steps/select_about_this_mac.png", class: "img-polaroid" %>
+    <%= image_tag "mac_steps/about_this_mac.png", class: "img-polaroid" %>
+  </ol>
+</section>
+<section class="prompt">
+  <h1>What does it say?</h1>
+  <div class="options row-fluid">
+    <div class="option span3">
+      <%= button_to "10.8", wizard_path, name: :os_version, method: :put %>
+    </div>
+    <div class="option span3">
+      <%= button_to "10.7", wizard_path, name: :os_version, method: :put %>
+    </div>
+    <div class="option span3">
+      <%= button_to "10.6", wizard_path, name: :os_version, method: :put %>
+    </div>
+    <div class="option span3">
+      <%= button_to "10.5", wizard_path, name: :os_version, method: :put %>
+    </div>
+  </div>
+<section>
