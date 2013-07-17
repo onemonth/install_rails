@@ -1,0 +1,589 @@
+/*
+ * Beaker - Responsive Landing Page - V.1.0
+ * Author: Shy Design
+ * Author URL: http://wrapbootstrap.com/user/shydesign
+ * All Right Reserved
+ * Credits:
+ * * http://twitter.github.com/bootstrap/
+ * * http://fortawesome.github.com/Font-Awesome/
+ **/
+
+/*************************************************************
+                         google font
+**************************************************************/
+@import url(http://fonts.googleapis.com/css?family=Lato:100,300,400,700);
+
+/*************************************************************
+                    reset some defaults styles
+**************************************************************/
+body {
+  font-family: lato;
+  font-size: 15px;
+  font-weight: 300;
+  color: rgb(124, 124, 124);
+}
+
+a {
+  color: rgb(50, 50, 50);
+  -webkit-transition: all 300ms ease;
+  -moz-transition: all 300ms ease;
+  -ms-transition: all 300ms ease;
+  -o-transition: all 300ms ease;
+  transition: all 300ms ease;
+}
+
+a:hover, a:focus {
+  color: rgb(219, 82, 47);
+  text-decoration: none;
+}
+
+.carousel-control {
+  font-size: 210px;
+  color: #000;
+  background: transparent;
+  border: 0;
+}
+a.carousel-control:hover {
+  color: rgb(200,200,200);
+}
+.carousel-control.right {
+  right: -10px;
+  left: auto;
+}
+.carousel-control.left {
+  left: -35px;
+}
+a.carousel-control:hover {
+  color: rgb(219, 82, 47);
+}
+
+
+/*************************************************************
+                             layout
+**************************************************************/
+#download, #testimonials, #prices, #subscribe, #footer{
+  min-height: 20px;
+  padding: 20px 0;
+}
+
+
+/*************************************************************
+                             header
+**************************************************************/
+.site-header {
+  background-image: image-url("bg.jpg");
+  background-repeat: no-repeat;
+  -webkit-background-size:cover;
+  -moz-background-size:cover;
+  background-size:cover;
+width: 100%;
+}
+
+/* logo - icon is from fontawesome font */
+.site-title {
+  margin-top: 5px;
+  color: #fff;
+  font-weight: 300;
+  font-size: 30px;
+  display: inline-block;
+  margin-top: 34px;
+}
+
+/* user login / register */
+.user {
+  margin-top: 34px;
+}
+.user a{
+  margin-top: 10px;
+  font-size: 14px;
+  padding: 10px 15px;
+  border: 2px solid #fff;
+  display: inline-block;
+  color: #fff;
+
+  -webkit-border-radius: 9px;
+  -moz-border-radius: 9px;
+  border-radius: 9px;
+}
+.user a:hover {
+  background: #fff;
+  color: rgb(219, 82, 47);
+}
+
+
+/* header-description */
+.header-description {
+  margin: 130px 0 80px;
+  text-align: center;
+}
+.header-description h2 {
+  font-weight: 100;
+  font-size: 93px;
+  line-height: 93px;
+  color: rgb(255, 255, 255);
+  text-shadow: 0 0px 12px rgba(36, 36, 36, 0.55);
+}
+
+/* header button - call to action button */
+.header-btn {
+  color: #fff;
+  margin-top: 130px;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  font-weight: 300;
+  font-size: 24px;
+  padding: 20px 35px;
+  border: 2px solid rgb(219, 82, 47);
+  background: rgb(219, 82, 47);
+  display: inline-block;
+
+  -webkit-border-radius: 9px;
+  -moz-border-radius: 9px;
+  border-radius: 9px;
+}
+.header-btn:hover {
+  color: #fff;
+  background: transparent;
+}
+
+/* header features */
+.header-features {
+  margin: -50px 110px 0 110px;
+  color: #fff;
+  display: block;
+}
+.header-feature{
+  padding: 50px;
+}
+
+
+/*************************************************************
+                        section#slider
+**************************************************************/
+.slider {
+  background: rgb(246, 246, 246);
+  padding: 70px 0 0px !important;
+  position: relative;
+  overflow: hidden;
+}
+.carousel {
+  margin-bottom: 0;
+}
+.carousel-inner>.item>img, .carousel-inner>.item>a>img {
+  display: inline-block;
+}
+
+
+
+/*************************************************************
+                        section#features
+**************************************************************/
+.features {
+  background: rgb(255, 135, 89);
+  border-top: 1px solid rgba(255, 255, 255, 0.54);
+  color: #fff;
+  padding: 20px 0;
+}
+
+.feature {
+  border-right: 1px solid rgba(255, 255, 255, 0.3);
+  border-left: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 20px 10px;
+}
+
+
+/*************************************************************
+                        section#testimonials
+**************************************************************/
+.testimonials {
+  padding: 90px 0 60px !important;
+}
+blockquote {
+  padding: 0 0 0 15px;
+  margin: 0 0 20px;
+  border-left: 0px solid rgb(238, 238, 238);
+}
+blockquote > div {
+  text-align: center;
+  padding: 0 200px;
+}
+blockquote p {
+  margin-top: 30px;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.55;
+}
+blockquote small {
+ line-height: 3.5em;
+}
+.testimonials i {
+  display: inline-block;
+  color: rgb(220, 220,220);
+  font-size: 200px;
+  border-radius: 100px;
+  padding: 20px 22px;
+  -webkit-transition: all 400ms ease;
+  -moz-transition: all 400ms ease;
+  -ms-transition: all 400ms ease;
+  -o-transition: all 400ms ease;
+  transition: all 400ms ease;
+}
+blockquote:hover i {
+  color: rgb(255, 125, 100);
+  -webkit-transform:rotate(180deg);
+  -moz-transform:rotate(180deg);
+  -ms-transform:rotate(180deg);
+  -o-transform:rotate(180deg);
+  transform:rotate(180deg);
+}
+
+
+/*************************************************************
+                        section#prices
+**************************************************************/
+.prices {
+  background: image-url("bg2.jpg");
+  background-repeat: no-repeat;
+  -webkit-background-size:cover;
+  -moz-background-size:cover;
+  background-size:cover;
+  padding: 100px 0 !important;
+}
+.prices .container {
+  max-width: 800px;
+}
+.plan {
+  border: 5px solid rgb(244, 244, 244);
+  background: #fff;
+  padding: 15px;
+
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+.plan-1 {
+  margin-top: 80px;
+}
+.plan-2 {
+  margin-top: 50px;
+}
+.plan-3 {
+  margin-top: 30px;
+}
+.plan-title {
+  text-align: center;
+  padding: 0 0 10px 0;
+}
+.plan-features li {
+  padding: 5px 0;
+}
+.plan-features li a{
+  padding: 0 0;
+}
+.plan-features li a:hover {
+  padding: 0 5px;
+}
+.plan-price {
+  border-top: 1px dashed rgb(209, 209, 209);
+  padding: 14px 0 0 0;
+  margin: 0;
+  font-size: 20px;
+}
+
+/*************************************************************
+                        section#contact
+**************************************************************/
+.contact {
+  background: rgb(243, 243, 243);
+}
+
+/* google map */
+#map{
+  display: block;
+  height: 450px;
+  margin: 0 auto;
+}
+
+/* contact description - feedbacks and questions */
+.contact > div.container {
+  padding-top: 50px;
+}
+.contact h2 {
+  font-weight: 400;
+}
+.contact i {
+  color: rgb(68, 68, 68);
+}
+
+/* social icons */
+ul.social {
+  text-align: center;
+  padding: 20px 0 0px;
+}
+ul.social li {
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+  overflow: hidden;
+  line-height: 60px;
+  background: rgb(219, 82, 47);
+  margin-bottom:.5em;
+  font-size: 20px;
+
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+
+  -webkit-transition-duration: 0.7s;
+  -moz-transition-duration: 0.7s;
+  -o-transition-duration: 0.7s;
+  transition-duration: 0.7s;
+}
+ul.social li:hover {
+  background: #33cc99;
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.3);
+}
+ul.social li:hover a {
+  top: -60px;
+}
+ul.social li a {
+  display: block;
+  width: 100%;
+  height: 200%;
+  position: relative;
+  top: 0;
+  -webkit-transition: top 0.7s;
+  -moz-transition: top 0.7s;
+  -o-transition: top 0.7s;
+  transition: top 0.7s;
+}
+ul.social li a i {
+  color: #fff;
+}
+ul.social li:hover:before {
+  opacity: 0;
+}
+ul.social li:nth-child(1):before{
+  content: 'P';
+  color: #fff;
+}
+ul.social li:nth-child(2):before{
+  content: 'F';
+  color: #fff;
+}
+ul.social li:nth-child(3):before{
+  content: 'T';
+  color: #fff;
+}
+ul.social li:nth-child(4):before{
+  content: 'G';
+  color: #fff;
+}
+ul.social li:nth-child(5):before{
+  content: 'L';
+  color: #fff;
+}
+ul.social li:nth-child(6):before{
+  content: '+';
+  color: #fff;
+}
+
+/* sliding contact form */
+.contact-form input, .contact-form textarea {
+  padding: 10px auto;
+  height: 50px;
+
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+}
+.contact-form textarea {
+  height: 150px;
+}
+.contact-form .container {
+  max-width: 500px;
+  padding: 20px 0 ;
+  display: none;
+}
+.contact-form i {
+  display: block;
+  padding: 20px;
+  font-size: 40px;
+  margin-top: 55px;
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAIklEQVQIW2NkQAInT578zwjjgzjm5uaMYAEYB8RmROaABAD2Mw9fuRdIeAAAAABJRU5ErkJggg==) repeat;
+  display: inline-block;
+
+  -webkit-transition: all 300ms ease;
+  -moz-transition: all 300ms ease;
+  -ms-transition: all 300ms ease;
+  -o-transition: all 300ms ease;
+  transition: all 300ms ease;
+
+  border-radius: 100%;
+  border-bottom-right-radius: 0%;
+  border-bottom-left-radius: 0%;
+}
+.contact-form-btn:hover {
+  cursor: pointer;
+}
+.contact-form .btn-custom {
+  border-radius: 5px;
+  margin: 20px auto;
+}
+.contact-form .btn-custom:hover {
+  color: #000;
+}
+
+/*************************************************************
+                        section#subscribe
+**************************************************************/
+.subscribe {
+  background: rgb(26, 26, 26);
+  color: #fff;
+  text-align: center;
+}
+.subscribe input{
+  border: 1px solid #fff;
+  height: 42px;
+  width: 322px;
+
+
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+
+  -webkit-border-top-left-radius: 5px;
+  -webkit-border-bottom-left-radius: 5px;
+  -moz-border-top-left-radius: 5px;
+  -moz-border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.btn-custom {
+  display: inline-block;
+  padding: 15px 32px 13px;
+  margin-bottom: 0;
+  font-size: 14px;
+  line-height: 20px;
+  color: #fff;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  border: 2px solid rgb(219, 82, 47);
+  background: rgb(219, 82, 47);
+
+  -webkit-border-top-right-radius: 5px;
+  -webkit-border-bottom-right-radius: 5px;
+  -moz-border-top-right-radius: 5px;
+  -moz-border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+
+  -webkit-transition: all 300ms ease;
+  -moz-transition: all 300ms ease;
+  -ms-transition: all 300ms ease;
+  -o-transition: all 300ms ease;
+  transition: all 300ms ease;
+}
+.btn-custom:hover {
+  background: transparent;
+}
+
+
+/*************************************************************
+                        #footer
+**************************************************************/
+.footer {
+  padding: 0px 0 !important;
+}
+.footer-title {
+  font-size: 20px;
+}
+.footer-title a:hover {
+  text-decoration: none;
+}
+.copyright {
+  margin-top: 22px;
+}
+
+/*************************************************************
+                        responsive fix
+**************************************************************/
+/* Large desktop */
+@media (min-width: 1200px) {  }
+
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px) {
+  .header-description h2 {
+    font-size: 83px;
+    line-height: 58px;
+  }
+  .header-features {
+    margin: 0 0 30px 0;
+  }
+  .header-feature {
+    margin: 0 0 30px 0;
+    padding: 0;
+  }
+}
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) {
+  body {
+    padding: 0;
+  }
+  .container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .header-description {
+    margin: 76px 0 80px;
+  }
+  .header-description h2 {
+    font-size: 66px;
+    line-height: 58px;
+  }
+  .header-btn {
+    margin-top: 74px;
+  }
+  .header-features {
+    margin: 0 0 30px 0;
+  }
+  .header-feature {
+    margin: 0 0 30px 0;
+    padding: 0;
+  }
+
+  /* blockqoute */
+  .testimonials {
+    padding: 44px 0 60px !important;
+  }
+  .testimonials i {
+    font-size: 106px;
+  }
+  blockquote > div {
+    padding: 0;
+  }
+  blockquote p {
+    font-size: 18px;
+  }
+
+  /* contact form */
+  .contact-form-inner {
+    padding: 18px !important;
+  }
+  .subscribe input {
+    height: 31px;
+    width: 154px;
+  }
+  .btn-custom {
+    padding: 9px 14px 8px;
+  }
+
+}
+
+/* Landscape phones and down */
+@media (max-width: 480px) {
+
+}
