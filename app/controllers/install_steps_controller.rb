@@ -2,7 +2,7 @@ class InstallStepsController < ApplicationController
   before_filter :signed_in_user
   include Wicked::Wizard
 
-  steps :choose_operating_system, :mac, :os_version, :pc
+  prepend_before_filter :set_steps
 
   def show
     render_wizard
@@ -18,4 +18,23 @@ class InstallStepsController < ApplicationController
     end
     render_wizard @user
   end
+
+  private
+    def set_steps
+      if ( params[:os] || current_user.os ) == "Mac"
+        self.steps = mac_steps
+      elsif ( params[:os] || current_user.os ) == "Windows"
+        self.steps = windows_steps
+      else
+        self.steps = [:choose_operating_system]
+      end
+    end
+
+    def mac_steps
+      [:choose_operating_system, :mac, :os_version]
+    end
+
+    def windows_steps
+      [:choose_operating_system, :pc]
+    end
 end
