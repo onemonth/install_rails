@@ -21,12 +21,12 @@ class InstallStepsController < ApplicationController
 
   private
     def set_steps
-      if ( params[:os] || current_user.os ) == "Mac"
+      if ( params[:os] || current_user.try(:os) ) == "Mac"
         self.steps = mac_steps
-      elsif ( params[:os] || current_user.os ) == "Windows"
+      elsif ( params[:os] || current_user.try(:os) ) == "Windows"
         self.steps = windows_steps
       else
-        self.steps = [:choose_operating_system]
+        self.steps = [:choose_os]
       end
     end
 
