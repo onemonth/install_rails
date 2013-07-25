@@ -36,7 +36,7 @@ class InstallStepsController < ApplicationController
     end
 
     def debug
-      [:textmate]
+      [:textmate, :create_ssh_key]
     end
 
     def windows_steps
