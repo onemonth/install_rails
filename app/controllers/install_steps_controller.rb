@@ -31,7 +31,7 @@ class InstallStepsController < ApplicationController
     end
 
     def mac_steps
-      steps = [:choose_os, :choose_os_version, :railsinstaller, :update_rails, text_editor_step]
+      steps = [:choose_os, :choose_os_version, :railsinstaller, :update_rails, text_editor_step, :install_rvm_and_ruby]
     end
 
     def windows_steps
