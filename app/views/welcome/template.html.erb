@@ -1,0 +1,17 @@
+<% content_for(:header) do %>
+  <header>
+    <div class="container">
+      <%= link_to (content_tag(:i, nil, class: "icon-beaker") + " InstallRails.com"), root_path, class: "site-title" %>
+    </div>
+  </header>
+<% end %>
+
+<section class="instructions">
+  <h1>Create Your First Rails App</h1>
+  <ol>
+    <li>If you're on a Mac, download <%= link_to "Tokaido", "https://github.com/tokaido/tokaidoapp/releases" %>, if you're on a PC, download <%= link_to "RailsInstaller", "http://railsinstaller.org" %>.</li>
+    <li>Run the following command in your command line (make sure you're in the right folder!):</li>
+    <pre><code>$ rails new sample_app -m https://s3.amazonaws.com/mrruby_templates/basic.rb</code></pre>
+  </ol>
+
+</section>
