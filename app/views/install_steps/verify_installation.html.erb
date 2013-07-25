@@ -1,0 +1,52 @@
+<section class="instructions">
+  <h1>Verify Your Installation</h1>
+  <ol>
+    <li>
+      Open your terminal
+      <ul>
+        <li>Open Spotlight (the little loup icon on the top right corner of your mac) and type "Terminal". Hit Enter.
+      </ul>
+    </li>
+
+    <li>
+      To check git, type the following command
+      <pre><code>which git</code></pre>
+      Expected result
+      <pre><code>/use/bin/git</code></pre>
+    </li>
+
+    <li>
+      To make sure Ruby is installed in the right place type
+      <pre><code>which ruby</code></pre>
+      Expected result
+      <pre><code>/usr/local/rvm/rubies/ruby-1.9.3-p194/bin/ruby</code></pre>
+    </li>
+
+    <li>
+      To make sure Rails is installed in the right place type
+      <pre><code>which rails</code></pre>
+      Expected result
+      <pre><code>/usr/local/rvm/gems/ruby-1.9.3-p194/bin/rails</code></pre>
+    </li>
+
+    <li>
+      To check your ruby version
+      <pre><code>ruby -v</code></pre>
+      Expected result
+      <pre><code>ruby 1.9.3p194</code></pre>
+    </li>
+
+    <li>
+      To check your rails version
+      <pre><code>rails -v</code></pre>
+      Expected result
+      <pre><code>Rails 4.0.X</code></pre>
+    </li>
+  </ol>
+</section>
+
+<section class="prompt">
+  <div class="option">
+    <%= link_to "Next Step", next_wizard_path %>
+  </div>
+</section>
