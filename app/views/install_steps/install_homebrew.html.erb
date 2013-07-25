@@ -1,0 +1,32 @@
+<section class="instructions">
+  <h1>Install Homebrew</h1>
+  <ol>
+    <li>
+      Open your terminal
+      <ul>
+        <li>Open Spotlight (the little loup icon on the top right corner of your mac) and type "Terminal". Hit Enter.
+      </ul>
+    </li>
+    <li>
+      In your terminal type
+      <pre><code>ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)" </code></pre>
+      <ul>
+        <li>
+          <b>Note:</b> If this doesn’t work, <%= link_to "go here", "https://github.com/mxcl/homebrew/wiki/installation" %> and follow the instructions
+        </li>
+      </ul>
+    </li>
+    <li>
+      To verify your installation, in your terminal type
+      <pre><code>brew -v</code></pre>
+      Approximate expected result
+      <pre><code>Homebrew 0.9.4</code></pre>
+    </li>
+  </ol>
+</section>
+
+<section class="prompt">
+  <div class="option">
+    <%= link_to "Next Step", next_wizard_path %>
+  </div>
+</section>
