@@ -26,20 +26,23 @@ class InstallStepsController < ApplicationController
       elsif ( params[:os] || current_user.try(:os) ) == "Windows"
         self.steps = windows_steps
       else
-        self.steps = debug
-        # self.steps = [:choose_os]
+        self.steps = [:choose_os]
       end
     end
 
     def mac_steps
-      [:choose_os, :choose_mac_os_version, :railsinstaller, :update_rails, :sublime_text]
-    end
-
-    def debug
-      [:textmate]
+      steps = [:choose_os, :choose_os_version, :railsinstaller, :update_rails, text_editor_step]
     end
 
     def windows_steps
-      [:choose_os, :choose_win_os_version]
+      [:choose_os, :choose_os_version]
+    end
+
+    def text_editor_step
+      if current_user.os_version == "10.5"
+        :textmate
+      else
+        :sublime_text
+      end
     end
 end
