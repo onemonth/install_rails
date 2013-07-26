@@ -1,0 +1,27 @@
+<section class="instructions">
+  <h1>Install Xcode</h1>
+  <ol>
+    <li>
+      Open the Mac App Store. This can be found in your Applications Folder.
+      <%= image_tag "xcode_finder.png", class: "list-image" %>
+    </li>
+    <li>Search for “Xcode” and click the “install” button</li>
+    <li>
+      Once Xcode is done installing, you’ll need to install the Command Line Tools.
+      <ul>
+        <li> Open Xcode. In the menu bar click on "Xcode" then select "Preferences"
+          <%= image_tag "xcode_preferences.png", class: "list-image" %>
+        </li>
+        <li> Click the “Install” button next to “Command Line Tools”
+          <%= image_tag "xcode_command_line_tool.png", class: "list-image" %>
+        </li>
+
+    </li>
+  </ol>
+</section>
+
+<section class="prompt">
+  <div class="option">
+    <%= link_to "Next Step", next_wizard_path %>
+  </div>
+</section>
