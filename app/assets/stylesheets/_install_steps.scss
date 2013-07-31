@@ -42,10 +42,11 @@ a {
     padding-top: 20px;
   }
   .option {
-    text-align: center;
+    display: inline-block;
     input[type="submit"], a {
       @extend .btn;
       @extend .btn-large;
+      @extend .btn-primary;
     }
   }
 }

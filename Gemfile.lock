@@ -1,4 +1,12 @@
 GIT
+  remote: git://github.com/thomas-mcdonald/bootstrap-sass.git
+  revision: f4294bfd0218a181a3c288dba7cb9811a99b9f83
+  branch: 3
+  specs:
+    bootstrap-sass (3.0.0.0)
+      sass (~> 3.2)
+
+GIT
   remote: https://github.com/mongoid/mongoid.git
   revision: 5d8397e24b673724f4b70ca2923a62bfe20e6e79
   specs:
@@ -37,8 +45,6 @@ GEM
       tzinfo (~> 0.3.37)
     arel (4.0.0)
     atomic (1.1.10)
-    bootstrap-sass (2.3.2.0)
-      sass (~> 3.2)
     builder (3.1.4)
     coffee-rails (4.0.0)
       coffee-script (>= 2.2.0)
@@ -126,7 +132,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bootstrap-sass (~> 2.3.2.0)
+  bootstrap-sass!
   coffee-rails (~> 4.0.0)
   font-awesome-rails
   jbuilder (~> 1.2)
