@@ -15,10 +15,18 @@
 <% if content_for? :container_override? %>
   <%= yield %>
 <% else %>
-  <%= content_tag :div, yield, class: "container" %>
+  <%= content_tag :div, class: "container" do %>
+    <%= content_for?(:content) ? yield(:content) : yield %>
+  <% end %>
 <% end %>
 
-<%= yield(:footer) %>
+<% if content_for?(:footer) %>
+  <footer>
+    <div class="container">
+      <%= yield(:footer) %>
+    </div>
+  </footer>
+<% end %>
 
 </body>
 </html>

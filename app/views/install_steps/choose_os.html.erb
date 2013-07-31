@@ -1,11 +1,16 @@
-<section class="prompt">
-<h1>First off, are you using a Mac or Windows?</h1>
-  <div class="options">
-    <div class="option">
-      <%= button_to "Mac", wizard_path, name: :os, method: :put %>
-    </div>
-    <div class="option">
-      <%= button_to "Windows", wizard_path, name: :os, method: :put  %>
+<section class="instructions">
+  <h1>First off, we need to figure out which instructions to give you</h1>
+  <ol>
+    <li>Choose one of the options</li>
+  </ol>
+</section>
+
+<% content_for(:sidebar) do %>
+  <div class="prompt">
+    <h2>What kind of operating system are you using?</h2>
+    <div class="options">
+      <%= button_to "Mac", wizard_path, name: :os, method: :put, class: "option" %>
+      <%= button_to "Windows", wizard_path, name: :os, method: :put, class: "option"  %>
     </div>
   </div>
-</section>
+<% end %>

@@ -4,7 +4,7 @@ InstallRails::Application.routes.draw do
   resources :install_steps
   root 'welcome#index'
 
-  get 'su', to: 'welcome#template'
+  get 'test', to: 'welcome#test'
   delete 'signout', to: 'sessions#destroy'
 
 end

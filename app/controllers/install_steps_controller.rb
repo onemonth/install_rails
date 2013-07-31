@@ -5,6 +5,7 @@ class InstallStepsController < ApplicationController
   prepend_before_filter :set_steps
 
   def show
+    @user = current_user
     render_wizard
   end
 

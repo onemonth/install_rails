@@ -2,7 +2,7 @@ class WelcomeController < ApplicationController
   def index
   end
 
-  def template
+  def test
     render layout: "application"
   end
 end

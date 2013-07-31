@@ -22,7 +22,6 @@ a {
 
 
 .instructions {
-  padding-top: 100px;
   li {
     font-size: 20px;
     line-height: 20px;
@@ -31,23 +30,23 @@ a {
   }
   img {
     display: block;
-    @extend .img-polaroid;
+    @extend .img-thumbnail;
   }
 }
 
 .prompt {
-  padding-top: 40px;
-  padding-bottom: 300px;
   .options {
     padding-top: 20px;
   }
+  .button_to  {
+    margin-top: 5px;
+  }
+
   .option {
-    display: inline-block;
-    input[type="submit"], a {
-      @extend .btn;
-      @extend .btn-large;
-      @extend .btn-primary;
-    }
+    @extend .btn;
+    @extend .btn-large;
+    @extend .btn-primary;
+    @extend .btn-block;
   }
 }
 
@@ -58,3 +57,4 @@ a {
 .list-image {
   margin: 10px;
 }
+

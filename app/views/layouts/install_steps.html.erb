@@ -2,20 +2,25 @@
   <header>
     <div class="container">
       <%= link_to (content_tag(:i, nil, class: "icon-beaker") + " InstallRails.com"), root_path, class: "site-title" %>
-      <ul class="nav nav-pills pull-right">
-        <li><%= link_to "Back", previous_wizard_path %></li>
-        <% if signed_in? %>
-          <li><%= link_to "Log out", signout_path, method: :delete %></li>
-        <% end %>
-      </ul>
     </div>
   </header>
-
 <% end %>
 
-<% content_for(:footer) do %>
-  <%= debug(params) if Rails.env.development? %>
-  <%= debug(current_user) if Rails.env.development? && current_user %>
+<% content_for(:content) do %>
+  <% if content_for?(:sidebar) %>
+    <div class="row">
+      <div class="col-lg-8">
+        <%= yield %>
+      </div>
+      <div class="col-lg-4">
+        <div class="sidebar well" data-spy="affix" data-offset-top="80" data-offset-bottom="400">
+          <%= yield(:sidebar) %>
+        </div>
+      </div>
+    </div>
+  <% else %>
+    <%= yield %>
+  <% end %>
 <% end %>
 
 <%= render template: "layouts/application" %>

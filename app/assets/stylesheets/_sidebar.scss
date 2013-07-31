@@ -1,0 +1,31 @@
+/* By default it's not affixed in mobile views, so undo that */
+.sidebar.affix-bottom,
+.sidebar.affix {
+  position: static;
+}
+
+/* Tablets/desktops and up */
+@media screen and (min-width: 992px) {
+  .sidebar.affix-bottom,
+  .sidebar.affix {
+    width: 293px;
+  }
+  .sidebar.affix {
+    position: fixed; /* Undo the static from mobile-first approach */
+    top: 20px;
+  }
+  .sidebar.affix-bottom {
+    position: absolute; /* Undo the static from mobile-first approach */
+  }
+}
+
+/* Large desktops and up */
+@media screen and (min-width: 1200px) {
+
+  /* Widen the fixed sidebar again */
+  .sidebar.affix-bottom,
+  .sidebar.affix {
+    width: 370px;
+  }
+
+}
