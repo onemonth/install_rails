@@ -28,6 +28,7 @@ module InstallRails
                                     *.gif
                                     html5shiv.js
                                     script.js
-                                    install_steps.css ]
+                                    install_steps.css
+                                    basic.rb ]
   end
 end
