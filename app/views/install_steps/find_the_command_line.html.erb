@@ -1,0 +1,28 @@
+<section class="instructions">
+  <h1>Now we're going to explore something called the command line</h1>
+  <p>The command line is a place on your computer where you can type in commands (that I'll show you in a moment) and hit <strong>Enter</strong> to run those commands</p>
+  <ol>
+    <li>On a Mac, command line is in your Applications folder, but the easiest way to find it is to open Spotlight (the little <i class="icon-search"></i> icon on the top right corner of your Mac) and type "Terminal".</li>
+    <%= image_tag "mac_steps/spotlight_search_for_terminal.png" %>
+    <li>
+      Once you open it, your terminal should look something like this (don't freak out):
+    </li>
+    <%= image_tag "mac_steps/terminal.png" %>
+    <li>Add it to your dock; you'll be using it a lot. (To add it to the dock, click and hold the dock icon once Terminal is open. Select Options > Keep in Dock.)</li>
+    <li>Try running typing the following command and hitting <strong>Enter</strong>. (Ignore the $ and the space at the beginning, it's called a prompt and it's just a hint you'll often see that you should type something in the command line)</li>
+    <pre><code>$ seq 1 100</code></pre>
+    <li>It should print out a <strong>seq</strong>uence of all the numbers from 1 to 100</li>
+    <pre><code>$ seq 1 100
+1
+2
+.
+.
+.
+99
+100 </code></pre>
+  </ol>
+</section>
+
+<section class="prompt">
+  <%= link_to "Next Step", next_wizard_path, class: "option" %>
+</section>

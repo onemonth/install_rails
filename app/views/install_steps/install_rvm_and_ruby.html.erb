@@ -7,10 +7,8 @@
         <li>Open Spotlight (the little loup icon on the top right corner of your mac) and type "Terminal". Hit Enter.
       </ul>
     </li>
-    <li>
-      To install RVM, type this in your terminal
-      <pre><code>curl -L get.rvm.io | bash -s stable</code></pre>
-    </li>
+    <li>To install RVM, type this in your terminal</li>
+    <pre><code>curl -L get.rvm.io | bash -s stable</code></pre>
     <li>Close your terminal and then re-open it.</li>
     <li>To install Ruby, type this in your terminal
       <pre><code>rvm install 1.9.3</code></pre>
@@ -28,7 +26,5 @@
 </section>
 
 <section class="prompt">
-  <div class="option">
-    <%= link_to "Next Step", next_wizard_path %>
-  </div>
+  <%= link_to "Next Step", next_wizard_path, class: "option" %>
 </section>

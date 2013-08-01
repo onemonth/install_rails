@@ -1,45 +1,18 @@
-<% if @user.os == "Mac" %>
-
 <section class="instructions">
   <h1>Let's figure out what version of <%= @user.os %> OS you have</h1>
   <ol>
-    <li>Click on the Apple icon in the top left of your screen.</li>
-    <%= image_tag "mac_steps/click_on_the_apple_icon.png" %>
-    <li>Select "About This Mac"</li>
+    <li>Click on the Apple icon in the top left of your screen and select "About This Mac"</li>
     <%= image_tag "mac_steps/select_about_this_mac.png" %>
     <%= image_tag "mac_steps/about_this_mac.png" %>
   </ol>
 </section>
 
-<% content_for(:sidebar) do %>
-  <div class="prompt">
-    <h2>What version of Mac OS do you have?</h2>
-    <div class="options">
-      <%= button_to "10.8", wizard_path, name: :os_version, method: :put, class: "option" %>
-      <%= button_to "10.7", wizard_path, name: :os_version, method: :put, class: "option" %>
-      <%= button_to "10.6", wizard_path, name: :os_version, method: :put, class: "option" %>
-      <%= button_to "10.5", wizard_path, name: :os_version, method: :put, class: "option" %>
-    </div>
-  </div>
-<% end %>
-
-<% elsif @user.os == "Windows" %>
-
-<section class="instructions">
-  <h1>Let's figure out what version of <%= @user.os %> OS you have</h1>
-  <ol>
-    <li>Click on the Apple icon in the top left of your screen.</li>
-    <li>Select "About This Mac"</li>
-  </ol>
-</section>
-<section class="prompt">
-  <h1>What does it say?</h1>
+<div class="prompt">
+  <h2>What version of Mac OS do you have?</h2>
   <div class="options">
     <%= button_to "10.8", wizard_path, name: :os_version, method: :put, class: "option" %>
     <%= button_to "10.7", wizard_path, name: :os_version, method: :put, class: "option" %>
     <%= button_to "10.6", wizard_path, name: :os_version, method: :put, class: "option" %>
-    <%= button_to "10.5", wizard_path, name: :os_version, method: :put, class: "option" %>
+    <%= button_to "10.5 or below", wizard_path, name: :os_version, method: :put, class: "option" %>
   </div>
-</section>
-
-<% end %>
+</div>

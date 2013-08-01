@@ -1,6 +1,6 @@
 <section class="instructions">
   <h1>RailsInstaller</h1>
-  <p>The easiest way to get you started is to use Rails Installer. This will install Rails, Ruby, Git and SQLite (don’t worry if you don’t know what all this means -- they’re just a bunch of things you need to get your computer ready).</p>
+  <p>The easiest way to get you started is to use Rails Installer. This will install Rails, Ruby, Git and SQLite (don’t worry if you don’t know what all this means -- they’re just a bunch of things you'll need on your computer to code with Rails).</p>
   <ol>
     <li>Go to <%= link_to "RailsInstaller.com", "http://railsinstaller.com", target: "_blank" %></li>
     <li>
@@ -8,21 +8,13 @@
       <strong><%= current_user.os %> <%= current_user.os_version %></strong>
     </li>
     <%= image_tag "railsinstaller.png" %>
-    <li>Once the file has fully downloaded, double click on it. This will open the installer wizard (Alohomora and what not).
-      <ul>
-        <li>Click next for each step, it’s ok to accept the defaults.</li>
-        <li>When prompted, enter your name and email address (don’t worry, no one will see this email or spam you, this is purely for setup purposes).</li>
-</li>
-      </ul>
+    <li>Once the file has fully downloaded (it may take a few minutes), double click on it. This will open the installer wizard (Alohomora and what not).</li>
+    <li>Click next for each step – it’s ok to accept the defaults.</li>
+    <li>When prompted, enter your name and email address (don’t worry, no one will see this email or spam you, this is purely for setup purposes).</li>
     </li>
   </ol>
 </section>
 
 <section class="prompt">
-  <div class="option">
-    <%= link_to "Go Back a Step", previous_wizard_path %>
-  </div>
-  <div class="option">
-    <%= link_to "Next Step", next_wizard_path %>
-  </div>
+  <%= link_to "Next Step", next_wizard_path, class: "option" %>
 </section>

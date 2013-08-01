@@ -23,6 +23,11 @@
   <% end %>
 <% end %>
 
+<% content_for(:footer) do %>
+  &copy; 2013 One Month Rails
+  <%= debug(wizard_steps) %>
+<% end %>
+
 <%= render template: "layouts/application" %>
 
 

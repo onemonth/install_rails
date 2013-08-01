@@ -1,52 +1,21 @@
 <section class="instructions">
-  <h1>Verify Your Installation</h1>
+  <h1>Verifying Your Installation</h1>
   <ol>
-    <li>
-      Open your terminal
-      <ul>
-        <li>Open Spotlight (the little loup icon on the top right corner of your mac) and type "Terminal". Hit Enter.
-      </ul>
-    </li>
 
-    <li>
-      To check git, type the following command
-      <pre><code>which git</code></pre>
-      Expected result
-      <pre><code>/use/bin/git</code></pre>
-    </li>
+    <li>In the command line (see the last step), try running</li>
+    <pre><code>$ ruby -v</code></pre>
+    <p>To see what version of Ruby you have installed.</p>
+    <pre><code>$ ruby -v
+ruby 2.0.0p195 (2013-05-14 revision 40734) [x86_64-darwin12.4.0]</code></pre>
+    <p>Rails 4 requires Ruby 1.9 or later and works best with Ruby 2.0. (Basically, you're fine as long as you don't have Ruby 1.8.7)</p>
 
-    <li>
-      To make sure Ruby is installed in the right place type
-      <pre><code>which ruby</code></pre>
-      Expected result
-      <pre><code>/usr/local/rvm/rubies/ruby-1.9.3-p194/bin/ruby</code></pre>
-    </li>
-
-    <li>
-      To make sure Rails is installed in the right place type
-      <pre><code>which rails</code></pre>
-      Expected result
-      <pre><code>/usr/local/rvm/gems/ruby-1.9.3-p194/bin/rails</code></pre>
-    </li>
-
-    <li>
-      To check your ruby version
-      <pre><code>ruby -v</code></pre>
-      Expected result
-      <pre><code>ruby 1.9.3p194</code></pre>
-    </li>
-
-    <li>
-      To check your rails version
-      <pre><code>rails -v</code></pre>
-      Expected result
-      <pre><code>Rails 4.0.X</code></pre>
-    </li>
+    <li>Next, make sure you have Rails installed:</li>
+    <pre><code>$ rails -v
+Rails 4.0.0</code></pre>
+    <p>You may not see the exact same version (RailsInstaller comes with 3.2 by default – we'll upgrade this in a second). But basically as long as you have some version of Rails installed, you're good to go.</p>
   </ol>
 </section>
 
 <section class="prompt">
-  <div class="option">
-    <%= link_to "Next Step", next_wizard_path %>
-  </div>
+  <%= link_to "Next Step", next_wizard_path, class: "option" %>
 </section>

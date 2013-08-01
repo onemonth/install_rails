@@ -22,9 +22,9 @@ a {
 
 
 .instructions {
+  font-size: 20px;
+  line-height: 20px;
   li {
-    font-size: 20px;
-    line-height: 20px;
     padding-top: 30px;
     padding-bottom: 10px;
   }
@@ -40,13 +40,13 @@ a {
   }
   .button_to  {
     margin-top: 5px;
+    display: inline-block;
   }
 
   .option {
     @extend .btn;
     @extend .btn-large;
     @extend .btn-primary;
-    @extend .btn-block;
   }
 }
 
