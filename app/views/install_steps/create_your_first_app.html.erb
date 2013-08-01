@@ -1,0 +1,20 @@
+<section class="instructions">
+  <h1>Create your first app</h1>
+  <p>If you followed all the previous steps correctly, you should be ready to create your first app.</p>
+  <ol>
+    <li>
+      Run the <code>cd</code> (change directory) command in the command line to change directory into your desktop folder
+    </li>
+    <pre><code>$ cd ~/Desktop</code></pre>
+    <p>We do this so that when we create a new application, we'll be able to see it on our desktop and access it more easily.</p>
+    <li>
+      You can doublecheck that you did this correctly with the command <code>pwd</code> (print working directly), which will tell you what folder you're currently in.
+    </li>
+    <pre><code>$ pwd
+/Users/username/Desktop</code></pre>
+    <li>
+      Now we're going to run a command that will create a new rails application
+    </li>
+    <pre><code>$ rails new sample_app -m <%= asset_url("basic.rb") %></code></pre>
+  </ol>
+</section>
