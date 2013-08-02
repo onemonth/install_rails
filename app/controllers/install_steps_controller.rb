@@ -71,7 +71,7 @@ class InstallStepsController < ApplicationController
     end
 
     def windows_steps
-      [:choose_os, :railsinstaller, :configure_git, text_editor_step, :create_your_first_app,
+      [:choose_os, :railsinstaller, :find_git_bash, text_editor_step, :create_your_first_app,
                   :see_it_live]
     end
 
