@@ -38,7 +38,7 @@ gem 'jbuilder'
 gem 'bootstrap-sass', '~> 2.3.2.0'
 gem 'devise', '3.0.0.rc'
 gem 'simple_form', '3.0.0.rc'
-run "bundle install"
+run "bundle install --without production"
 
 # Add bootstrap CSS and JS
 

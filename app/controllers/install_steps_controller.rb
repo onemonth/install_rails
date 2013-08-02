@@ -47,16 +47,23 @@ class InstallStepsController < ApplicationController
                   :find_the_command_line,
                   :verify_installation,
                   :update_rails,
+                  :configure_git,
                   text_editor_step,
-                  :create_your_first_app]
+                  :create_your_first_app,
+                  :see_it_live]
       elsif ( params[:os_version] || current_user.try(:os_version) ) == "10.5 or below"
         steps = [ :choose_os,
                   :choose_os_version,
-                  :find_the_command_line,
-                  :install_rvm_and_ruby,
                   :install_xcode,
+                  :find_the_command_line,
+                  :install_homebrew,
+                  :install_git,
                   :configure_git,
-                  text_editor_step]
+                  :install_rvm_and_ruby,
+                  :install_rails,
+                  text_editor_step,
+                  :create_your_first_app,
+                  :see_it_live]
       else
         steps = [ :choose_os,
                   :choose_os_version]
@@ -64,7 +71,8 @@ class InstallStepsController < ApplicationController
     end
 
     def windows_steps
-      [:choose_os, :choose_os_version]
+      [:choose_os, :railsinstaller, :configure_git, text_editor_step, :create_your_first_app,
+                  :see_it_live]
     end
 
     def text_editor_step
@@ -73,5 +81,9 @@ class InstallStepsController < ApplicationController
       else
         :sublime_text
       end
+    end
+
+    def finish_wizard_path
+      wizard_path(:congratulations)
     end
 end
