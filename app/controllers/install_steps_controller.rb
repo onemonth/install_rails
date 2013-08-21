@@ -34,13 +34,15 @@ class InstallStepsController < ApplicationController
         self.steps = mac_steps
       elsif ( params[:os] || current_user.try(:os) ) == "Windows"
         self.steps = windows_steps
+      elsif ( params[:os] || current_user.try(:os) ) == "Linux"
+        self.steps = ubuntu_steps
       else
         self.steps = [:choose_os]
       end
     end
 
     def mac_steps
-      if %w(10.8 10.7 10.6).include?( params[:os_version] || current_user.try(:os_version) )
+      if [10.8, 10.7, 10.6].include?( params[:os_version] || current_user.try(:os_version) )
         steps = [ :choose_os,
                   :choose_os_version,
                   :railsinstaller,
