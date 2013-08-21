@@ -3,25 +3,45 @@
   <ol>
     <li>
       In your terminal type this
-      <pre><code>git config --global user.name "Your Actual Name"
-git config --global user.email "Your Actual Email"
-</code></pre>
     </li>
     <li>
-      To verify your installation, type this in your terminal
+      <pre><code>git config --global user.name "Your Actual Name"</code></pre>
+    </li>
+    <li>
+      And then type:
+    </li>
+    <li>
+      <pre><code>git config --global user.email "Your Actual Email"</code></pre>
+    </li>
+    <li>
+      To verify your installation, type:
+    </li>
+    <li>
       <pre><code>git config --get user.name</code></pre>
-      Your name should appear. Now type this
+    </li>
+    <li>
+      Your name should appear. Now type:
+    </li>
       <pre><code>git config --get user.email</code></pre>
+    </li>
+    <li>
       Your email should appear.
+    </li>
+    <li>
+      <h2>Why did we do this? What is git?</h2>
+      <p>We'll use git to track your coding history. To put it another way, git will allow you to make revisions of your work... this way you can feel assured that if you make an awful mistake (which inevitably you will at some point), git will be there to help you undo it.</p>
+
+      <p>Git is also used for uploading (aka. "git push") and downloading (aka. "git pull") code to the Web.</p>
     </li>
   </ol>
 </section>
 
-  <h2>Why did we do this? What is git?</h2>
-  <p>We'll use git to track your coding history. To put it another way, git will allow you to make revisions of your work... this way you can feel assured that if you make an awful mistake (which inevitably you will at some point), git will be there to help you undo it.</p>
-
-  <p>Git is also used for uploading (aka. "git push") and downloading (aka. "git pull") code to the Web.</p>
 
 <section class="prompt">
-  <%= link_to "Next Step", next_wizard_path, class: "option" %>
+  <%= link_to "Previous Step", previous_wizard_path, class: "option" %>
+  <%= link_to "Next Step",     next_wizard_path, class: "option" %>
 </section>
+
+<small>
+  Run into problems? Need help?
+</small>
