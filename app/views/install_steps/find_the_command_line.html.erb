@@ -1,32 +1,81 @@
 <section class="instructions">
-  <h1>Now we're going to explore something called: the command line</h1>
-   <p>The command line is a place on your computer where you can type in commands (I'll show you in a moment). After you type them in you'll hit <strong>Enter</strong> to run those commands. And then the magic happens!</p>
-  <ol>
-    <li>On a Mac the easiest way to find it is to open Spotlight (the little <i class="icon-search"></i> icon on the top right corner of your Mac) and type "Terminal". (Alternatively you could look in your "Applications" folder. It's under "Applications->Utilities->Terminal")</li>
-    <%= image_tag "mac_steps/spotlight_search_for_terminal.png" %>
-    <li>
-      Once you open it, your terminal should look something like this (don't freak out):
-    </li>
-    <%= image_tag "mac_steps/terminal.png" %>
-    <li>Add it to your dock; you'll be using it a lot. (One way to add it to the dock, click and hold the dock icon once Terminal is open. Select Options > Keep in Dock.)</li>
-    <li>Try typing the following command and hitting <strong>Enter</strong>. (Ignore the $ and the space at the beginning, it's called a prompt and it's just a hint you'll often see that you should type something in the command line)</li>
-    <pre><code>$ seq 1 100</code></pre>
-    <p>It should look something like this:</p>
-    <%= image_tag "mac_steps/command_line_seq_command.png" %>
+  <center>
+  <h2>
+    Now we're going to explore something called:
+  </h2>
+  <h1>
+    The Command Line
+  </h1>
+  </center>
 
-    <li>It should print out a <strong>seq</strong>uence of all the numbers from 1 to 100</li>
-    <pre><code>$ seq 1 100
+   <p>
+     The command line is a place on your computer where you can type in commands <i>(I'll show you in a moment)</i>. After you type them in you'll hit <strong>Enter</strong> to run those commands. And then the magic happens!
+   </p>
+  <ol>
+    <li>
+      On a Mac the easiest way to find it is to open Spotlight <i>(the little <i class="icon-search"></i> icon on the top right corner of your Mac)</i> and type '<strong>Terminal</strong>'.
+    </li>
+    <li>
+      Alternatively, you could look in your '<strong>Applications</strong>' folder. It's under 'Applications -> Utilities -> Terminal')
+    </li>
+    <li>
+      <%= image_tag "mac_steps/spotlight_search_for_terminal.png" %>
+    </li>
+    <li>
+      <%= image_tag "mac_steps/applications_utilities_terminal.png" %>
+    </li>
+    <li>
+      Once you open it, your terminal should look something like this <i>(don't freak out)</i>:
+    </li>
+    <li>
+      <%= image_tag "mac_steps/terminal.png" %>
+    </li>
+    <li>
+      PRO TIP:
+      Add Terminal to your dock; you'll be using it a lot.
+      Click & Hold the Terminal dock icon and select
+      '<strong>Options > Keep in Dock</strong>'
+    </li>
+    <li>
+      Now try typing the following command and hitting '<strong>Enter</strong>'. <i>(Ignore the <strong>$</strong> and the <strong>space</strong> at the beginning, it's called a <strong>prompt</strong> and it's just a hint you'll often see that you should type something in the command line)</i>
+    </li>
+    <li>
+      <pre><code>
+$ seq 1 100
+      </code></pre>
+    </li>
+    <li>
+      It should look something like this:
+    </li>
+    <li>
+      <%= image_tag "mac_steps/command_line_seq_command.png" %>
+    </li>
+    <li>
+      It should print out a <strong>seq</strong>uence of all the numbers from <strong>1</strong> to <strong>100</strong>
+    </li>
+    <li>
+      <pre><code>
+$ seq 1 100
 1
 2
 .
 .
 .
 99
-100 </code></pre>
-    <p>Don't worry, you'll probably never have to use that command again. It's just a fun one. Try going up to a million.</p>
+100
+      </code></pre>
+    </li>
+    <li>
+      Don't worry, you'll probably never have to use that command again. It's just a fun one. Try going up to a million. ~__^
+    </li>
   </ol>
 </section>
 
 <section class="prompt">
-  <%= link_to "Next Step", next_wizard_path, class: "option" %>
+  <%= link_to "Previous Step", next_wizard_path, class: "option" %>
+  <%= link_to "Next Step",     next_wizard_path, class: "option" %>
 </section>
+
+<small>
+  Run into problems? Need help?
+</small>
