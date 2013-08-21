@@ -1,7 +1,14 @@
 // Place all the styles related to the install_steps controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
+.choose_os_version, .find_the_command_line {
+  background-color: #5B6474;
+  color: white;
+}
+.railsinstaller {
+  background-color: #CE613E;
+  color: white;
+}
 header {
   padding-bottom: 20px;
   background-color: #db522f;
@@ -30,7 +37,6 @@ a {
   }
   img {
     display: block;
-    @extend .img-thumbnail;
   }
 }
 
@@ -42,11 +48,16 @@ a {
     margin-top: 5px;
     display: inline-block;
   }
-
   .option {
+    background-color: #515151;
+    border-color: #515151;
     @extend .btn;
     @extend .btn-large;
     @extend .btn-primary;
+    &:hover {
+      background-color: #3B3C3C;
+      border-color: #3B3C3C;
+    }
   }
 }
 
