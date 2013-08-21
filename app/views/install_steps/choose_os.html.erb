@@ -1,11 +1,19 @@
 <section class="instructions">
-  <h1>First things first</h1>
+  <h1>
+    First off, we need to figure out which instructions to give you.
+  </h1>
+  <h2>
+    Which operating system are you using?
+  </h2>
 </section>
 
 <div class="prompt">
-  <h2>What operating system are you using?</h2>
+  <%= image_tag "mac_steps/apple.png" %>
+  <%= image_tag "mac_steps/microsoft.png" %>
+  <%= image_tag "mac_steps/ubuntu.png" %>
   <div class="options">
     <%= button_to "Mac", wizard_path, name: :os, method: :put, class: "option" %>
     <%= button_to "Windows", wizard_path, name: :os, method: :put, class: "option"  %>
+    <%= button_to "Linux", wizard_path, name: :os, method: :put, class: "option"  %>
   </div>
 </div>
