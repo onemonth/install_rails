@@ -1,29 +1,36 @@
 // Place all the styles related to the install_steps controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#confetti {
+  z-index: -1;
+  position: fixed;
+}
+.install_steps.show {
+  color: white;
+}
+.install_steps.show {
+  &.congratulations, &.choose_os {
+    color: #3B3C3C;
+  }
+
+}
 .choose_os_version {
   background-color: #5B6474;
-  color: white;
 }
 .find_the_command_line {
   background-color: #3B4960;
-  color: white;
 }
 .railsinstaller {
   background-color: #CE613E;
-  color: white;
 }
 .verify_installation {
   background-color: #65AE55;
-  color: white;
 }
 .configure_git {
   background-color: #8E59BC;
-  color: white;
 }
 .sublime_text {
   background-color: #72B49B;
-  color: white;
   .option {
     background-color: #fff;
     border-color: #fff;
@@ -32,6 +39,12 @@
     @extend .btn-large;
     @extend .btn-primary;
   }
+}
+.create_your_first_app {
+  background-color: #CF7C00;
+}
+.see_it_live {
+  background-color: #5181BD;
 }
 
 header {
@@ -54,15 +67,19 @@ a {
 
 
 .instructions {
-  // text-align: center;
+  text-align: center;
   font-size: 20px;
   line-height: 20px;
+  margin: 0 10%;
   ol {
-    // list-style-type: none;
+    list-style-type: none;
   }
   li {
     padding-top: 30px;
     padding-bottom: 10px;
+  ul {
+    text-align: left;
+  }
   }
   img {
     text-align: center;
