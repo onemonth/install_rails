@@ -1,24 +1,47 @@
 <section class="instructions">
   <h1>Create your first app</h1>
-  <p>If you followed all the previous steps correctly, you should be ready to create your first app.</p>
   <ol>
     <li>
-      Run the <code>cd</code> (change directory) command in the command line to change directory into your desktop folder
+      If you followed all the previous steps correctly, you should be ready to create your first app.
     </li>
-    <pre><code>$ cd ~/Desktop</code></pre>
-    <p>We do this so that when we create a new application, we'll be able to see it on our desktop and access it more easily.</p>
     <li>
-      You can doublecheck that you did this correctly with the command <code>pwd</code> (print working directly), which will tell you what folder you're currently in.
+      Run the <strong>cd</strong> <i>(change directory)</i> command in the command line to change directory into your desktop folder
     </li>
-    <pre><code>$ pwd
-/Users/username/Desktop</code></pre>
+    <li>
+      <pre><code>$ cd ~/Desktop</code></pre>
+    </li>
+    <li>
+      <blockquote>
+        NOTE:
+        We do this so that when we create a new application, we'll be able to see it in our desktop and access it more easily.
+      </blockquote>
+    </li>
+    <li>
+      You can doublecheck that you did this correctly with the command <strong>pwd</strong> <i>(print working directly)</i>, which will tell you what folder you're currently in.
+    </li>
+    <li>
+      <pre><code>$ pwd</code></pre>
+    </li>
+    <li>
+      <pre><code>/Users/<strong>[YOUR USER NAME]</strong>/Desktop</code></pre>
+    </li>
     <li>
       Now we're going to run a command that will create a new rails application
     </li>
-    <pre><code>$ rails new sample_app -m <%= asset_url("basic.rb") %></code></pre>
+    <li>
+      <pre><code>$ rails new sample_app -m <%= asset_url("basic.rb") %></code></pre>
+    </li>
+    <li>
+      We just created a new app! Let's see it live.
+    </li>
   </ol>
 </section>
 
 <section class="prompt">
-  <%= link_to "Next Step", next_wizard_path, class: "option" %>
+  <%= link_to "Previous Step", previous_wizard_path, class: "option" %>
+  <%= link_to "Next Step",     next_wizard_path, class: "option" %>
 </section>
+
+<small>
+  Run into problems? Need help?
+</small>
