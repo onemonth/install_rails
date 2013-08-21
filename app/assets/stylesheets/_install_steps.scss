@@ -21,6 +21,19 @@
   background-color: #8E59BC;
   color: white;
 }
+.sublime_text {
+  background-color: #72B49B;
+  color: white;
+  .option {
+    background-color: #fff;
+    border-color: #fff;
+    color: #72B49B;
+    @extend .btn;
+    @extend .btn-large;
+    @extend .btn-primary;
+  }
+}
+
 header {
   padding-bottom: 20px;
   background-color: #db522f;
@@ -41,13 +54,18 @@ a {
 
 
 .instructions {
+  // text-align: center;
   font-size: 20px;
   line-height: 20px;
+  ol {
+    // list-style-type: none;
+  }
   li {
     padding-top: 30px;
     padding-bottom: 10px;
   }
   img {
+    text-align: center;
     display: block;
   }
 }
