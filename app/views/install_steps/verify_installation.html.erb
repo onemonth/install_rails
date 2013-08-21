@@ -1,25 +1,46 @@
 <section class="instructions">
-  <h1>Verifying Your Installation</h1>
+  <h1>
+    Verifying Your Installation
+  </h1>
   <ol>
-
-    <li>In the command line (see the last step), try running</li>
-    <pre><code>$ ruby -v</code></pre>
-    <p>To see what version of Ruby you have installed.</p>
-    <pre><code>$ ruby -v
-ruby 2.0.0p195 (2013-05-14 revision 40734) [x86_64-darwin12.4.0]</code></pre>
-    <p>Rails 4 requires Ruby 1.9 or later and works best with Ruby 2.0. (Basically, you're fine as long as you don't have Ruby 1.8.7)</p>
-
-    <li>Next, make sure you have Rails installed:</li>
-    <pre><code>$ rails -v
-Rails 4.0.0</code></pre>
-    <p>You may not see the exact same version (RailsInstaller comes with 3.2 by default – we'll upgrade this in a second). But basically as long as you have some version of Rails installed, you're good to go.</p>
+    <li>
+      In the command line <i>(see the last step)</i>, try running:
+    </li>
+    <li>
+      <pre><code>$ ruby --version</code></pre>
+    </li>
+    <li>
+      Expected result:
+    </li>
+    <li>
+      <pre><code>ruby 2.0.0p195 (2013-05-14 revision 40734) [x86_64-darwin12.4.0]</code></pre>
+    </li>
+    <li>
+      Next, make sure you have Rails installed by running:
+    </li>
+    <li>
+      <pre><code>$ rails --version</code></pre>
+    </li>
+    <li>
+      Expected result:
+    </li>
+    <li>
+      <pre><code>Rails 4.0.0</code></pre>
+    </li>
+    <li>
+      You may not see the exact same version (RailsInstaller comes with 3.2 by default – we'll upgrade this in a second). But basically as long as you have some version of Rails installed, you're good to go.
+    </li>
   </ol>
 </section>
 
 <section class="prompt">
   <h2>What version of Rails do you have?</h2>
   <div class="options">
-    <%= button_to "4.0", wizard_path, name: :rails_version, method: :put, class: "option" %>
-    <%= button_to "3.2", wizard_path, name: :rails_version, method: :put, class: "option" %>
+    <%= button_to "Rails 4.0", wizard_path, name: :rails_version, method: :put, class: "option" %>
+    <%= button_to "Rails 3.2", wizard_path, name: :rails_version, method: :put, class: "option" %>
   </div>
 </section>
+
+<small>
+  Run into problems? Need help?
+</small>
