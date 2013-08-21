@@ -1,20 +1,29 @@
 <section class="instructions">
-  <h1>RailsInstaller</h1>
-  <p>The easiest way to get you started is to use Rails Installer. This will install Rails, Ruby, Git and SQLite (don’t worry if you don’t know what all this means -- they’re just a bunch of things you'll need on your computer to code with Rails).</p>
+  <h1>Time to install Rails!</h1>
   <ol>
-    <li>Go to <%= link_to "RailsInstaller.com", "http://railsinstaller.com", target: "_blank" %></li>
     <li>
-      Scroll to the bottom of the page and download the installer for
-      <strong><%= current_user.os %> <%= current_user.os_version %></strong>
+      <strong>RailsInstaller</strong> is now downloading to your computer. Once the file has fully downloaded, double-click it ti open the installer wizard.
     </li>
-    <%= image_tag "railsinstaller.png" %>
-    <li>Once the file has fully downloaded (it may take a few minutes), double click on it. This will open the installer wizard (Alohomora and what not).</li>
-    <li>Click next for each step – it’s ok to accept the defaults.</li>
-    <li>When prompted, enter your name and email address (don’t worry, no one will see this email or spam you, this is purely for setup purposes).</li>
+    <li>
+      <%= image_tag "mac_steps/installer_wizard.png" %>
+    </li>
+    <li>
+      Click '<strong>Next</strong>' for each step - it's okay to accept the default settings.
+    </li>
+    <li>
+      <%= image_tag "mac_steps/rails_one_click.png" %>
+    </li>
+    <li>
+      When propted, enter your <strong>name</strong> and <strong>email addresstrong</b> (don't worry, no one will see this email or spam you, this is purely for setup purposes).
     </li>
   </ol>
 </section>
 
 <section class="prompt">
-  <%= link_to "Next Step", next_wizard_path, class: "option" %>
+  <%= link_to "Previous Step", next_wizard_path, class: "option" %>
+  <%= link_to "Next Step",     next_wizard_path, class: "option" %>
 </section>
+
+<small>
+  Run into problems? Need help?
+</small>
