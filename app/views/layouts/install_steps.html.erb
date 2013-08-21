@@ -1,9 +1,4 @@
 <% content_for(:header) do %>
-  <header>
-    <div class="container">
-      <%= link_to (content_tag(:i, nil, class: "icon-beaker") + " InstallRails.com"), root_path, class: "site-title" %>
-    </div>
-  </header>
 <% end %>
 
 <% content_for(:content) do %>
@@ -26,7 +21,7 @@
 
 <% content_for(:footer) do %>
   &copy; 2013 One Month Rails
-  <%= debug(wizard_steps) if Rails.env.development? %>
+  <!-- <%= debug(wizard_steps) if Rails.env.development? %> -->
 <% end %>
 
 <%= render template: "layouts/application" %>
