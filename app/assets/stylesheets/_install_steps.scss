@@ -48,6 +48,12 @@
   background-color: #5181BD;
 }
 
+.sam {
+  float:right;
+  display:inline;
+  width:25%
+}
+
 header {
   padding-bottom: 20px;
   background-color: #db522f;
@@ -78,7 +84,7 @@ a {
   li {
     padding-top: 30px;
     padding-bottom: 10px;
-  ul {
+  ul, pre {
     text-align: left;
   }
   }

@@ -42,7 +42,7 @@ class InstallStepsController < ApplicationController
     end
 
     def mac_steps
-      if [10.8, 10.7, 10.6].include?( params[:os_version] || current_user.try(:os_version) )
+      if %w(10.8 10.7 10.6).include?( params[:os_version] || current_user.try(:os_version) )
         steps = [ :choose_os,
                   :choose_os_version,
                   :railsinstaller,
