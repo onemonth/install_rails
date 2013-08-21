@@ -1,25 +1,27 @@
 <section class="instructions">
   <h1>Install Sublime Text</h1>
-  <p>
-    As a developer, you’ll be using your text editor quite often. A text editor is a simple program that lets you write text (and by text we mean code). Our preferred text editor is <b>Sublime Text 2</b>. You’re free to use any text editor you’d like but note that <b>MS WORD DOCUMENTS WILL NOT WORK</b>.
-  </p>
   <ol>
     <li>
-      Go to <%= link_to "SublimeText.com", "http://sublimetext.com/2", target: "_blank" %> and select "OS X".
-      <%= image_tag "sublime_website.png", class: "list-image" %>
+      As a developer, you’ll be using your text editor quite often. A text editor is a simple program that lets you write text <i>(and by text we mean code)</i>. Our preferred text editor is <strong>Sublime Text 2</strong>. Click the button below to download it.
     </li>
     <li>
-      This will download a file that will appear in your “Downloads” folder (or wherever you save downloaded files).
-      <%= image_tag "sublime_downloaded.png", class: "list-image" %>
+      <%= button_to "Download Sublime Text 2", 'http://www.sublimetext.com/2', class: "btn option" %>
     </li>
-    <li>Double click on the newly downloaded file.</li>
     <li>
-      A new window will open. Drag and drop Sublime Text 2 into your Applications folder.
-      <%= image_tag "sublime_drag_drop.png", class: "list-image" %>
+      Once the file has fully downloaded, double-click it and a new window will open. Drag and drop <strong>Sublime Text 2</strong> into your <strong>Applications</strong> folder.
+    </li>
+    <li>
+      <%= image_tag "mac_steps/applications_folder.png", class: "list-image" %>
     </li>
   </ol>
 </section>
 
+
 <section class="prompt">
-  <%= link_to "Next Step", next_wizard_path, class: "option" %>
+  <%= link_to "Previous Step", previous_wizard_path, class: "option" %>
+  <%= link_to "Next Step",     next_wizard_path, class: "option" %>
 </section>
+
+<small>
+  Run into problems? Need help?
+</small>
