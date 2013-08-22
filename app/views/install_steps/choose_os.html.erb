@@ -8,14 +8,16 @@
 </section>
 
 <center>
-<div class="prompt">
-  <%= image_tag "mac_steps/apple.png" %>
-  <%= image_tag "mac_steps/microsoft.png" %>
-  <%= image_tag "mac_steps/ubuntu.png" %>
-  <div class="options">
-    <%= button_to "Mac", wizard_path, name: :os, method: :put, class: "option" %>
+<div class="prompt" style="max-width: 50%;">
+  <div class="apple">
+    <%= image_tag "mac_steps/apple.png",     class: 'choose_your_os' %>
+    <br>
+    <%= button_to "Mac",     wizard_path, name: :os, method: :put, class: "option" %>
+  </div>
+  <div class="windows">
+    <%= image_tag "mac_steps/microsoft.png", class: 'choose_your_os' %>
+    <br>
     <%= button_to "Windows", wizard_path, name: :os, method: :put, class: "option"  %>
-    <%= button_to "Linux", wizard_path, name: :os, method: :put, class: "option"  %>
   </div>
 </div>
 </center>

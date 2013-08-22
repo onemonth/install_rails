@@ -3,14 +3,10 @@
   <ol>
     <li>
       Move into your new application folder
-    </li>
-    <li>
       <pre><code>$ cd ~/Desktop/sample_app</code></pre>
     </li>
     <li>
       We're going to start a little server so we can see the application in a browser
-    </li>
-    <li>
       <pre><code>$ rails server</code></pre>
     </li>
     <li>
@@ -25,12 +21,10 @@
 [2013-08-01 16:37:03] INFO  ruby 2.0.0 (2013-05-14) [x86_64-darwin12.4.0]
 [2013-08-01 16:37:03] INFO  WEBrick::HTTPServer#start: pid=12109 port=3000</code></pre>
     </li>
-    <li>
-      <blockquote>
-        NOTE: You'll no longer be able to type anything in this window. You can close the server by hitting '<strong>Control + C</strong>'
-        <%= image_tag "sam.png", class: 'sam' %>
-      </blockquote>
-    </li>
+    <blockquote>
+      NOTE: You'll no longer be able to type anything in this window. You can close the server by hitting '<strong>Control + C</strong>'
+    <%= image_tag "sam.png", class: 'sam', style: 'margin-top: -105px;margin-right: -150px;' %>
+    </blockquote>
     <li>
       Open up your browser and visit <%= link_to "http://localhost:3000", "http://localhost:3000", target: "_blank" %>
     </li>
@@ -40,8 +34,8 @@
 
 <center>
 <section class="prompt">
-  <%= link_to "Previous Step",       previous_wizard_path, class: "option" %>
-  <%= link_to "Yay! What's next?", next_wizard_path, class: "option" %>
+  <%= link_to "Previous Step",     previous_wizard_path, class: "option" %>
+  <%= link_to "Yay! What's next?", next_wizard_path,     class: "option", "data-no-turbolink" => "data-no-turbolink" %>
   <br>
   <small>
     Run into problems? Need help?

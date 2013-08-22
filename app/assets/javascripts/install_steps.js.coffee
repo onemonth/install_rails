@@ -39,7 +39,6 @@ window.requestAnimationFrame = do ->
 
 
 class Confetti
-
   constructor: ->
     @style = COLORS[~~range(0,5)]
     @rgb = "rgba(#{@style[0]},#{@style[1]},#{@style[2]}"

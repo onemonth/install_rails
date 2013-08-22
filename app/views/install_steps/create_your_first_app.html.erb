@@ -6,29 +6,23 @@
     </li>
     <li>
       Run the <strong>cd</strong> <i>(change directory)</i> command in the command line to change directory into your desktop folder
-    </li>
-    <li>
       <pre><code>$ cd ~/Desktop</code></pre>
     </li>
-    <li>
-      <blockquote>
-        NOTE:
-        We do this so that when we create a new application, we'll be able to see it in our desktop and access it more easily.
-      </blockquote>
-    </li>
+    <blockquote>
+      NOTE:
+      We do this so that when we create a new application, we'll be able to see it in our desktop and access it more easily.
+      <%= image_tag "sam.png", class: 'sam' %>
+    </blockquote>
     <li>
       You can doublecheck that you did this correctly with the command <strong>pwd</strong> <i>(print working directly)</i>, which will tell you what folder you're currently in.
-    </li>
-    <li>
       <pre><code>$ pwd</code></pre>
     </li>
     <li>
+      Expected result:
       <pre><code>/Users/<strong>[YOUR USER NAME]</strong>/Desktop</code></pre>
     </li>
     <li>
       Now we're going to run a command that will create a new rails application
-    </li>
-    <li>
       <pre><code>$ rails new sample_app -m <%= asset_url("basic.rb") %></code></pre>
     </li>
     <li>

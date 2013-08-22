@@ -1,4 +1,9 @@
 <% content_for(:header) do %>
+  <header>
+    <div class="container">
+      <%= link_to (content_tag(:i, nil, class: "icon-beaker") + " InstallRails.com"), root_path, class: "site-title" %>
+    </div>
+  </header>
 <% end %>
 
 <% content_for(:content) do %>
