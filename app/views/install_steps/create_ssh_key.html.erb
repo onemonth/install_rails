@@ -16,10 +16,10 @@
     </li>
     <li>Expected result:</li>
     <pre><code>Generating public/private rsa key pair.
-Enter file in which to save the key (/Users/yourname/.ssh/id_rsa): 
+Enter file in which to save the key (/Users/yourname/.ssh/id_rsa):
 Created directory '/Users/yourname/.ssh'.
-Enter passphrase (empty for no passphrase): 
-Enter same passphrase again: 
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
 Your identification has been saved in /Users/yourname/.ssh/id_rsa.
 Your public key has been saved in /Users/yourname/.ssh/id_rsa.pub.
 The key fingerprint is:
@@ -27,8 +27,14 @@ The key fingerprint is:
   </ol>
 </section>
 
+
+<center>
 <section class="prompt">
-  <div class="option">
-    <%= link_to "Next Step", next_wizard_path %>
-  </div>
+  <%= link_to "Previous Step", previous_wizard_path, class: "option" %>
+  <%= link_to "Next Step",     next_wizard_path,     class: "option"%>
+  <br>
+  <small>
+    Run into problems? Need help?
+  </small>
 </section>
+</center>
