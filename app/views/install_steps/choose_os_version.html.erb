@@ -1,10 +1,13 @@
 <section class="instructions">
-  <h1>Let's figure out what version of <%= @user.os %> OS you have?</h1>
+  <h1>What version of Mac OS do you have?</h1>
   <ol>
-    <li>Click on the &#63743; <strong>Apple</strong> logo (at the top left of your screen) and select '<strong>About This Mac</strong>'</li>
+    <li>Click on the &#63743; <strong>Apple</strong> logo (at the top left of your screen)<br>and select '<strong>About This Mac</strong>'
+
     <%= image_tag "mac_steps/select_about_this_mac.png" %>
-    <li>Your version number is shown under <strong>OS X</strong></li>
-    <%= image_tag "mac_steps/about_this_mac.png" %>
+     <small>Your version number is shown under <strong>OS X</strong></small>
+        <%= image_tag "mac_steps/about_this_mac.png" %>
+    </li>
+
   </ol>
 </section>
 
@@ -14,16 +17,13 @@
     Select your version of <%= @user.os %> OS X below to <strong>download RailsInstaller</strong>
   </h2>
   <div class="options">
-    <%= button_to "Version 10.9", wizard_path, name: :os_version, method: :put, class: "option" %>
-    <%= button_to "Version 10.8", wizard_path, name: :os_version, method: :put, class: "option" %>
-    <%= button_to "Version 10.7", wizard_path, name: :os_version, method: :put, class: "option" %>
+    <%= button_to "10.9", wizard_path, name: :os_version, method: :put, class: "option" %>
+    <%= button_to "10.8", wizard_path, name: :os_version, method: :put, class: "option" %>
+    <%= button_to "10.7", wizard_path, name: :os_version, method: :put, class: "option" %>
     <br>
-    <%= button_to "Version 10.6", wizard_path, name: :os_version, method: :put, class: "option" %>
-    <%= button_to "Version 10.5", wizard_path, name: :os_version, method: :put, class: "option" %>
-    <%= button_to "Version 10.4 or below", wizard_path, name: :os_version, method: :put, class: "option" %>
+    <%= button_to "10.6", wizard_path, name: :os_version, method: :put, class: "option" %>
+    <%= button_to "10.5 or below", wizard_path, name: :os_version, method: :put, class: "option" %>
   </div>
-  <small>
-    Run into problems? Need help?
-  </small>
+
 </div>
 </center>

@@ -11,8 +11,6 @@
     </li>
     <li>
       This command should show you:
-    </li>
-    <li>
       <pre><code>=> Booting WEBrick
 => Rails 4.0.0 application starting in development on http://0.0.0.0:3000
 => Run `rails server -h` for more startup options
@@ -28,17 +26,13 @@
     <li>
       Open up your browser and visit <%= link_to "http://localhost:3000", "http://localhost:3000", target: "_blank" %>
     </li>
-    <li>You should see your new web app!</li>
   </ol>
+  <p>You should see your new web app!</p>
 </section>
 
 <center>
 <section class="prompt">
   <%= link_to "Previous Step",     previous_wizard_path, class: "option" %>
   <%= link_to "Yay! What's next?", next_wizard_path,     class: "option", "data-no-turbolink" => "data-no-turbolink" %>
-  <br>
-  <small>
-    Run into problems? Need help?
-  </small>
 </section>
 </center>
