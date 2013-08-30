@@ -21,11 +21,16 @@
   <% else %>
     <%= yield %>
   <% end %>
-   <%= render 'layouts/disqus' %>
+
+   
 <% end %>
 
 <% content_for(:footer) do %>
-  &copy; 2013 One Month Rails
+  <div class="disqus">
+    <%= render 'layouts/disqus' %>
+  </div>
+
+    &copy; 2013 One Month Rails
   <!-- <%= debug(wizard_steps) if Rails.env.development? %> -->
 <% end %>
 
