@@ -8,13 +8,13 @@
 </section>
 
 
-<section class="center prompt clearfix">
-  <div class="apple">
+<section class="center prompt row">
+  <div class="apple col-sm-6">
     <%= image_tag "mac_steps/apple.png",     class: 'choose_your_os' %>
     <br>
     <%= button_to "Mac",     wizard_path, name: :os, method: :put, class: "option" %>
   </div>
-  <div class="windows">
+  <div class="windows col-sm-6">
     <%= image_tag "mac_steps/microsoft.png", class: 'choose_your_os' %>
     <br>
     <%= button_to "Windows", wizard_path, name: :os, method: :put, class: "option"  %>

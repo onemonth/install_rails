@@ -19,10 +19,18 @@
 [2013-08-01 16:37:03] INFO  ruby 2.0.0 (2013-05-14) [x86_64-darwin12.4.0]
 [2013-08-01 16:37:03] INFO  WEBrick::HTTPServer#start: pid=12109 port=3000</code></pre>
     </li>
-    <blockquote>
-      NOTE: You'll no longer be able to type anything in this window. You can close the server by hitting '<strong>Control + C</strong>'
-    <%= image_tag "sam.png", class: 'sam', style: 'margin-top: -105px;margin-right: -150px;' %>
-    </blockquote>
+
+     <div class="row">
+      
+      <div class="col-sm-6 note">
+        NOTE: You'll no longer be able to type anything in this window. You can close the server by hitting '<strong>Control + C</strong>'
+      </div>
+       <div class="col-sm-6">
+        <%= image_tag "sam.png", class: 'sam' %>
+      </div>
+    </div>
+
+
     <li>
       Open up your browser and visit <%= link_to "http://localhost:3000", "http://localhost:3000", target: "_blank" %>
     </li>

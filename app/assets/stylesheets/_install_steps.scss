@@ -16,7 +16,7 @@ body {
 h1 {
   font-family: $sansFontFamily;
   font-weight: 300;
-  margin: 1em 0 2.5em 0;
+  margin: 1em 0 1.5em 0;
 }
 
 strong {
@@ -48,6 +48,9 @@ section {
 }
 .find_the_command_line, .install_rvm_and_ruby {
   background-color: #3B4960;
+   .note:before {
+      border-color:#fff #3B4960 rgba(255,255,255,0.2) #658E15;    
+    }
 }
 .railsinstaller, .install_git {
   background-color: #CE613E;
@@ -55,9 +58,16 @@ section {
 .verify_installation, .install_xcode, .textmate {
   background-color: #65AE55;
 }
+
+
 .configure_git, .find_git_bash, .install_homebrew {
   background-color: #8E59BC;
+    .note:before {
+      border-color:#fff #8E59BC rgba(255,255,255,0.2) #658E15;    
+    }
 }
+
+
 .sublime_text, .create_ssh_key {
   background-color: #72B49B;
   .option {
@@ -69,20 +79,28 @@ section {
     @extend .btn-primary;
   }
 }
+
+
 .create_your_first_app, .update_rails {
-  background-color: #CF7C00;
+  background: #CF7C00; 
+
+    .note:before {
+         border-color:#fff #CF7C00 rgba(255,255,255,0.2) #658E15;
+    }
 }
+  
+
 .see_it_live {
-  background-color: #5181BD;
+  background: #5181BD;
+   .note:before {
+         border-color:#fff #5181BD rgba(255,255,255,0.2) #658E15;
+    }
 }
+
 .choose_your_os {
   padding: 30px;
 }
-.sam {
-  float:right;
-  display:inline;
-  width:25%
-}
+
 
 header {
   background-color: #eeeeee;
@@ -132,17 +150,7 @@ header {
 .prompt {
   padding-bottom: 40px;
   max-width: 50%;
-  
-  .apple, .windows {
 
-    display: inline;
-  }
-  .apple {
-    float: left;
-  }
-  .windows {
-    float: right;
-  }
   .options {
     padding-top: 20px;
   }
@@ -155,6 +163,8 @@ header {
     text-align: center;
     background-color: #515151;
     border-color: #515151;
+    margin-bottom: 3px;
+
     @extend .btn;
     @extend .btn-large;
     @extend .btn-primary;
@@ -168,6 +178,52 @@ header {
 .list-image {
   margin: 10px;
 }
+
+
+/* folded corner  
+http://nicolasgallagher.com/pure-css-folded-corner-effect/
+*/
+
+.note {
+   position:relative;
+   padding:1em 1.5em;
+   margin:2em auto;
+   color:#fff;
+   background: rgba(255,255,255,0.2);
+   overflow:hidden;
+   font-size: 90%;
+}
+.note:before {
+   content:"";
+   position:absolute;
+   top:0;
+   right:0;
+   border-width:0 16px 16px 0;
+   border-style:solid;
+   // border-color:#fff #CF7C00 rgba(255,255,255,0.2) #658E15;
+   background: rgba(255,255,255,1);
+   -webkit-box-shadow:0 1px 1px rgba(0,0,0,0.3), -1px 1px 1px rgba(0,0,0,0.2);
+   -moz-box-shadow:0 1px 1px rgba(0,0,0,0.3), -1px 1px 1px rgba(0,0,0,0.2);
+   box-shadow:0 1px 1px rgba(0,0,0,0.3), -1px 1px 1px rgba(0,0,0,0.2);
+   display:block; width:0; /* Firefox 3.0 damage limitation */
+}
+
+.note.rounded {
+   -webkit-border-radius:5px 0 5px 5px;
+   -moz-border-radius:5px 0 5px 5px;
+   border-radius:5px 0 5px 5px;
+}
+
+.note.rounded:before {
+   border-width:8px;
+   border-color:#fff #fff transparent transparent;
+   -webkit-border-bottom-left-radius:5px;
+   -moz-border-radius:0 0 0 5px;
+   border-radius:0 0 0 5px;
+}
+
+
+
 
 
 
