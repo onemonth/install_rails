@@ -11,8 +11,7 @@
   </ol>
 </section>
 
-<center>
-<div class="prompt">
+<div class="prompt center">
   <h2>
     Select your version of <%= @user.os %> OS X below to <strong>download RailsInstaller</strong>
   </h2>
@@ -24,6 +23,5 @@
     <%= button_to "10.6", wizard_path, name: :os_version, method: :put, class: "option" %>
     <%= button_to "10.5 or below", wizard_path, name: :os_version, method: :put, class: "option" %>
   </div>
-
 </div>
-</center>
+

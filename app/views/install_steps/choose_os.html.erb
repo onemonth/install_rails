@@ -7,8 +7,8 @@
   </h2>
 </section>
 
-<center>
-<div class="prompt" style="max-width: 50%;">
+
+<section class="center prompt clearfix">
   <div class="apple">
     <%= image_tag "mac_steps/apple.png",     class: 'choose_your_os' %>
     <br>
@@ -19,5 +19,5 @@
     <br>
     <%= button_to "Windows", wizard_path, name: :os, method: :put, class: "option"  %>
   </div>
-</div>
-</center>
+</section>
+

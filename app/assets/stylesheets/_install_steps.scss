@@ -23,6 +23,7 @@ strong {
   font-weight: 400;
 }
 
+
 /* SECTIONS */
 
 section {
@@ -122,8 +123,15 @@ header {
   }
 }
 
+.center {
+  text-align: center;
+  margin: auto;
+  display: block;
+}
+
 .prompt {
   padding-bottom: 40px;
+  max-width: 50%;
   
   .apple, .windows {
 
@@ -157,18 +165,30 @@ header {
   }
 }
 
-.debug_dump {
-
-}
-
 .list-image {
   margin: 10px;
 }
 
 
-div.disqus {
 
+// Clearfix
+// --------
+// For clearing floats like a boss h5bp.com/q
+.clearfix {
+  *zoom: 1;
+  &:before,
+  &:after {
+    display: table;
+    content: "";
+    // Fixes Opera/contenteditable bug:
+    // http://nicolasgallagher.com/micro-clearfix-hack/#comment-36952
+    line-height: 0;
+  }
+  &:after {
+    clear: both;
+  }
 }
+
 
 
 
