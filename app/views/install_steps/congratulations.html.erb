@@ -1,70 +1,56 @@
 <canvas id="confetti"></canvas>
 <section class="instructions">
   <h1>
-    Congratulations! What's next?
+    Congratulations!
   </h1>
-   <%= image_tag "mac_steps/congrats_sam.png", style: 'display:inline;' %>
+     <%= image_tag "mac_steps/congrats_sam.png", class: "congrats-sam", style: 'display:inline;' %>
+
+  <h2>What's next?</h2>
   <ol>
     <li>
-      <%= image_tag "omr_logo.png", style: 'display:inline;' %> Head on over to <strong><%= link_to "One Month Rails", "http://onemonthrails.com", target: "_blank" %></strong> where you can continue your progress!
+      <%= image_tag "omr_logo.png", style: 'display:inline; padding: 0;' %> <strong><%= link_to "One Month Rails", "http://onemonthrails.com", target: "_blank" %></strong> helps you build your first app in less than one month!
     </li>
-    <li>
-      You may also want to check out some of these resources:
-      <ul>
-        <li>
-          <a href="http://www.lynda.com/Ruby-on-Rails-3-tutorials/essential-training/55960-2.html">Ruby on Rails 3 Essential Training</a> by Kevin Skoglund
-        </li>
-        <li>
-          <a href="http://ruby.railstutorial.org/ruby-on-rails-tutorial-book">Ruby on Rails Tutorial</a> by Michael Hartl
-        </li>
-        <li>
-          <a href="http://openclassroom.stanford.edu/MainFolder/CoursePage.php?course=WebApplications">Web Applications</a> by John Ousterhout at Stanford University
-        </li>
-        <li>
-          <a href="http://railscasts.com/">RailsCasts</a> by Ryan Bates
-        </li>
-        <li>
-          <a href="http://stackoverflow.com/">StackOverflow</a>
-        </li>
-        <li>
-          <a href="http://guides.rubyonrails.org/">Ruby on Rails Guides</a>
-        <li>
-          <a href="http://meetup.com">Meetup</a>
-        </li>
-        <li>
-          <a href="http://generalassemb.ly/">General Assembly</a>
-        </li>
-        <li>
-          <a href="http://startupdigest.com/">Startup Digest</a>
-        </li>
-        <li>
-          <a href="http://startupweekend.org/">Startup Weekend</a>
-        </li>
-        <li>
-          <a href="http://railsforzombies.org/">Rails for Zombies</a>
-        </li>
-        <li>
-          <a href="https://peepcode.com/">Peepcode</a>
-        </li>
-        <li>
-          <a href="http://www.amazon.com/Agile-Web-Development-R
-        ails-Programmers/dp/097669400X">Agile Web Development</a></li>
-        <li>
-          <a href="http://hackety.com/">Hackety-Hack</a>
-        </li>
-        <li>
-          <a href="http://teamtreehouse.com/">Treehouse</a>
-        </li>
-        <li>
-          <a href="http://codecademy.com">Codecademy</a>
-        </li>
-        <li>
-          <a href="http://codeschool.com">Codeschool</a>
-        </li>
-        <li>
-          <a href="http://rorcasts.com/">Rorcasts</a>
-        </li>
-      </ul>
+    <li><strong><%= link_to "Enroll now", "http://onemonthrails.com", target: "_blank" %></strong> and get started learning Rails. 
     </li>
   </ol>
+
+  <strong><h3>Other Resources for Learning Rails:</h3></strong>
+
+
+
+    <div class="row">
+      <div class="col-sm-6">
+         <ul>
+          <li>
+            <a href="http://ruby.railstutorial.org/ruby-on-rails-tutorial-book" target="_blank">Ruby on Rails Tutorial by Michael Hartl</a>
+          </li>
+          <li>
+            <a href="http://railscasts.com/" target="_blank">RailsCasts by Ryan Bates</a>
+          </li>
+          <li>
+            <a href="http://guides.rubyonrails.org/" target="_blank">Ruby on Rails Guides</a>
+          </li>
+        </ul>
+      </div>
+     
+        
+      <div class="col-sm-6">
+        <ul>
+          <li>
+            <a href="http://generalassemb.ly/" target="_blank">General Assembly (12 week offline)</a>
+          </li>
+          <li>
+            <a href="http://codecademy.com" target="_blank">Codecademy</a>
+          </li>
+          <li>
+            <a href="http://codeschool.com" target="_blank">Codeschool</a>
+          </li>
+          <li>
+            <a href="http://teamtreehouse.com/" target="_blank">Treehouse</a>
+          </li>
+        </ul>
+      </div>
+    </div><!-- .row --> 
+
+ 
 </section>

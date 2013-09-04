@@ -57,6 +57,9 @@ section {
 }
 .verify_installation, .install_xcode, .textmate {
   background-color: #65AE55;
+   .note:before {
+      border-color:#fff #65AE55 rgba(255,255,255,0.2) #658E15;    
+    }
 }
 
 
@@ -99,6 +102,10 @@ section {
 
 .choose_your_os {
   padding: 30px;
+}
+
+.congratulations a {
+  color: #5181BD;
 }
 
 
