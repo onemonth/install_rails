@@ -46,6 +46,18 @@ section {
 .choose_os_version, .install_rails {
   background-color: #5B6474;
 }
+
+.railsinstaller {
+    .option {
+    background-color: rgba(255,255,255,0.9);
+    border-color: #fff;
+    color: #72B49B;
+    @extend .btn;
+    @extend .btn-large;
+    @extend .btn-primary;
+  }
+}
+
 .find_the_command_line, .install_rvm_and_ruby {
   background-color: #3B4960;
    .note:before {

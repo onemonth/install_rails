@@ -2,8 +2,19 @@
   <h1>Time to install Rails!</h1>
   <ol>
     <li>
-      <strong>RailsInstaller</strong> is now downloading to your computer.<br><small>Once the file has fully downloaded, double-click it to open the installer wizard.</small>
-      <%= image_tag "mac_steps/installer_wizard.png" %>
+      Visit the site <%= link_to "Railsinstaller.com", "http://www.railsinstaller.com", target: "_blank" %> and choose from ONE of the following options to download RailsInstaller.<br><br>
+      <small>Note: Windows users please download Ruby 1.9. Mac users please choose your version: <%= current_user.try(:os_version) %></small>
+
+      <div class="center">
+        <%= link_to (image_tag "railsinstaller.png", alt: "RailsInstaller"), "http://www.railsinstaller.com", target: "_blank" %>
+            
+      </div>
+
+   
+    </li>
+    <li>
+      <small>Once the file has fully downloaded, double-click it to open the installer wizard.</small>
+      <%= image_tag "mac_steps/installer_wizard.png", alt: "RailsInstaller Wizard" %>
     </li>
     <li>
       Click '<strong>Next</strong>' for each step - it's okay to accept the default settings.
