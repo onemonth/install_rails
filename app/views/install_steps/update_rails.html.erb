@@ -1,16 +1,43 @@
-<section class="instructions">
-  <h1>Because you don't have the latest version of Rails, we're going to update to the latest version</h1>
-  <ol>
-    <li>In the command line, run the following command:</li>
-    <pre><code>$ gem update rails --no-ri --no-rdoc</code></pre>
-    <p>This command should update several gems for you and may take a few minutes</p>
-  </ol>
-</section>
+<% if current_user.rails_version =~ /3.2/ %>
+  <section class="instructions">
+    <h1>Because you don't have the latest version of Rails, we're going to update to the latest version</h1>
+    <ol>
+      <li>In the command line, run the following command:</li>
+      <pre><code>$ gem update rails --no-ri --no-rdoc</code></pre>
+      <p>This command should update several gems for you and may take a few minutes</p>
+      <li>
+        Next, check to see if you have Rails installed by running:
+         <pre><code>$ rails --version</code></pre>
+      </li>
+    </ol>
+  </section>
 
 
-<section class="prompt center">
-  <%= link_to "Previous Step", previous_wizard_path, class: "option" %>
-  <%= link_to "Next Step",     next_wizard_path,     class: "option"%>
-</section>
+  <section class="prompt center">
+    <%= link_to "Previous Step", previous_wizard_path, class: "option" %>
+    <%= link_to "Next Step",     next_wizard_path,     class: "option"%>
+  </section>
 
+<% else %>
+
+  <section class="instructions">
+    <h1>Because you don't have rails Rails installed yet, we're going to install it</h1>
+    <ol>
+      <li>In the command line, run the following command:</li>
+      <pre><code>$ gem install rails --no-ri --no-rdoc</code></pre>
+      <p>This command should update several gems for you and may take a few minutes</p>
+      <li>
+        Next, check to see if you have the right version of Rails installed by running:
+         <pre><code>$ rails --version</code></pre>
+      </li>
+    </ol>
+  </section>
+
+
+  <section class="prompt center">
+    <%= link_to "Previous Step", previous_wizard_path, class: "option" %>
+    <%= link_to "Next Step",     next_wizard_path,     class: "option"%>
+  </section>
+
+<% end %>
 

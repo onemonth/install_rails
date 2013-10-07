@@ -3,6 +3,7 @@ class User
   field :guest
   field :os
   field :os_version
+  field :ruby_version
   field :rails_version
 
   def self.new_guest

@@ -23,6 +23,9 @@
   <footer>
     <div class="container container-disqus">
       <%= yield(:footer) %>
+      <%= debug(params) if Rails.env.development? %>
+      <%= debug(current_user) if Rails.env.development? %>
+      <%= debug(wizard_steps) if Rails.env.development? %>
     </div>
   </footer>
 <% end %>

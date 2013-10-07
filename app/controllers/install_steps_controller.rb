@@ -7,32 +7,25 @@ class InstallStepsController < ApplicationController
   def show
     @user = current_user
     case step
+    when :update_ruby
+      skip_step if @user.ruby_version =~ /2.0/
     when :update_rails
-      if @user.rails_version == "4.0"
-        skip_step
-      end
+      skip_step if @user.rails_version =~ /4.0/
     end
     render_wizard
   end
 
   def update
     @user = current_user
-    case step
-    when :choose_os
-      @user.os = params[:os]
-    when :choose_os_version
-      @user.os_version = params[:os_version]
-    when :verify_installation
-      @user.rails_version = params[:rails_version]
-    end
+    @user.update_attributes(user_params)
     render_wizard @user
   end
 
   private
     def set_steps
-      if ( params[:os] || current_user.try(:os) ) == "Mac"
+      if ( params[:os] || current_user.try(:os) ) =~ /Mac/
         self.steps = mac_steps
-      elsif ( params[:os] || current_user.try(:os) ) == "Windows"
+      elsif ( params[:os] || current_user.try(:os) ) =~ /Windows/
         self.steps = windows_steps
       elsif ( params[:os] || current_user.try(:os) ) == "Linux"
         self.steps = ubuntu_steps
@@ -47,7 +40,9 @@ class InstallStepsController < ApplicationController
                   :choose_os_version,
                   :railsinstaller,
                   :find_the_command_line,
-                  :verify_installation,
+                  :verify_ruby_version,
+                  :update_ruby,
+                  :verify_rails_version,
                   :update_rails,
                   :configure_git,
                   text_editor_step,
@@ -78,7 +73,7 @@ class InstallStepsController < ApplicationController
     end
 
     def text_editor_step
-      if current_user.os_version == "10.5 or below"
+      if current_user.os_version =~ /10.5/
         :textmate
       else
         :sublime_text
@@ -87,5 +82,10 @@ class InstallStepsController < ApplicationController
 
     def finish_wizard_path
       wizard_path(:congratulations)
+    end
+
+  private
+    def user_params
+      params.permit(:os, :os_version, :ruby_version, :rails_version)
     end
 end

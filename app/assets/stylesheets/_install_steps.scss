@@ -61,29 +61,29 @@ section {
 .find_the_command_line, .install_rvm_and_ruby {
   background-color: #3B4960;
    .note:before {
-      border-color:#fff #3B4960 rgba(255,255,255,0.2) #658E15;    
+      border-color:#fff #3B4960 rgba(255,255,255,0.2) #658E15;
     }
 }
 .railsinstaller, .install_git {
   background-color: #CE613E;
 }
-.verify_installation, .install_xcode, .textmate {
+.verify_ruby_version, .install_xcode, .textmate {
   background-color: #65AE55;
    .note:before {
-      border-color:#fff #65AE55 rgba(255,255,255,0.2) #658E15;    
+      border-color:#fff #65AE55 rgba(255,255,255,0.2) #658E15;
     }
 }
 
 
-.configure_git, .find_git_bash, .install_homebrew {
+.configure_git, .find_git_bash, .install_homebrew, .verify_rails_version {
   background-color: #8E59BC;
     .note:before {
-      border-color:#fff #8E59BC rgba(255,255,255,0.2) #658E15;    
+      border-color:#fff #8E59BC rgba(255,255,255,0.2) #658E15;
     }
 }
 
 
-.sublime_text, .create_ssh_key {
+.sublime_text, .update_ruby, .create_ssh_key {
   background-color: #72B49B;
   .option {
     background-color: #fff;
@@ -97,13 +97,13 @@ section {
 
 
 .create_your_first_app, .update_rails {
-  background: #CF7C00; 
+  background: #CF7C00;
 
     .note:before {
          border-color:#fff #CF7C00 rgba(255,255,255,0.2) #658E15;
     }
 }
-  
+
 
 .see_it_live {
   background: #5181BD;
@@ -199,7 +199,7 @@ header {
 }
 
 
-/* folded corner  
+/* folded corner
 http://nicolasgallagher.com/pure-css-folded-corner-effect/
 */
 
