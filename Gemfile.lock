@@ -63,6 +63,9 @@ GEM
     erubis (2.7.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
+    figaro (0.6.4)
+      bundler (~> 1.0)
+      rails (>= 3, < 5)
     font-awesome-rails (3.2.1.2)
       railties (>= 3.2, < 5.0)
     hike (1.2.3)
@@ -149,6 +152,7 @@ DEPENDENCIES
   binding_of_caller
   bootstrap-sass!
   coffee-rails (~> 4.0.0)
+  figaro
   font-awesome-rails
   jbuilder (~> 1.2)
   jquery-rails
