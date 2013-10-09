@@ -3,7 +3,12 @@
   <ol>
     <li>
       Visit the site <%= link_to "Railsinstaller.com", "http://www.railsinstaller.com", target: "_blank" %> and choose from ONE of the following options to download RailsInstaller.<br><br>
-      <small>Note: Windows users please download Ruby 1.9. Mac users please choose your version: <%= current_user.try(:os_version) %></small>
+      <small>Note: Windows users please download Ruby 1.9. Mac users please choose your version: <%= current_user.try(:os_version) %></small><br><br>
+
+      <div class="alert alert-info">
+        <i class="icon-warning-sign"></i> Looking for Ruby 2 and Rails 4?<br>
+        <i class="icon-check-sign"></i> We'll be upgrading in the next couple of steps.
+      </div>
 
       <div class="center">
         <%= link_to (image_tag "railsinstaller.png", alt: "RailsInstaller"), "http://www.railsinstaller.com", target: "_blank" %>
