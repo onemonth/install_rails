@@ -66,7 +66,12 @@ section {
 }
 .railsinstaller, .install_git {
   background-color: #CE613E;
+  .note:before {
+      border-color:#fff #CE613E rgba(255,255,255,0.2) #CE613E;
+    }
 }
+
+
 .verify_ruby_version, .install_xcode, .textmate {
   background-color: #65AE55;
    .note:before {
