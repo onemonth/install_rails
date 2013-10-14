@@ -3,18 +3,20 @@
   <ol>
     <li>
       Visit the site <%= link_to "Railsinstaller.com", "http://www.railsinstaller.com", target: "_blank" %> and choose from ONE of the following options to download RailsInstaller.<br><br>
-      <small>Note: Windows users please download Ruby 1.9. Mac users please choose your version: <%= current_user.try(:os_version) %></small>
+  
 
-      <div class="row">
-        <div class="col-sm-12 note">
-          <i class="icon-warning-sign"></i> Looking for Ruby 2 and Rails 4?<br>
-          <i class="icon-check-sign"></i>&nbsp; We'll be upgrading in the next couple of steps. Be sure to finish the whole tutorial.
-        </div>
-      </div>
+      <small>Note: Windows users please download from "Want to live on the edge?" download near the bottom. Mac users please choose your version <%= current_user.try(:os_version) %> from the right</small>. 
 
       <div class="center">
-        <%= link_to (image_tag "railsinstaller.png", alt: "RailsInstaller"), "http://www.railsinstaller.com", target: "_blank" %>
+        <%= link_to (image_tag "railsinstaller-mac-windows.jpg", alt: "RailsInstaller"), "http://www.railsinstaller.com", target: "_blank" %>
 
+      </div>
+
+       <div class="row">
+        <div class="col-sm-12 note">
+          <i class="icon-warning-sign"></i> Looking for Ruby 2 and Rails 4 for Mac?<br>
+          <i class="icon-check-sign"></i>&nbsp; We'll be upgrading in the next couple of steps. Be sure to finish the whole tutorial.
+        </div>
       </div>
 
 
