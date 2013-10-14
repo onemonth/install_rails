@@ -27,7 +27,7 @@ class InstallStepsController < ApplicationController
         self.steps = mac_steps
       elsif ( params[:os] || current_user.try(:os) ) =~ /Windows/
         self.steps = windows_steps
-      elsif ( params[:os] || current_user.try(:os) ) == "Linux"
+      elsif ( params[:os] || current_user.try(:os) ) == "Other"
         self.steps = ubuntu_steps
       else
         self.steps = [:choose_os]
@@ -70,6 +70,10 @@ class InstallStepsController < ApplicationController
     def windows_steps
       [:choose_os, :railsinstaller, :find_git_bash, :install_rails, text_editor_step, :create_your_first_app,
                   :see_it_live]
+    end
+
+    def ubuntu_steps
+      [:choose_os, :rails_for_linux_and_other]
     end
 
     def text_editor_step
