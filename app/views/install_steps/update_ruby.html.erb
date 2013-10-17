@@ -27,5 +27,29 @@
 
 <section class="prompt center">
   <%= link_to "Previous Step", previous_wizard_path, class: "option" %>
+   <button type="button" class="btn btn-large btn-danger" data-toggle="collapse" data-target="#trouble">
+    Troubleshooting
+  </button> 
   <%= link_to "Next Step",     next_wizard_path,     class: "option"%>
 </section>
+
+
+  <div id="trouble" class="collapse out note">
+      <h4>#1 - I'm currently getting an error "Operation not permitted"</h4>
+      <p>This error may also include words like: "chmod", and "Unable to change file mode on /usr/local/rvm/scripts/aliases". This is a permissions error. Running the following in your terminal should fix it:</p>
+      <pre><code>$ sudo rvm get stable</code></pre>
+   
+      <br><br>
+
+      <h4>#2 - The above answer didn't work for me!</h4>
+      <p>Try this in addition only if the last question didn't work for you:</p>
+      <pre><code>$brew install openssl 
+$rvm install 2.0.0 --autolibs=1</code></pre>
+
+      <br><br>
+
+      <h4>#3 - Warning: Your Xcode (3.2.2) is outdated</h4>
+      <p>Update your current version of XCode, and/or download the latest version of Xcode from Apple. <a href="https://developer.apple.com/xcode/">XCode Download</a></p>
+
+
+  </div>

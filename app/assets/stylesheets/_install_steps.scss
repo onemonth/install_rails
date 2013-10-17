@@ -98,6 +98,9 @@ section {
     @extend .btn-large;
     @extend .btn-primary;
   }
+   .note:before {
+         border-color:#fff #72B49B rgba(255,255,255,0.2) #72B49B;
+    }
 }
 
 

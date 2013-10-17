@@ -19,26 +19,37 @@
 [2013-08-01 16:37:03] INFO  ruby 2.0.0 (2013-05-14) [x86_64-darwin12.4.0]
 [2013-08-01 16:37:03] INFO  WEBrick::HTTPServer#start: pid=12109 port=3000</code></pre>
     </li>
+  
+        <li>
+          Open up your browser and visit <%= link_to "http://localhost:3000", "http://localhost:3000", target: "_blank" %>
+        </li>
+      </ol>
+      <p>You should see your new web app!</p>
+       <hr>
 
      <div class="row">
-  
-    <li>
-      Open up your browser and visit <%= link_to "http://localhost:3000", "http://localhost:3000", target: "_blank" %>
-    </li>
-  </ol>
-  <p>You should see your new web app!</p>
-   <hr>
-  <div class="col-sm-6 note">
-        PRO TIP: <br>Whenever you run <pre><code>$ rails server</pre></code> ...you'll no longer be able to type anything in that command line window (because that window is now busy running your site). <br><br>Leaving us with two options: <br>1) When you're coding: let this window run the server, and open another command line window to write new commands<br>2) When you're finished: close the server by hitting '<strong>Control + C</strong>' and give yourself a pat on the back for being awesome. 
-      </div>
-       <div class="col-sm-6">
-        <%= image_tag "sam.png", class: 'sam' %>
-      </div>
+            <div class="col-sm-6 note">
+            PRO TIP: <br>Whenever you run <pre><code>$ rails server</pre></code> ...you'll no longer be able to type anything in that command line window (because that window is now busy running your site). <br><br>Leaving us with two options: <br>1) When you're coding: let this window run the server, and open another command line window to write new commands<br>2) When you're finished: close the server by hitting '<strong>Control + C</strong>' and give yourself a pat on the back for being awesome. 
+          </div>
+           <div class="col-sm-6">
+            <%= image_tag "sam.png", class: 'sam' %>
+          </div>
+
     </div>
 </section>
 
 <section class="prompt center">
   <%= link_to "Previous Step",     previous_wizard_path, class: "option" %>
+  <button type="button" class="btn btn-large btn-danger" data-toggle="collapse" data-target="#trouble">
+    Troubleshooting
+  </button> 
   <%= link_to "Yay! What's next?", next_wizard_path,     class: "option", "data-no-turbolink" => "data-no-turbolink" %>
 </section>
+
+<div id="trouble" class="collapse out note">
+      <h4>#1 - My error is about: "node.js", "therubyrhino", "therubyracer" or a Java Runtime Error</h4>
+      <p>a) If your error resembles any of those words you may need to <a href="http://nodejs.org/download/" target="_blank" class="btn btn-info">DOWNLOAD NODE.JS</a></p>
+      <p>b) Restart your computer after you install Node.js</p>
+      <br><br> 
+</div>
 
