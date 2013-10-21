@@ -119,7 +119,7 @@ width: 100%;
   margin: 130px 0 80px;
   text-align: center;
 }
-.header-description h2 {
+.header-description h1, .header-description h2 {
   font-weight: 100;
   font-size: 93px;
   line-height: 93px;
@@ -189,9 +189,9 @@ width: 100%;
 }
 
 .feature {
-  border-right: 1px solid rgba(255, 255, 255, 0.3);
+  // border-right: 1px solid rgba(255, 255, 255, 0.3);
   border-left: 1px solid rgba(255, 255, 255, 0.3);
-  padding: 20px 10px;
+  padding: 12px 1px 9px 21px;
 }
 
 
@@ -518,7 +518,7 @@ ul.social li:nth-child(6):before{
 
 /* Portrait tablet to landscape and desktop */
 @media (min-width: 768px) and (max-width: 979px) {
-  .header-description h2 {
+  .header-description h1,  .header-description h2 {
     font-size: 83px;
     line-height: 68px;
   }
@@ -543,7 +543,7 @@ ul.social li:nth-child(6):before{
   .header-description {
     margin: 76px 0 80px;
   }
-  .header-description h2 {
+  .header-description h1, .header-description h2 {
     font-size: 66px;
     line-height: 58px;
   }
