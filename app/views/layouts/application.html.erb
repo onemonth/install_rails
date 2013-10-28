@@ -38,4 +38,8 @@
 <% end %>
 
 </body>
+<script>
+  mixpanel.track("Viewed Homepage");
+  mixpanel.track('page viewed', {'page name' : document.title, 'url' : window.location.pathname});
+</script>
 </html>
