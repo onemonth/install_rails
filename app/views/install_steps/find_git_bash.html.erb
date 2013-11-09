@@ -5,9 +5,9 @@
   </small>
    <h1>
     The Command Line
-   </h1>     
+   </h1>
   </div>
-  
+
   <p>The command line is a place on your computer where you can type in commands (I'll show you in a moment).</p>
 
   <p>After you type them in you'll hit <strong>Enter</strong> to run those commands. And then the magic happens!</p>
@@ -26,6 +26,15 @@
 
 <section class="prompt center">
   <%= link_to "Previous Step", previous_wizard_path, class: "option" %>
-  <%= link_to "Next Step",     next_wizard_path,     class: "option"%>
+ <button type="button" class="troubleshooting" data-toggle="collapse" data-target="#trouble">Troubleshooting</button>
+  <%= link_to "Next Step",     next_wizard_path,     class: "option" %>
 </section>
 
+
+<div id="trouble" class="collapse out note">
+
+  <div class="disqus">
+    <%= render 'layouts/disqus' %>
+  </div>
+
+</div>

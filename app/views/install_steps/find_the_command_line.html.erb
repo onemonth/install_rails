@@ -9,10 +9,10 @@
   </div>
 
    <p>
-     The command line is a place on your computer where you can type in commands <i>(I'll show you in a moment)</i>. 
+     The command line is a place on your computer where you can type in commands <i>(I'll show you in a moment)</i>.
    </p>
 
-   <p>After you type them in you'll hit <strong>Enter</strong> to run those commands.</p> 
+   <p>After you type them in you'll hit <strong>Enter</strong> to run those commands.</p>
    <p>
     ...and then the magic happens!
    </p>
@@ -30,7 +30,7 @@
       Once you open it, your terminal should look something like this <i>(don't freak out)</i>:
       <%= image_tag "mac_steps/terminal.png" %>
     </li>
-   
+
       <div class="row">
           <div class="col-sm-6 note">
           PRO TIP:
@@ -42,7 +42,7 @@
             <%= image_tag "sam.png" %>
           </div>
       </div>
-      
+
 
     <li>
       Now try typing the following command and hitting '<strong>Enter</strong>'. <i>(Ignore the <strong>$</strong> and the <strong>space</strong> at the beginning, it's called a <strong>prompt</strong> and it's just a hint you'll often see that you should type something in the command line)</i>
@@ -70,10 +70,22 @@
 </section>
 
 
-<section class="prompt center">
+<center>
+<section class="prompt">
   <%= link_to "Previous Step", previous_wizard_path, class: "option" %>
+ <button type="button" class="troubleshooting" data-toggle="collapse" data-target="#trouble">Troubleshooting</button>
   <%= link_to "Next Step",     next_wizard_path,     class: "option"%>
 </section>
+</center>
+
+
+<div id="trouble" class="collapse out note">
+
+  <div class="disqus">
+    <%= render 'layouts/disqus' %>
+  </div>
+
+</div>
 
 
 

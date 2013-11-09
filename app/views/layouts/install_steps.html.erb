@@ -22,14 +22,10 @@
     <%= yield %>
   <% end %>
 
-   
+
 <% end %>
 
 <% content_for(:footer) do %>
-  <div class="disqus">
-    <%= render 'layouts/disqus' %>
-  </div>
-
     &copy; 2013 One Month Rails
   <!-- <%= debug(wizard_steps) if Rails.env.development? %> -->
 <% end %>

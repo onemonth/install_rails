@@ -7,9 +7,9 @@
     </li>
     <li>Search for “Xcode” and click the “install” button</li>
 
-     
+
    <div class="row">
-    
+
     <div class="col-sm-12 note">
      <strong>Assuming XCode has finished installing:</strong> now you’ll need to install the Command Line Tools. That's what these next two steps are about...
      </div>
@@ -29,6 +29,16 @@
 <center>
 <section class="prompt">
   <%= link_to "Previous Step", previous_wizard_path, class: "option" %>
+ <button type="button" class="troubleshooting" data-toggle="collapse" data-target="#trouble">Troubleshooting</button>
   <%= link_to "Next Step",     next_wizard_path,     class: "option"%>
 </section>
 </center>
+
+
+<div id="trouble" class="collapse out note">
+
+  <div class="disqus">
+    <%= render 'layouts/disqus' %>
+  </div>
+
+</div>

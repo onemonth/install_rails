@@ -39,9 +39,7 @@
 
 <section class="prompt center">
   <%= link_to "Previous Step", previous_wizard_path, class: "option" %>
-   <button type="button" class="btn btn-large btn-danger" data-toggle="collapse" data-target="#trouble">
-    Troubleshooting
-  </button> 
+  <button type="button" class="troubleshooting" data-toggle="collapse" data-target="#trouble">Troubleshooting</button>
   <%= link_to "Next Step",     next_wizard_path,     class: "option"%>
 </section>
 
@@ -49,21 +47,27 @@
 <div id="trouble" class="collapse out note">
       <h4>#1 - My error is about "Uglifier"</h4>
       <p>If your error resembles something like...</p>
-      <pre><code>#ERROR MESSAGE: 
+      <pre><code>#ERROR MESSAGE:
 Could not find gem 'uglifier <>=1.0.3> x85-mingw32' in the gems available on this machine
 Run 'bundle install' to install missing gems</code></pre>
        <p>Try running...</p>
       <pre><code>$ gem install uglifier</code></pre>
-      <br><br> 
+      <br><br>
 
        <h4>#2 - My error is about "sdoc"</h4>
       <p>If your error resembles something like...</p>
-      <pre><code>#ERROR MESSAGE: 
+      <pre><code>#ERROR MESSAGE:
 Could not find gem 'sdoc (>= 0) ruby' in the gems available on this machine
 Run 'bundle install' to install missing gems.</code></pre>
        <p>Try running...</p>
       <pre><code>$ gem install sdoc</code></pre>
-      <br><br> 
+      <br><br>
+
+        <hr><br>
+
+  <div class="disqus">
+    <%= render 'layouts/disqus' %>
+  </div>
 
   </div>
 

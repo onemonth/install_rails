@@ -8,7 +8,7 @@
        <center>
         <%= link_to "Visit Sublime Text & Download", 'http://www.sublimetext.com/', target: :_blank, class: "btn option" %>
       </center>
-    </li> 
+    </li>
     <li>
       Once the file has fully downloaded, double-click it and a new window will open. One a Mac: drag and drop <strong>Sublime Text 2</strong> into your <strong>Applications</strong> folder.
       <%= image_tag "mac_steps/applications_folder.png", class: "list-image" %>
@@ -20,6 +20,15 @@
 
 <section class="prompt center">
   <%= link_to "Previous Step", previous_wizard_path, class: "option" %>
-  <%= link_to "Next Step",     next_wizard_path,     class: "option"%>
+ <button type="button" class="troubleshooting" data-toggle="collapse" data-target="#trouble">Troubleshooting</button>
+  <%= link_to "Next Step",     next_wizard_path,     class: "option" %>
 </section>
 
+
+<div id="trouble" class="collapse out note">
+
+  <div class="disqus">
+    <%= render 'layouts/disqus' %>
+  </div>
+
+</div>

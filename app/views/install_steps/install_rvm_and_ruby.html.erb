@@ -7,8 +7,8 @@
     <li>Close your terminal and then re-open it.</li>
     <li>To install Ruby, type this in your terminal
       <pre><code>rvm install 2.0.0</code></pre>
-      
-      <div class="row">    
+
+      <div class="row">
       <div class="col-sm-12 note">
         <h3>Notes:</h3>
         <ul>
@@ -27,5 +27,15 @@
 
 <section class="prompt center">
   <%= link_to "Previous Step", previous_wizard_path, class: "option" %>
+ <button type="button" class="troubleshooting" data-toggle="collapse" data-target="#trouble">Troubleshooting</button>
   <%= link_to "Next Step",     next_wizard_path,     class: "option"%>
 </section>
+
+
+<div id="trouble" class="collapse out note">
+
+  <div class="disqus">
+    <%= render 'layouts/disqus' %>
+  </div>
+
+</div>

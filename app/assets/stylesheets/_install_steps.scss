@@ -45,6 +45,9 @@ section {
 }
 .choose_os_version, .install_rails {
   background-color: #5B6474;
+   .note:before {
+    border-color:#fff #5B6474 rgba(255,255,255,0.2) #658E15;
+  }
 }
 
 .railsinstaller {
@@ -55,6 +58,9 @@ section {
     @extend .btn;
     @extend .btn-large;
     @extend .btn-primary;
+  }
+  .note:before {
+    border-color:#fff #72B49B rgba(255,255,255,0.2) #658E15;
   }
 }
 
@@ -176,7 +182,7 @@ header {
 
 .prompt {
   padding-bottom: 40px;
-  max-width: 50%;
+  max-width: 70%;
 
   .options {
     padding-top: 20px;
@@ -198,6 +204,36 @@ header {
     &:hover {
       background-color: #3B3C3C;
       border-color: #3B3C3C;
+    }
+  }
+  .troubleshooting {
+    min-width: 175px;
+    text-align: center;
+    background-color: #d9534f;
+    border-color: #d9534f;
+    margin-bottom: 3px;
+
+    @extend .btn;
+    @extend .btn-large;
+    @extend .btn-primary;
+    &:hover {
+      background-color: #c9302c;
+      border-color: #c9302c;
+    }
+  }
+.troubleshooting-blue {
+    min-width: 175px;
+    text-align: center;
+    background-color: #3B4960;
+    border-color: #3B4960;
+    margin-bottom: 3px;
+
+    @extend .btn;
+    @extend .btn-large;
+    @extend .btn-primary;
+    &:hover {
+      background-color: #5B6474;
+      border-color: #5B6474;
     }
   }
 }

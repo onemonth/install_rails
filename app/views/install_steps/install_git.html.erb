@@ -15,8 +15,20 @@
 </section>
 
 
-<section class="prompt center">
+<center>
+<section class="prompt">
   <%= link_to "Previous Step", previous_wizard_path, class: "option" %>
+ <button type="button" class="troubleshooting-blue" data-toggle="collapse" data-target="#trouble">Troubleshooting</button>
   <%= link_to "Next Step",     next_wizard_path,     class: "option"%>
 </section>
+</center>
+
+
+<div id="trouble" class="collapse out note">
+
+  <div class="disqus">
+    <%= render 'layouts/disqus' %>
+  </div>
+
+</div>
 
