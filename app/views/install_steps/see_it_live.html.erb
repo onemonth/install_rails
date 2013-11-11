@@ -40,16 +40,14 @@
 
 <section class="prompt center">
   <%= link_to "Previous Step",     previous_wizard_path, class: "option" %>
- <button type="button" class="troubleshooting" data-toggle="collapse" data-target="#trouble">Troubleshooting</button>
+  <button type="button" class="troubleshooting" data-toggle="collapse" data-target="#trouble">Troubleshooting</button>
   <%= link_to "Yay! What's next?", next_wizard_path,     class: "option", "data-no-turbolink" => "data-no-turbolink" %>
 </section>
 
 <div id="trouble" class="collapse out note">
-      <h4>#1 - My error is about: "node.js", "therubyrhino", "therubyracer" or a Java Runtime Error</h4>
-      <p>a) If your error resembles any of those words you may need to <a href="http://nodejs.org/download/" target="_blank" class="btn btn-info">DOWNLOAD NODE.JS</a></p>
-      <p>b) Restart your computer after you install Node.js</p>
-      <br><br>
-
+  <h4>#1 - My error is about: "node.js", "therubyrhino", "therubyracer" or a Java Runtime Error</h4>
+  <p>a) If your error resembles any of those words you may need to <a href="http://nodejs.org/download/" target="_blank" class="btn btn-info">DOWNLOAD NODE.JS</a></p>
+  <p>b) Restart your computer after you install Node.js</p>
   <hr><br>
 
   <div class="disqus">
