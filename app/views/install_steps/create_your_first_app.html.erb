@@ -3,7 +3,13 @@
       <p>If you followed all the previous steps correctly, you should be ready to create your first app.</p>
     <ol>
     <li>
-      Run the <strong>cd</strong> <i>(change directory)</i> command in the command line to change directory into your desktop folder
+      Run the <strong>cd</strong> <i>(change directory)</i> command in
+      <% if  current_user.try(:os_version) == "10.9" || "10.8" || "10.7" || "10.6" || "10.5 or below"  %>
+        <%= "Terminal" %>
+        <% else %>
+          <%= "Git Bash" %>
+      <% end %>
+      to change directory into your desktop folder
       <pre><code>$ cd ~/Desktop</code></pre>
     </li>
 
