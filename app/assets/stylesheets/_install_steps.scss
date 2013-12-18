@@ -13,22 +13,26 @@ body {
   letter-spacing: .08em;
   font-weight: 300;
 }
+
 h1 {
   font-family: $sansFontFamily;
   font-weight: 300;
   margin: 1em 0;
   text-align: center;
+  text-shadow: 0 0 2px rgb(151, 151, 151);
+}
+
+h2 {
+  font-family: $sansFontFamily;
 }
 
 strong {
   font-weight: 400;
 }
 
-#prompt {
-  color: #D9A24F;
-  padding: 1.7em;
+i {
+  font-size: 15px;
 }
-
 
 /* SECTIONS */
 
@@ -68,6 +72,11 @@ section {
   .note:before {
     border-color:#fff #72B49B rgba(255,255,255,0.2) #658E15;
   }
+}
+
+#prompt {
+  color: #8FE7B3;
+  padding: 1.7em;
 }
 
 .find_the_command_line, .install_rvm_and_ruby {
