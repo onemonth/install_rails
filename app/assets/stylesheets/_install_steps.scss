@@ -34,6 +34,10 @@ i {
   font-size: 15px;
 }
 
+pre {
+  margin: 1.4em 0;
+}
+
 /* SECTIONS */
 
 section {
@@ -177,10 +181,9 @@ header {
     // list-style-type: none;
   }
   li {
-    margin-bottom: 40px;
+    margin-bottom: 30px;
   ul, pre {
     text-align: left;
-    margin-top: 1.4em;
   }
   }
   img {
