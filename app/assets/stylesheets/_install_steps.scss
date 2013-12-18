@@ -13,16 +13,30 @@ body {
   letter-spacing: .08em;
   font-weight: 300;
 }
+
 h1 {
   font-family: $sansFontFamily;
   font-weight: 300;
-  margin: 1em 0 1.5em 0;
+  margin: 1em 0;
+  text-align: center;
+  text-shadow: 0 0 2px rgb(151, 151, 151);
+}
+
+h2 , h3, h4{
+  font-family: $sansFontFamily;
 }
 
 strong {
   font-weight: 400;
 }
 
+i {
+  font-size: 15px;
+}
+
+pre {
+  margin: 1.4em 0;
+}
 
 /* SECTIONS */
 
@@ -62,6 +76,11 @@ section {
   .note:before {
     border-color:#fff #72B49B rgba(255,255,255,0.2) #658E15;
   }
+}
+
+#prompt {
+  color: #8FE7B3;
+  padding: 1.7em;
 }
 
 .find_the_command_line, .install_rvm_and_ruby {
@@ -162,7 +181,7 @@ header {
     // list-style-type: none;
   }
   li {
-    margin-bottom: 40px;
+    margin-bottom: 30px;
   ul, pre {
     text-align: left;
   }
@@ -286,7 +305,12 @@ http://nicolasgallagher.com/pure-css-folded-corner-effect/
 }
 
 
-
+#git-intro {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 1%;
+  border-radius: 2px;
+  box-shadow: 0 0 1px rgb(85, 85, 85);
+}
 
 
 
