@@ -8,17 +8,17 @@
     <li>
       And then type:
       <pre><code>git config --global user.email "<strong>Your Actual Email</strong>"</code></pre>
+      <div class="row">
+        <div class="col-sm-12 note" id="prompt" style="text-align:center;">
+          Your email address should be the same one associated with your <%= link_to "GitHub", "http://help.github.com/articles/set-up-git", target: "_blank" %> account.
+        </div>
+      </div>
     </li>
     <li>
       To verify your installation, type:
-      <pre><code>git config --get user.name</code></pre>
+      <pre><code>git config -l</code></pre>
     </li>
-    <li>
-      Your name should appear. Now type:
-      <pre><code>git config --get user.email</code></pre>
-    </li>
-    <li>
-      Your email should appear.
+      Your email and user name should appear.
     </li>
     </ol>
     <hr>
