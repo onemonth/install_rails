@@ -16,11 +16,17 @@ body {
 h1 {
   font-family: $sansFontFamily;
   font-weight: 300;
-  margin: 1em 0 1.5em 0;
+  margin: 1em 0;
+  text-align: center;
 }
 
 strong {
   font-weight: 400;
+}
+
+#prompt {
+  color: #D9A24F;
+  padding: 1.7em;
 }
 
 
