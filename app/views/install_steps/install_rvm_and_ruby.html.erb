@@ -1,12 +1,30 @@
+<!--  I think I want to make RVM and Ruby installation seperate -->
 <section class="instructions">
   <h1>Install RVM and Ruby</h1>
-  <p>RVM is short for Ruby Version Manager, it's a little program that makes it easy to install different versions of Ruby on your computer</p>
+  <p class="center">RVM is short for <strong>Ruby Version Manager</strong>. RVM makes it easy to install different versions of Ruby on your computer and manage them as well</p>
+  <hr>
   <ol>
     <li>To install RVM, type this in your terminal</li>
-    <pre><code>curl -L get.rvm.io | bash -s stable</code></pre>
-    <li>Close your terminal and then re-open it.</li>
-    <li>To install Ruby, type this in your terminal
-      <pre><code>rvm install 2.0.0</code></pre>
+    <pre><code>\curl -L https://get.rvm.io | bash -s stable</code></pre>
+
+    <li>Close your terminal and then re-open it. Now, let's load RVM and make sure the terminal remembers to do the same next time:
+      <pre><code>source ~/.rvm/scripts/rvm
+touch .bash_profile
+open .bash_profile</code></pre>
+      <div class="row">
+            <div class="col-sm-12 note">
+              <strong>Note:</strong> If a .profile already exists, you can open that instead
+            </div>
+          </div>
+    <p>Paste the following into your new .bash_profile then save and close it:</p>
+    <pre><code>PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function</pre></code>
+    </li>
+    <li>Now install Ruby with:
+      <pre><code>rvm install 2.0.0
+rvm use 2.0.0 --default
+ruby -v</code></pre>
 
       <div class="row">
       <div class="col-sm-12 note">
@@ -14,8 +32,13 @@
         <ul>
           <li>This will install Ruby and may take a while.</li>
           <li>If you get an entire page of instructions, beginning with 'Ruby (and needed base gems) for your selection...', you should press Q to skip.</li>
-          <li>If rvm install 2.0.0 says autoreconf was not found in the PATH, type this in your terminal
-            <pre><code>brew install automake</code></pre>
+          <li>If RVM reports an error, run:
+            <pre><code>rvm requirements</code></pre>
+            <p>Any "Missing Required Package" statements can be resolved by entering
+              <pre><code>brew install *missing package name*
+EX:
+$ brew install autoconf automake libtool pkg-config apple-gcc42 libyaml readline libxml2 libxslt libksba openssl sqlite imagemagick</pre></code>
+            </p>
           </li>
         </ul>
       </div>
