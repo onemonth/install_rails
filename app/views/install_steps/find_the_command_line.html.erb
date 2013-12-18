@@ -1,29 +1,28 @@
 <section class="instructions">
   <div class="center">
-  <small>
-    Now we're going to explore something called:
-  </small>
-  <h1>
-    The Command Line
-  </h1>
+    <small>
+      Now we're going to explore something called:
+    </small>
+    <h1>
+      The Command Line
+    </h1>
   </div>
 
    <p>
-     The command line is a place on your computer where you can type in executable code <i>(I'll show you in a moment)</i>.
+     The command line is a place on your computer where you can type in executable code <i>(You will see in a moment)</i>
    </p>
 
-   <p>After you type them in you'll hit <strong>Enter</strong> to run those commands.</p>
-   <p>
-    ...and then the magic happens!
-   </p>
+   <p>After you type them in, you'll hit <strong>Enter</strong> to run the commands</p>
+   <p style="text-align: center; color: rgb(154, 155, 160);">This is where magic happens</p>
    <hr>
   <ol>
     <li>
-      On a Mac, we can find the Terminal by opening Spotlight <i><br>(the little <i class="icon-search"></i> icon on the top right corner of your Mac),</i><br>and type '<strong>Terminal</strong>'.
+      On a Mac, we can find the Terminal by opening Spotlight and type '<strong>Terminal</strong>' <i><br>(the little <i class="icon-search"></i> icon on the top right corner of your Mac)</i><br>
       <%= image_tag "mac_steps/spotlight_search_for_terminal.png" %>
     </li>
     <li>
-      Alternatively, you could look in your '<strong>Applications</strong>' folder.<br>It's under '<strong>Applications -> Utilities -> Terminal</strong>')
+      Alternatively, you could look in your '<strong>Applications</strong>' folder
+      <br />It's under '<strong>Applications -> Utilities -> Terminal</strong>')
       <%= image_tag "mac_steps/applications_utilities_terminal.png" %>
     </li>
     <li>
@@ -32,7 +31,7 @@
     </li>
 
       <div class="row">
-          <div class="col-sm-6 note">
+          <div class="col-sm-6 note" style="text-align: center;">
           PRO TIP:
           Add Terminal to your dock; you'll be using it a lot.
           Click &amp; Hold the Terminal dock icon and select
@@ -48,11 +47,13 @@
       Now try typing the following command and hitting '<strong>Enter</strong>'
       <pre><code>$ jot - 1 25</code></pre>
       <div class="row">
-        <p class="col-sm-6 note" id="prompt">Ignore the <strong>$</strong> and the <strong>space</strong> at the beginning. It is called a <strong>prompt</strong> and it just means the command is executable</p>
+        <div class="col-sm-6 note" id="prompt" style="text-align: center;">
+          Ignore the <strong>$</strong> and the <strong>space</strong> at the beginning. It is called a <strong>prompt</strong> and it just means the command is executable
+        </div>
       </div>
     </li>
       It should print out list of all the numbers from <strong>1</strong> to <strong>25</strong>
-      <pre><code>$ jot - 1 25
+      <pre style="margin-top: 1.4em"><code>$ jot - 1 25
 1
 2
 .
