@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-InstallRails::Application.config.secret_key_base = '5d6ca71e1e1e4cbaee1f1ad56879db19c83f4ee394e444e5804068814b17e294fe16017d47225771eaf3f95e76bf8c8ada7f09f6ba40f3e4fa0f6f1acdfb8a89'
+InstallRails::Application.config.secret_key_base = ENV['SECRET_KEY_BASE'] || "868fd6b774842ed10a3eadb9fc684b6f1172809cd6c37ef4f76044ee3e788b1d7eb5114484b94b30f01aa33fa7026a346c483d011a1d5a201a6201695a98cb6c"
