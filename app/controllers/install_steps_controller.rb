@@ -22,20 +22,28 @@ class InstallStepsController < ApplicationController
   end
 
   private
+    def os
+      params[:os] || current_user.try(:os)
+    end
+
     def set_steps
-      if ( params[:os] || current_user.try(:os) ) =~ /Mac/
+      if os =~ /Mac/
         self.steps = mac_steps
-      elsif ( params[:os] || current_user.try(:os) ) =~ /Windows/
+      elsif os =~ /Windows/
         self.steps = windows_steps
-      elsif ( params[:os] || current_user.try(:os) ) == "Other"
+      elsif os == "Other"
         self.steps = ubuntu_steps
       else
         self.steps = [:choose_os]
       end
     end
 
+    def os_version
+      params[:os_version] || current_user.try(:os_version)
+    end
+
     def mac_steps
-      if %w(10.8 10.7 10.6).include?( params[:os_version] || current_user.try(:os_version) )
+      if %w(10.8 10.7 10.6).include?(os_version)
         steps = [ :choose_os,
                   :choose_os_version,
                   :railsinstaller,
@@ -48,7 +56,7 @@ class InstallStepsController < ApplicationController
                   text_editor_step,
                   :create_your_first_app,
                   :see_it_live]
-      elsif ["10.9", "10.5 or below"].include?( params[:os_version] || current_user.try(:os_version) )
+      elsif ["10.9", "10.5 or below"].include?(os_version)
         steps = [ :choose_os,
                   :choose_os_version,
                   :install_xcode,
@@ -77,7 +85,7 @@ class InstallStepsController < ApplicationController
     end
 
     def text_editor_step
-      if current_user.os_version =~ /10.5/
+      if os_version =~ /10.5/
         :textmate
       else
         :sublime_text
