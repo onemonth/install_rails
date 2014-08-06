@@ -26,16 +26,21 @@ class InstallStepsController < ApplicationController
       params[:os] || current_user.try(:os)
     end
 
-    def set_steps
-      if os =~ /Mac/
-        self.steps = mac_steps
-      elsif os =~ /Windows/
-        self.steps = windows_steps
-      elsif os == "Other"
-        self.steps = ubuntu_steps
+    def get_steps
+      case os
+      when /Mac/
+        mac_steps
+      when /Windows/
+        windows_steps
+      when "Other"
+        ubuntu_steps
       else
-        self.steps = [:choose_os]
+        [:choose_os]
       end
+    end
+
+    def set_steps
+      self.steps = get_steps
     end
 
     def os_version
@@ -43,35 +48,36 @@ class InstallStepsController < ApplicationController
     end
 
     def mac_steps
-      if %w(10.8 10.7 10.6).include?(os_version)
-        steps = [ :choose_os,
-                  :choose_os_version,
-                  :railsinstaller,
-                  :find_the_command_line,
-                  :verify_ruby_version,
-                  :update_ruby,
-                  :verify_rails_version,
-                  :update_rails,
-                  :configure_git,
-                  text_editor_step,
-                  :create_your_first_app,
-                  :see_it_live]
-      elsif ["10.9", "10.5 or below"].include?(os_version)
-        steps = [ :choose_os,
-                  :choose_os_version,
-                  :install_xcode,
-                  :find_the_command_line,
-                  :install_homebrew,
-                  :install_git,
-                  :configure_git,
-                  :install_rvm_and_ruby,
-                  :install_rails,
-                  text_editor_step,
-                  :create_your_first_app,
-                  :see_it_live]
+      case os_version
+      when "10.8", "10.7", "10.6"
+        [ :choose_os,
+          :choose_os_version,
+          :railsinstaller,
+          :find_the_command_line,
+          :verify_ruby_version,
+          :update_ruby,
+          :verify_rails_version,
+          :update_rails,
+          :configure_git,
+          text_editor_step,
+          :create_your_first_app,
+          :see_it_live]
+      when "10.9", "10.5 or below"
+        [ :choose_os,
+          :choose_os_version,
+          :install_xcode,
+          :find_the_command_line,
+          :install_homebrew,
+          :install_git,
+          :configure_git,
+          :install_rvm_and_ruby,
+          :install_rails,
+          text_editor_step,
+          :create_your_first_app,
+          :see_it_live]
       else
-        steps = [ :choose_os,
-                  :choose_os_version]
+        [ :choose_os,
+          :choose_os_version]
       end
     end
 
