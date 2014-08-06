@@ -4,6 +4,8 @@ class InstallStepsController < ApplicationController
 
   prepend_before_filter :set_steps
 
+  helper_method :mac?, :windows?, :os_version
+
   def show
     @user = current_user
     case step
@@ -26,13 +28,20 @@ class InstallStepsController < ApplicationController
       params[:os] || current_user.try(:os)
     end
 
+    def mac?
+      os =~ /Mac/
+    end
+
+    def windows?
+      os =~ /Windows/
+    end
+
     def get_steps
-      case os
-      when /Mac/
+      if mac?
         mac_steps
-      when /Windows/
+      elsif windows?
         windows_steps
-      when "Other"
+      elsif os == "Other"
         ubuntu_steps
       else
         [:choose_os]

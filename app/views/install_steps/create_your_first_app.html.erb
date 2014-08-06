@@ -4,10 +4,10 @@
     <ol>
     <li>
       Run the <strong>cd</strong> <i>(change directory)</i> command in
-      <% if  current_user.try(:os_version) == "10.9" || "10.8" || "10.7" || "10.6" || "10.5 or below"  %>
-        <%= "Terminal" %>
-        <% else %>
-          <%= "Git Bash" %>
+      <% if windows? %>
+        Git Bash
+      <% else %>
+        Terminal
       <% end %>
       to change directory into your desktop folder
       <pre><code>$ cd ~/Desktop</code></pre>
@@ -75,5 +75,3 @@ Run 'bundle install' to install missing gems.</code></pre>
   </div>
 
   </div>
-
-
