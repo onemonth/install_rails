@@ -5,25 +5,17 @@
       Visit the site <%= link_to "Railsinstaller.com", "http://www.railsinstaller.com", target: "_blank" %> and choose from ONE of the following options to download RailsInstaller.<br><br>
 
 
-      <small>Note: Windows users please download from "Want to live on the edge?" download near the bottom. Mac users please choose your version <%= current_user.try(:os_version) %> from the right</small>.
+      <small>
+        <% if windows? %>
+          Please download from "Want to live on the edge?" download near the bottom.
+        <% elsif mac? %>
+          Please choose your version <%= os_version %> from the right.
+        <% end %>
+      </small>
 
       <div class="center">
         <%= link_to (image_tag "railsinstaller-mac-windows.jpg", alt: "RailsInstaller"), "http://www.railsinstaller.com", target: "_blank" %>
-
       </div>
-
-      <div class="row">
-        <div class="col-sm-12 note">
-          <i class="icon-warning-sign"></i> Looking for Ruby 2 and Rails 4 for Mac?<br>
-          <i class="icon-check-sign"></i>&nbsp; We'll be upgrading in the next couple of steps. Be sure to finish the whole tutorial.
-        </div>
-
-        <div class="col-sm-12 note">
-          <strong>Q:</strong> How do I fix the error /opt/rix to rvm ?<br>
-          <strong>A:</strong> Restart your computer
-        </div>
-      </div>
-
 
     </li>
     <li>
@@ -51,12 +43,14 @@
 
 
 <div id="trouble" class="collapse out note">
-  <h4><i class="icon-warning-sign"></i> Looking for Ruby 2 and Rails 4 for Mac?</h4>
-  <h4><i class="icon-check-sign"></i>&nbsp; We'll be upgrading in the next couple of steps. Be sure to finish the whole tutorial.</h4>
-  <hr>
+  <% if mac? %>
+    <h4><i class="icon-warning-sign"></i> Looking for Ruby 2 and Rails 4 for Mac?</h4>
+    <h4><i class="icon-check-sign"></i>&nbsp; We'll be upgrading in the next couple of steps. Be sure to finish the whole tutorial.</h4>
+    <hr>
 
-  <h4><strong>Q:</strong> How do I fix the error /opt/rix to rvm ?</h4>
-  <h4><strong>A:</strong> Restart your computer</h4>
+    <h4><strong>Q:</strong> How do I fix the error <code>/opt/rix to rvm</code>?</h4>
+    <h4><strong>A:</strong> Restart your computer</h4>
+  <% end %>
 
   <hr><br>
   <div class="disqus">

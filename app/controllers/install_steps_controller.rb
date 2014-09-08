@@ -4,6 +4,8 @@ class InstallStepsController < ApplicationController
 
   prepend_before_filter :set_steps
 
+  helper_method :mac?, :windows?, :os_version
+
   def show
     @user = current_user
     case step
@@ -22,66 +24,79 @@ class InstallStepsController < ApplicationController
   end
 
   private
-    def set_steps
-      if ( params[:os] || current_user.try(:os) ) =~ /Mac/
-        self.steps = mac_steps
-      elsif ( params[:os] || current_user.try(:os) ) =~ /Windows/
-        self.steps = windows_steps
-      elsif ( params[:os] || current_user.try(:os) ) == "Other"
-        self.steps = ubuntu_steps
+    def os
+      params[:os] || current_user.try(:os)
+    end
+
+    def mac?
+      os =~ /Mac/
+    end
+
+    def windows?
+      os =~ /Windows/
+    end
+
+    def get_steps
+      if mac?
+        mac_steps
+      elsif windows?
+        windows_steps
+      elsif os == "Other"
+        ubuntu_steps
       else
-        self.steps = [:choose_os]
+        [:choose_os]
       end
     end
 
+    def set_steps
+      self.steps = get_steps
+    end
+
+    def os_version
+      params[:os_version] || current_user.try(:os_version)
+    end
+
     def mac_steps
-      if ( params[:os_version] || current_user.try(:os_version) ) == "10.9"
-        steps = [ :choose_os,
-                  :choose_os_version,
-                  :find_the_command_line,
-                  :install_homebrew,
-                  :install_git,
-                  :configure_git,
-                  :install_rvm_and_ruby,
-                  :install_rails,
-                  text_editor_step,
-                  :create_your_first_app,
-                  :see_it_live]
-      elsif %w(10.8 10.7 10.6).include?( params[:os_version] || current_user.try(:os_version) )
-        steps = [ :choose_os,
-                  :choose_os_version,
-                  :railsinstaller,
-                  :find_the_command_line,
-                  :verify_ruby_version,
-                  :update_ruby,
-                  :verify_rails_version,
-                  :update_rails,
-                  :configure_git,
-                  text_editor_step,
-                  :create_your_first_app,
-                  :see_it_live]
-      elsif ( params[:os_version] || current_user.try(:os_version) ) == "10.5 or below"
-        steps = [ :choose_os,
-                  :choose_os_version,
-                  :install_xcode,
-                  :find_the_command_line,
-                  :install_homebrew,
-                  :install_git,
-                  :configure_git,
-                  :install_rvm_and_ruby,
-                  :install_rails,
-                  text_editor_step,
-                  :create_your_first_app,
-                  :see_it_live]
+      case os_version
+      when "10.8", "10.7", "10.6"
+        [ :choose_os,
+          :choose_os_version,
+          :railsinstaller,
+          :find_the_command_line,
+          :verify_ruby_version,
+          :update_ruby,
+          :verify_rails_version,
+          :update_rails,
+          :configure_git,
+          text_editor_step,
+          :create_your_first_app,
+          :see_it_live]
+      when "10.9", "10.5 or below"
+        [ :choose_os,
+          :choose_os_version,
+          :install_xcode,
+          :find_the_command_line,
+          :install_homebrew,
+          :install_git,
+          :configure_git,
+          :install_rvm_and_ruby,
+          :install_rails,
+          text_editor_step,
+          :create_your_first_app,
+          :see_it_live]
       else
-        steps = [ :choose_os,
-                  :choose_os_version]
+        [ :choose_os,
+          :choose_os_version]
       end
     end
 
     def windows_steps
-      [:choose_os, :railsinstaller, :find_git_bash, :install_rails, text_editor_step, :create_your_first_app,
-                  :see_it_live]
+      [ :choose_os,
+        :railsinstaller,
+        text_editor_step,
+        :find_git_bash,
+        :create_your_first_app,
+        :see_it_live]
     end
 
     def ubuntu_steps
@@ -89,7 +104,7 @@ class InstallStepsController < ApplicationController
     end
 
     def text_editor_step
-      if current_user.os_version =~ /10.5/
+      if os_version =~ /10.5/
         :textmate
       else
         :sublime_text
