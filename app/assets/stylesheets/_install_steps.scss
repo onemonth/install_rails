@@ -64,8 +64,8 @@ section {
   }
 }
 
-.railsinstaller {
-    .option {
+.railsinstaller, .railsinstaller_windows {
+  .option {
     background-color: rgba(255,255,255,0.9);
     border-color: #fff;
     color: #72B49B;
@@ -89,7 +89,7 @@ section {
       border-color:#fff #3B4960 rgba(255,255,255,0.2) #658E15;
     }
 }
-.railsinstaller, .rails_for_linux_and_other, .install_git {
+.railsinstaller, .rails_for_linux_and_other, .install_git, .railsinstaller_windows {
   background-color: #CE613E;
   .note:before {
       border-color:#fff #CE613E rgba(255,255,255,0.2) #CE613E;
