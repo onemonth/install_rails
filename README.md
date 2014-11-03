@@ -18,4 +18,4 @@ bundle install
 rails server
 ```
 
-Run `open http://localhost:3000` in a new Terminal window or open the address in your browser.
+Open http://localhost:3000` in your browser.
