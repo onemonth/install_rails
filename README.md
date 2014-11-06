@@ -16,5 +16,6 @@ brew install mongodb
 
 bundle install
 rails server
-open http://localhost:3000
 ```
+
+Open http://localhost:3000 in your browser.
