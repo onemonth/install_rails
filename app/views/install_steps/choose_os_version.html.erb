@@ -16,12 +16,14 @@
     Select your version of <%= @user.os %> OS X
   </h2>
   <div class="options">
+    <%= button_to "10.10", wizard_path, name: :os_version, method: :put, class: "option" %>
     <%= button_to "10.9", wizard_path, name: :os_version, method: :put, class: "option" %>
     <%= button_to "10.8", wizard_path, name: :os_version, method: :put, class: "option" %>
-    <%= button_to "10.7", wizard_path, name: :os_version, method: :put, class: "option" %>
     <br>
+    <%= button_to "10.7", wizard_path, name: :os_version, method: :put, class: "option" %>
     <%= button_to "10.6", wizard_path, name: :os_version, method: :put, class: "option" %>
     <%= button_to "10.5 or below", wizard_path, name: :os_version, method: :put, class: "option" %>
+    <br>
     <button type="button" class="troubleshooting" data-toggle="collapse" data-target="#trouble">Troubleshooting</button>
   </div>
 </div>
