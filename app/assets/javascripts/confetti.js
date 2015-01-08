@@ -3,33 +3,33 @@
 var initiated = false;
 function MetervaraConfetti()
 {
-	
+
 	if(initiated)
 		return;
-	
+
 	initiated = true;
-	
+
 	var contentDivName = "metervara_confetti";
-	
+
 	var contentDiv = document.createElement('div');
 	contentDiv.setAttribute('id', contentDivName);
 	//document.body.appendChild(contentDiv);
 	document.body.insertBefore(contentDiv, document.body.firstChild);
-	
+
 	//css
 	var sheet = document.createElement('style')
 	sheet.innerHTML = "#"+contentDivName+" {position: fixed; left: 0em; top:0em; z-index: -1; width: 100%; height: 100%; }";
 	document.body.appendChild(sheet);
-	
+
 	var frameRate = 30;
 	var dt = 1.0 / frameRate;
 	var DEG_TO_RAD = Math.PI / 180;
     var RAD_TO_DEG = 180 / Math.PI;
-	
+
 	var confettiCount = 26;
 	var ribbonCount = 10;
-	
-	var colors = 
+
+	var colors =
 	[
 		["#df0049","#660671"], //red
 		["#00e857","#005291"], //green/mint
@@ -39,7 +39,7 @@ function MetervaraConfetti()
 		["#0018ff","#002369"] // blue
 		//["#ffd200","#b06c00"] //yellow
 	];
-	
+
 	function Vector2(_x,_y)
 	{
 	    this.x = _x, this.y = _y;
@@ -48,12 +48,12 @@ function MetervaraConfetti()
 	    this.Length = function(){ return Math.sqrt(this.SqrLength()); }
 		this.SqrLength = function(){ return this.x*this.x + this.y*this.y; }
 		this.Equals = function(_vec0, _vec1){ return _vec0.x == _vec1.x && _vec0.y == _vec1.y; }
-		
+
 		this.Add = function(_vec) { this.x += _vec.x; this.y += _vec.y; }
 		this.Sub = function(_vec) { this.x -= _vec.x; this.y -= _vec.y; }
 		this.Div = function(_f) { this.x /= _f; this.y /= _f; }
 		this.Mul = function(_f) { this.x *= _f; this.y *= _f; }
-		
+
 		this.Normalize = function()
 		{
 			var sqrLen = this.SqrLength();
@@ -61,7 +61,7 @@ function MetervaraConfetti()
 			{
 				var factor = 1.0 / Math.sqrt( sqrLen );
 		        this.x *= factor;
-		        this.y *= factor;	
+		        this.y *= factor;
 			}
 		}
 		this.Normalized = function()
@@ -70,7 +70,7 @@ function MetervaraConfetti()
 			if(sqrLen != 0)
 			{
 				var factor = 1.0 / Math.sqrt( sqrLen );
-		        return new Vector2(this.x*factor, this.y*factor);	
+		        return new Vector2(this.x*factor, this.y*factor);
 			}
 			//
 			return new Vector2(0,0);
@@ -79,7 +79,7 @@ function MetervaraConfetti()
 	}
 
 	Vector2.Sub = function(_vec0, _vec1) { return new Vector2(_vec0.x -_vec1.x, _vec0.y -_vec1.y, _vec0.z -_vec1.z); }
-	
+
 	function EulerMass(_x,_y, _mass, _drag)
 	{
 	    this.position = new Vector2(_x, _y);
@@ -87,30 +87,30 @@ function MetervaraConfetti()
 		this.drag = _drag;
 		this.force = new Vector2(0,0);
 		this.velocity = new Vector2(0,0);
-		
+
 		this.AddForce = function(_f)
 		{
 			this.force.Add(_f);
 		}
-		
+
 		this.Integrate = function(_dt)
 		{
-			
+
 		    // compute acceleration
 			var acc = this.CurrentForce(this.position);
 			acc.Div(this.mass);
-		    
+
 			// compute new position, velocity
 		    var posDelta = new Vector2(this.velocity.x, this.velocity.y);
 		    posDelta.Mul(_dt);
 		    this.position.Add(posDelta);
-			
+
 			acc.Mul(_dt);
 			this.velocity.Add(acc);
 
 			this.force = new Vector2(0,0);
 		}
-		
+
 		this.CurrentForce = function(_pos, _vel)
 		{
 		    var totalForce = new Vector2(this.force.x, this.force.y);
@@ -122,59 +122,59 @@ function MetervaraConfetti()
 
 		    return totalForce;
 		}
-		
+
 	}
-	
+
 	function ConfettiPaper(_x,_y)
 	{
 		this.pos = new Vector2(_x, _y);
 		this.rotationSpeed = Math.random()*600+800;
-		
+
 		this.angle = DEG_TO_RAD*Math.random()*360;
 		this.rotation = DEG_TO_RAD*Math.random()*360;
 		this.cosA = 1.0;
-	
+
 		this.size = 5.0;
-        
+
 		this.oscillationSpeed = Math.random()*1.5+0.5;
 		this.xSpeed = 40.0;
 		this.ySpeed = Math.random()*60+50.0;
-		
+
 		this.corners = new Array(); //Vector2[]
-		
+
 		this.time = Math.random();
-		
+
 		var ci = Math.round(Math.random()*(colors.length-1));
-		
+
 		this.frontColor = colors[ci][0];
 		this.backColor = colors[ci][1];
-		
+
 		for(var i=0;i<4;i++)
 		{
 			var dx = Math.cos(this.angle+DEG_TO_RAD*(i*90+45));
 			var dy = Math.sin(this.angle+DEG_TO_RAD*(i*90+45));
 			this.corners[i] = new Vector2(dx,dy);
 		}
-		
+
 		this.Update = function(_dt)
 		{
 			this.time += _dt;
-			
+
 			this.rotation += this.rotationSpeed * _dt;
 		    this.cosA = Math.cos(DEG_TO_RAD * this.rotation);
-		
+
 			this.pos.x += Math.cos(this.time*this.oscillationSpeed) * this.xSpeed * _dt
 			this.pos.y += this.ySpeed * _dt;
-			
+
 			//wrap
 		    if(this.pos.y>ConfettiPaper.bounds.y)
 		    {
 		    	this.pos.x = Math.random()*ConfettiPaper.bounds.x;
 		      	this.pos.y = 0;
 		    }
-			
+
 		}
-		
+
 		this.Draw = function(_g)
 		{
 			if(this.cosA >0)
@@ -186,48 +186,48 @@ function MetervaraConfetti()
 				_g.fillStyle = this.backColor;
 			}
 			_g.beginPath();
-			
+
 			_g.moveTo(this.pos.x + this.corners[0].x*this.size, this.pos.y + this.corners[0].y*this.size * this.cosA);
 			for(var i=1;i<4;i++)
 			{
 				_g.lineTo(this.pos.x + this.corners[i].x*this.size, this.pos.y + this.corners[i].y*this.size * this.cosA);
 			}
-			
+
 			_g.closePath();
 			_g.fill();
 		}
 	}
-	
+
 	ConfettiPaper.bounds = new Vector2(0,0);
-	
+
 	function ConfettiRibbon(_x, _y, _count, _dist, _thickness, _angle, _mass, _drag)
 	{
 		this.particleDist = _dist;
 		this.particleCount = _count;
 		this.particleMass = _mass;
 		this.particleDrag = _drag;
-		
+
 		this.particles = new Array();
-		
+
 		var ci = Math.round(Math.random()*(colors.length-1));
-		
+
 		this.frontColor = colors[ci][0];
 		this.backColor = colors[ci][1];
-		
+
 		this.xOff = Math.cos(DEG_TO_RAD * _angle) * _thickness;
 		this.yOff = Math.sin(DEG_TO_RAD * _angle) * _thickness;
-		
+
 		this.position = new Vector2(_x, _y);
 		this.prevPosition = new Vector2(_x, _y);
-		
+
 		this.velocityInherit = Math.random()*2+4;
-		
+
 		this.time = Math.random()*100;
 		this.oscillationSpeed = Math.random()*2 + 2;
 		this.oscillationDistance = Math.random()*40+40;
-		
+
 		this.ySpeed = Math.random()*40+80;
-		
+
 		for(var i=0;i<this.particleCount;i++)
 		{
 		  this.particles[i] = new EulerMass(_x, _y -i*this.particleDist, this.particleMass, this.particleDrag);
@@ -237,19 +237,19 @@ function MetervaraConfetti()
 		{
 			var i = 0;
 			this.time += _dt * this.oscillationSpeed;
-			
+
 			//update position
 			this.position.y += this.ySpeed*_dt;
 			this.position.x += Math.cos(this.time) * this.oscillationDistance * _dt;
-			
+
 		    this.particles[0].position = this.position;
-			
+
 			var dX = this.prevPosition.x - this.position.x;
 			var dY = this.prevPosition.y - this.position.y;
 			var delta = Math.sqrt(dX*dX + dY*dY);
-			
+
 			this.prevPosition = new Vector2(this.position.x, this.position.y);
-			
+
 			//Forces
 			for(i=1;i<this.particleCount;i++)
 			{
@@ -258,13 +258,13 @@ function MetervaraConfetti()
      			dirP.Mul((delta/_dt)*this.velocityInherit);
      			this.particles[i].AddForce(dirP);
 			}
-			
+
 			//Integrate physics
 			for(i=1;i<this.particleCount;i++)
 			{
 				this.particles[i].Integrate(_dt);
 			}
-			
+
 			//constrain
 			for(i=1;i<this.particleCount;i++)
 			{
@@ -275,21 +275,21 @@ function MetervaraConfetti()
 				rp2.Add(this.particles[i-1].position);
 				this.particles[i].position = rp2;//new Vector2(rp2.x rp2.y);
 			}
-			
+
 			//wrap
 			if(this.position.y > ConfettiRibbon.bounds.y + this.particleDist*this.particleCount)
 			{
 				this.Reset();
-				
+
 			}
-			
+
 		}
 		this.Reset = function()
 		{
 			this.position.y = -Math.random()*ConfettiRibbon.bounds.y;
 			this.position.x = Math.random()*ConfettiRibbon.bounds.x;
 			this.prevPosition = new Vector2(this.position.x, this.position.y);
-			
+
 			this.velocityInherit = Math.random()*2+4;
 
 			this.time = Math.random()*100;
@@ -297,12 +297,12 @@ function MetervaraConfetti()
 			this.oscillationDistance = Math.random()*40+40;
 
 			this.ySpeed = Math.random()*40+80;
-			
+
 			var ci = Math.round(Math.random()*(colors.length-1));
 
 			this.frontColor = colors[ci][0];
 			this.backColor = colors[ci][1];
-			
+
 			this.particles = new Array();
 			for(var i=0;i<this.particleCount;i++)
 			{
@@ -315,7 +315,7 @@ function MetervaraConfetti()
 			{
 				var p0 = new Vector2(this.particles[i].position.x + this.xOff, this.particles[i].position.y + this.yOff); //new is slow?
 			    var p1 = new Vector2(this.particles[i+1].position.x + this.xOff, this.particles[i+1].position.y + this.yOff);//new is slow?
-				
+
 				if( this.Side(this.particles[i].position.x, this.particles[i].position.y, this.particles[i+1].position.x, this.particles[i+1].position.y, p1.x, p1.y) < 0)
 				{
 					_g.fillStyle = this.frontColor;
@@ -326,7 +326,7 @@ function MetervaraConfetti()
 					_g.fillStyle = this.backColor;
 					_g.strokeStyle = this.backColor;
 				}
-				
+
 				if(i == 0) //ends
 			    {
 					_g.beginPath();
@@ -373,20 +373,20 @@ function MetervaraConfetti()
 					_g.closePath();
 					_g.stroke();
 					_g.fill();
-					
+
 				}
 			}
 		}
-		
+
 		this.Side = function(x1,y1,x2,y2,x3,y3)
 		{
 			return ( (x1-x2)*(y3-y2)-(y1-y2)*(x3-x2) );
 		}
 	}
-	
+
 	ConfettiRibbon.bounds = new Vector2(0,0);
-	
-	
+
+
 	confetti = {}; // confetti object
 	confetti.Main = function(parent)
 	{
@@ -396,11 +396,11 @@ function MetervaraConfetti()
 	    canvas.width = canvasParent.offsetWidth;
 	    canvas.height = canvasParent.offsetHeight;
 		canvasParent.appendChild(canvas);
-		
+
 		var context = canvas.getContext('2d');
-		
+
 		var interval = null;
-		
+
 		//confetti ribbons
 		var confettiRibbonCount = ribbonCount;
 		var rpCount = 30;
@@ -412,35 +412,36 @@ function MetervaraConfetti()
 		{
 			confettiRibbons[i] = new ConfettiRibbon(Math.random()*canvas.width, -Math.random()*canvas.height*2, rpCount, rpDist, rpThick, 45, 1, 0.05);
 		}
-		
+
 		//Confetti paper
 		var confettiPaperCount = confettiCount;
 		var confettiPapers = new Array();
 		ConfettiPaper.bounds = new Vector2(canvas.width, canvas.height);
-		
+
 		for(i=0;i<confettiPaperCount;i++)
 		{
 			confettiPapers[i] = new ConfettiPaper(Math.random()*canvas.width, Math.random()*canvas.height);
 		}
-		
+
 		this.Resize = function ()
 		{
 	    	canvas.width = canvasParent.offsetWidth;
 	   		canvas.height = canvasParent.offsetHeight;
-	
+
 			ConfettiPaper.bounds = new Vector2(canvas.width, canvas.height);
 			ConfettiRibbon.bounds = new Vector2(canvas.width, canvas.height);
 	    }
-		
+
 		this.Start = function()
 		{
+      console.log("CONFETTI");
 			this.Stop()
             var context = this
             this.interval = setInterval(function () {
                 confetti.Update();
             }, 1000.0 / frameRate)
 		}
-		
+
 		this.Stop = function () {
             clearInterval(this.interval);
         }
@@ -448,22 +449,22 @@ function MetervaraConfetti()
 		this.Update = function () {
 			var i=0;
 			context.clearRect(0, 0, canvas.width, canvas.height);
-			
+
 			for(i=0;i<confettiPaperCount;i++){
 				confettiPapers[i].Update(dt);
 				confettiPapers[i].Draw(context);
 			}
-			
+
 			for(i=0;i<confettiRibbonCount;i++){
 				confettiRibbons[i].Update(dt);
 				confettiRibbons[i].Draw(context);
 			}
 		}
 	}
-	
+
 	var confetti = new confetti.Main(contentDivName);
 	confetti.Start();
-	
+
 	window.onresize = function() {
 		confetti.Resize();
 	}

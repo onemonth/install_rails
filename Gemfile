@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
-ruby "2.1.4"
+ruby "2.2.0"
 
-gem 'rails', '4.0.11'
+gem 'rails', '4.2.0'
 
 group :development do
 end
@@ -16,7 +16,6 @@ end
 
 group :test do
   gem 'cucumber-rails', require: false
-  gem 'database_cleaner'
 end
 
 group :production do
@@ -31,7 +30,6 @@ gem 'coffee-rails'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
-gem 'mongoid', git: 'https://github.com/mongoid/mongoid.git'
-gem 'wicked', '~> 0.6.1'
+gem 'wicked', '~> 1.1.0'
 gem 'unicorn', require: false
 gem 'figaro'

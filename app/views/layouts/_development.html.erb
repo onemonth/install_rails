@@ -1,0 +1,8 @@
+<hr />
+
+<div>Params <%= debug(params) %></div>
+<div>User <%= debug(current_user) %></div>
+
+<% if params[:controller] == "install_steps" %>
+  <div>Steps <%= debug(wizard_steps) %></div>
+<% end %>

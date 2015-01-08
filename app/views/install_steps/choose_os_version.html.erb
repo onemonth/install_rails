@@ -1,19 +1,18 @@
 <section class="instructions">
   <h1>What version of Mac OS do you have?</h1>
   <ol>
-    <li>Click on the &#63743; <strong>Apple</strong> logo (at the top left of your screen)<br>and select '<strong>About This Mac</strong>'
-
-    <%= image_tag "mac_steps/select_about_this_mac.png" %>
-     <small>Your version number is shown under <strong>OS X</strong></small>
-        <%= image_tag "mac_steps/about_this_mac.png" %>
+    <li>
+      <p>Click on the &#63743; <strong>Apple</strong> logo (at the top left of your screen)<br>and select '<strong>About This Mac</strong>'</p>
+      <div class="text-center"><%= image_tag "mac_steps/select_about_this_mac.png" %></div>
+      <p><small>Your version number is shown under <strong>OS X</strong></small></p>
+      <div class="text-center"><%= image_tag "mac_steps/about_this_mac.png" %></div>
     </li>
-
   </ol>
 </section>
 
 <div class="prompt center">
   <h2>
-    Select your version of <%= @user.os %> OS X
+    Select your version of <%= current_user.os %> OS X
   </h2>
   <div class="options">
     <%= button_to "10.10", wizard_path, name: :os_version, method: :put, class: "option" %>
@@ -24,15 +23,10 @@
     <%= button_to "10.6", wizard_path, name: :os_version, method: :put, class: "option" %>
     <%= button_to "10.5 or below", wizard_path, name: :os_version, method: :put, class: "option" %>
     <br>
-    <button type="button" class="troubleshooting" data-toggle="collapse" data-target="#trouble">Troubleshooting</button>
+    <%= button_tag "Troubleshooting", type: "button", class: "troubleshooting", data: {toggle: "collapse", target: "#trouble"} %>
   </div>
 </div>
 
-
 <div id="trouble" class="collapse out note">
-
-  <div class="disqus">
-    <%= render 'layouts/disqus' %>
-  </div>
-
+  <%= render 'layouts/disqus' %>
 </div>

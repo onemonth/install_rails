@@ -6,7 +6,7 @@
   <%= csrf_meta_tags %>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  
+
   <!-- start Mixpanel --><script type="text/javascript">(function(e,b){if(!b.__SV){var a,f,i,g;window.mixpanel=b;a=e.createElement("script");a.type="text/javascript";a.async=!0;a.src=("https:"===e.location.protocol?"https:":"http:")+'//cdn.mxpnl.com/libs/mixpanel-2.2.min.js';f=e.getElementsByTagName("script")[0];f.parentNode.insertBefore(a,f);b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==
   typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.set_once people.increment people.append people.track_charge people.clear_charges people.delete_user".split(" ");for(g=0;g<i.length;g++)f(c,i[g]);
   b._i.push([a,e,d])};b.__SV=1.2}})(document,window.mixpanel||[]);
@@ -16,29 +16,27 @@
 </head>
 <body class="<%= controller_name %> <%= action_name %> <%= params[:id] %>">
 
-<%= yield(:header) %>
+  <%= yield(:header) %>
 
-<% if content_for? :container_override? %>
-  <%= yield %>
-<% else %>
-  <%= content_tag :div, class: "container" do %>
-    <%= content_for?(:content) ? yield(:content) : yield %>
+  <% if content_for? :container_override? %>
+    <%= yield %>
+  <% else %>
+    <%= content_tag :div, class: "container" do %>
+      <%= content_for?(:content) ? yield(:content) : yield %>
+    <% end %>
   <% end %>
-<% end %>
 
-<% if content_for?(:footer) %>
-  <footer>
-    <div class="container container-disqus">
-      <%= yield(:footer) %>
-      <%= debug(params) if Rails.env.development? %>
-      <%= debug(current_user) if Rails.env.development? %>
-      <%= debug(wizard_steps) if Rails.env.development? %>
-    </div>
-  </footer>
-<% end %>
+  <% if content_for?(:footer) %>
+    <footer>
+      <div class="container container-disqus">
+        <%= yield(:footer) %>
+        <%= render partial: "layouts/development" if Rails.env.development? %>
+      </div>
+    </footer>
+  <% end %>
 
+  <script>
+    mixpanel.track('page viewed', {'page name' : document.title, 'url' : window.location.pathname});
+  </script>
 </body>
-<script>
-  mixpanel.track('page viewed', {'page name' : document.title, 'url' : window.location.pathname});
-</script>
 </html>

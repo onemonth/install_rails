@@ -12,15 +12,7 @@
     </ol>
   </section>
 
-
-  <section class="prompt center">
-    <%= link_to "Previous Step", previous_wizard_path, class: "option" %>
-      <button type="button" class="btn btn-large btn-danger" data-toggle="collapse" data-target="#trouble">
-    Troubleshooting
-      </button>
-    <%= link_to "Next Step",     next_wizard_path,     class: "option"%>
-  </section>
-
+  <%= render 'layouts/step_navigation' %>
 <% else %>
 
   <section class="instructions">
@@ -36,18 +28,8 @@
     </ol>
   </section>
 
-
-  <section class="prompt center">
-
-    <%= link_to "Previous Step", previous_wizard_path, class: "option" %>
-    <button type="button" class="troubleshooting" data-toggle="collapse" data-target="#trouble">Troubleshooting</button>
-    <%= link_to "Next Step",     next_wizard_path,     class: "option"%>
-  </section>
-
+  <%= render 'layouts/step_navigation' %>
 <% end %>
-
-
-
 
 <div id="trouble" class="collapse out note">
   <h4>#1 - I'm currently getting an error that has the words "SSL" and "Certificate"</h4>
@@ -63,9 +45,5 @@ $ brew install curl-ca-bundle</code></pre>
 
   <hr><br>
 
-  <div class="disqus">
-    <%= render 'layouts/disqus' %>
-  </div>
-
+  <%= render 'layouts/disqus' %>
 </div>
-

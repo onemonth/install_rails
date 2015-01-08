@@ -5,32 +5,23 @@
   <hr>
   <ol>
     <li>To install RVM, type this in your terminal</li>
+
     <pre><code>\curl -L https://get.rvm.io | bash -s stable</code></pre>
 
     <li>Close your terminal and then re-open it. Now, lets see if RVM was loaded properly:
       <pre><code>type rvm | head -n 1</code></pre>
     </li>
+
     <li>Now install Ruby with:
       <pre><code>rvm use ruby --install --default
 ruby -v</code></pre>
       <p>This will install Ruby and may take a while, on older OSX it might take up to 1 hour.</p>
     </li>
-
   </ol>
 </section>
 
-
-<section class="prompt center">
-  <%= link_to "Previous Step", previous_wizard_path, class: "option" %>
-  <button type="button" class="troubleshooting" data-toggle="collapse" data-target="#trouble">Troubleshooting</button>
-  <%= link_to "Next Step",     next_wizard_path,     class: "option"%>
-</section>
-
+<%= render 'layouts/step_navigation' %>
 
 <div id="trouble" class="collapse out note">
-
-  <div class="disqus">
-    <%= render 'layouts/disqus' %>
-  </div>
-
+  <%= render 'layouts/disqus' %>
 </div>

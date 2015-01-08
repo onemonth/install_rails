@@ -18,18 +18,14 @@
         </div>
       </div>
     </div>
+
   <% else %>
-    <%= yield %>
+      <%= yield %>
   <% end %>
-
-
 <% end %>
 
 <% content_for(:footer) do %>
-    &copy; 2013 One Month Rails
-  <!-- <%= debug(wizard_steps) if Rails.env.development? %> -->
+  &copy; <%= Time.zone.now.year %> <%= link_to "One Month", "https://onemonth.com/?utm_source=installrails" %>
 <% end %>
 
 <%= render template: "layouts/application" %>
-
-

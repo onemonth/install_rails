@@ -1,11 +1,7 @@
-// Place all the styles related to the install_steps controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-
-
 /* BASE FONTS */
 @import url(https://fonts.googleapis.com/css?family=Lato:300,400,700);
 @import url(https://fonts.googleapis.com/css?family=Rokkitt:400,700);
+
 $sansFontFamily: 'Lato', "Helvetica Neue", Helvetica, Arial, sans-serif;
 $serifFontFamily: 'Rokkitt', Georgia, "Times New Roman", Times, serif;
 
@@ -43,23 +39,27 @@ pre {
 section {
   padding-top: 2em;
 }
+
 #confetti {
   z-index: -1;
   position: fixed;
   margin-left: -10%;
 }
+
 .install_steps.show {
   color: white;
 }
+
 .install_steps.show {
   &.congratulations, &.choose_os {
     color: #3B3C3C;
   }
-
 }
+
 .choose_os_version, .install_rails {
   background-color: #5B6474;
-   .note:before {
+
+  .note:before {
     border-color:#fff #5B6474 rgba(255,255,255,0.2) #658E15;
   }
 }
@@ -73,6 +73,7 @@ section {
     @extend .btn-large;
     @extend .btn-primary;
   }
+
   .note:before {
     border-color:#fff #72B49B rgba(255,255,255,0.2) #658E15;
   }
@@ -85,36 +86,58 @@ section {
 
 .find_the_command_line, .install_rvm_and_ruby {
   background-color: #3B4960;
-   .note:before {
-      border-color:#fff #3B4960 rgba(255,255,255,0.2) #658E15;
-    }
-}
-.railsinstaller, .rails_for_linux_and_other, .install_git, .railsinstaller_windows {
-  background-color: #CE613E;
+
   .note:before {
-      border-color:#fff #CE613E rgba(255,255,255,0.2) #CE613E;
-    }
+    border-color:#fff #3B4960 rgba(255,255,255,0.2) #658E15;
+  }
 }
 
+.railsinstaller, .rails_for_linux_and_other, .install_git, .railsinstaller_windows {
+  background-color: #CE613E;
+
+  .prompt {
+    .troubleshooting {
+      min-width: 175px;
+      text-align: center;
+      background-color: #3B4960;
+      border-color: #3B4960;
+      margin-bottom: 3px;
+
+      @extend .btn;
+      @extend .btn-large;
+      @extend .btn-primary;
+
+      &:hover {
+        background-color: #5B6474;
+        border-color: #5B6474;
+      }
+    }
+  }
+
+  .note:before {
+    border-color:#fff #CE613E rgba(255,255,255,0.2) #CE613E;
+  }
+}
 
 .verify_ruby_version, .install_xcode, .textmate {
   background-color: #65AE55;
-   .note:before {
-      border-color:#fff #65AE55 rgba(255,255,255,0.2) #658E15;
-    }
-}
 
+  .note:before {
+    border-color:#fff #65AE55 rgba(255,255,255,0.2) #658E15;
+  }
+}
 
 .configure_git, .find_git_bash, .install_homebrew, .verify_rails_version {
   background-color: #8E59BC;
-    .note:before {
-      border-color:#fff #8E59BC rgba(255,255,255,0.2) #658E15;
-    }
-}
 
+  .note:before {
+    border-color:#fff #8E59BC rgba(255,255,255,0.2) #658E15;
+  }
+}
 
 .sublime_text, .update_ruby, .create_ssh_key {
   background-color: #72B49B;
+
   .option {
     background-color: #fff;
     border-color: #fff;
@@ -123,26 +146,26 @@ section {
     @extend .btn-large;
     @extend .btn-primary;
   }
-   .note:before {
-         border-color:#fff #72B49B rgba(255,255,255,0.2) #72B49B;
-    }
-}
 
+  .note:before {
+    border-color:#fff #72B49B rgba(255,255,255,0.2) #72B49B;
+  }
+}
 
 .create_your_first_app, .update_rails {
   background: #CF7C00;
 
-    .note:before {
-         border-color:#fff #CF7C00 rgba(255,255,255,0.2) #658E15;
-    }
+  .note:before {
+    border-color:#fff #CF7C00 rgba(255,255,255,0.2) #658E15;
+  }
 }
-
 
 .see_it_live {
   background: #5181BD;
-   .note:before {
-         border-color:#fff #5181BD rgba(255,255,255,0.2) #658E15;
-    }
+
+  .note:before {
+    border-color:#fff #5181BD rgba(255,255,255,0.2) #658E15;
+  }
 }
 
 .choose_your_os {
@@ -153,42 +176,42 @@ section {
   color: #5181BD;
 }
 
-
 header {
   background-color: #eeeeee;
+
   .site-title {
     margin: 20px;
     color: #333;
+
     &:hover {
       color: black;
     }
   }
+
   .nav {
     margin-top: 34px;
   }
+
   a {
     color: #333;
   }
 }
 
-
 .instructions {
   // text-align: center;
   font-size: 20px;
-    line-height: 1.4;
+  line-height: 1.4;
   margin: 0 15%;
-  ol {
-    // list-style-type: none;
-  }
+
   li {
     margin-bottom: 30px;
-  ul, pre {
-    text-align: left;
+
+    ul, pre {
+      text-align: left;
+    }
   }
-  }
+
   img {
-    // text-align: center;
-    display: block;
     padding: 1.4em 0;
   }
 }
@@ -206,10 +229,12 @@ header {
   .options {
     padding-top: 20px;
   }
+
   .button_to  {
     margin-top: 5px;
     display: inline-block;
   }
+
   .option {
     min-width: 175px;
     text-align: center;
@@ -220,11 +245,13 @@ header {
     @extend .btn;
     @extend .btn-large;
     @extend .btn-primary;
+
     &:hover {
       background-color: #3B3C3C;
       border-color: #3B3C3C;
     }
   }
+
   .troubleshooting {
     min-width: 175px;
     text-align: center;
@@ -235,24 +262,10 @@ header {
     @extend .btn;
     @extend .btn-large;
     @extend .btn-primary;
+
     &:hover {
       background-color: #c9302c;
       border-color: #c9302c;
-    }
-  }
-.troubleshooting-blue {
-    min-width: 175px;
-    text-align: center;
-    background-color: #3B4960;
-    border-color: #3B4960;
-    margin-bottom: 3px;
-
-    @extend .btn;
-    @extend .btn-large;
-    @extend .btn-primary;
-    &:hover {
-      background-color: #5B6474;
-      border-color: #5B6474;
     }
   }
 }
@@ -261,49 +274,49 @@ header {
   margin: 10px;
 }
 
-
 /* folded corner
 http://nicolasgallagher.com/pure-css-folded-corner-effect/
-*/
+ */
 
 .note {
-   position:relative;
-   padding:1em 1.5em;
-   margin:2em auto;
-   color:#fff;
-   background: rgba(255,255,255,0.2);
-   overflow:hidden;
-   font-size: 90%;
-}
-.note:before {
-   content:"";
-   position:absolute;
-   top:0;
-   right:0;
-   border-width:0 16px 16px 0;
-   border-style:solid;
-   // border-color:#fff #CF7C00 rgba(255,255,255,0.2) #658E15;
-   background: rgba(255,255,255,1);
-   -webkit-box-shadow:0 1px 1px rgba(0,0,0,0.3), -1px 1px 1px rgba(0,0,0,0.2);
-   -moz-box-shadow:0 1px 1px rgba(0,0,0,0.3), -1px 1px 1px rgba(0,0,0,0.2);
-   box-shadow:0 1px 1px rgba(0,0,0,0.3), -1px 1px 1px rgba(0,0,0,0.2);
-   display:block; width:0; /* Firefox 3.0 damage limitation */
-}
+  background: rgba(255,255,255,0.2);
+  color: #fff;
+  font-size: 90%;
+  margin-bottom: 2em;
+  margin-top: 2em;
+  overflow: hidden;
+  padding: 1em 1.5em;
+  position: relative;
 
-.note.rounded {
-   -webkit-border-radius:5px 0 5px 5px;
-   -moz-border-radius:5px 0 5px 5px;
-   border-radius:5px 0 5px 5px;
-}
+  &:before {
+    content:"";
+    position:absolute;
+    top:0;
+    right:0;
+    border-width:0 16px 16px 0;
+    border-style:solid;
+    // border-color:#fff #CF7C00 rgba(255,255,255,0.2) #658E15;
+    background: rgba(255,255,255,1);
+    -webkit-box-shadow:0 1px 1px rgba(0,0,0,0.3), -1px 1px 1px rgba(0,0,0,0.2);
+    -moz-box-shadow:0 1px 1px rgba(0,0,0,0.3), -1px 1px 1px rgba(0,0,0,0.2);
+    box-shadow:0 1px 1px rgba(0,0,0,0.3), -1px 1px 1px rgba(0,0,0,0.2);
+    display:block; width:0; /* Firefox 3.0 damage limitation */
+  }
 
-.note.rounded:before {
-   border-width:8px;
-   border-color:#fff #fff transparent transparent;
-   -webkit-border-bottom-left-radius:5px;
-   -moz-border-radius:0 0 0 5px;
-   border-radius:0 0 0 5px;
-}
+  &.rounded {
+    -webkit-border-radius:5px 0 5px 5px;
+    -moz-border-radius:5px 0 5px 5px;
+    border-radius:5px 0 5px 5px;
 
+    &:before {
+      border-width:8px;
+      border-color:#fff #fff transparent transparent;
+      -webkit-border-bottom-left-radius:5px;
+      -moz-border-radius:0 0 0 5px;
+      border-radius:0 0 0 5px;
+    }
+  }
+}
 
 #git-intro {
   background: rgba(255, 255, 255, 0.2);
@@ -312,26 +325,21 @@ http://nicolasgallagher.com/pure-css-folded-corner-effect/
   box-shadow: 0 0 1px rgb(85, 85, 85);
 }
 
-
-
 // Clearfix
 // --------
 // For clearing floats like a boss h5bp.com/q
 .clearfix {
   *zoom: 1;
-  &:before,
-  &:after {
+
+  &:before, &:after {
     display: table;
     content: "";
     // Fixes Opera/contenteditable bug:
     // http://nicolasgallagher.com/micro-clearfix-hack/#comment-36952
     line-height: 0;
   }
+
   &:after {
     clear: both;
   }
 }
-
-
-
-

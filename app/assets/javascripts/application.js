@@ -15,9 +15,9 @@
 //= require turbolinks
 //= require bootstrap
 //= require_tree .
+//= require_self
 
-//if we are using the #confetti id, run the confetti
-confetti = document.getElementById("confetti");
-if(confetti !== null) {
-	MetervaraConfetti();
-}
+$(document).ready(function() {
+  if ($("#confetti").length > 0)
+    MetervaraConfetti()
+});

@@ -1,13 +1,19 @@
 class User
-  include Mongoid::Document
-  field :guest
-  field :os
-  field :os_version
-  field :ruby_version
-  field :rails_version
+  include ActiveModel::Model
 
-  def self.new_guest
-    new { |u| u.guest = true }
+  attr_accessor :config
+
+  def update(params)
+    params.each do |key, value|
+      config[key] = value
+    end
   end
 
+  def save
+    true
+  end
+
+  def method_missing(name)
+    config[name.to_s]
+  end
 end

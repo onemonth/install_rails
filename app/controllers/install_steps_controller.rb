@@ -1,59 +1,33 @@
 class InstallStepsController < ApplicationController
-  before_filter :signed_in_user
   include Wicked::Wizard
 
-  prepend_before_filter :set_steps
-
-  helper_method :mac?, :windows?, :os_version
+  prepend_before_action :set_steps
+  after_action :set_session
 
   def show
-    @user = current_user
     case step
     when :update_ruby
-      skip_step if @user.ruby_version =~ /2.0/
+      skip_step if ruby_version =~ /2.0/
     when :update_rails
-      skip_step if @user.rails_version =~ /4.0/
+      skip_step if rails_version =~ /4.0/
     end
     render_wizard
   end
 
   def update
-    @user = current_user
-    @user.update_attributes(user_params)
-    render_wizard @user
+    current_user.update(user_params)
+    render_wizard current_user
   end
 
   private
-    def os
-      params[:os] || current_user.try(:os)
-    end
-
-    def mac?
-      os =~ /Mac/
-    end
-
-    def windows?
-      os =~ /Windows/
-    end
-
-    def get_steps
-      if mac?
-        mac_steps
-      elsif windows?
-        windows_steps
-      elsif os == "Other"
-        ubuntu_steps
-      else
-        [:choose_os]
-      end
-    end
 
     def set_steps
-      self.steps = get_steps
-    end
-
-    def os_version
-      params[:os_version] || current_user.try(:os_version)
+      self.steps = case
+                   when mac?          then mac_steps
+                   when windows?      then windows_steps
+                   when os == "Other" then ubuntu_steps
+                   else [:choose_os]
+                   end
     end
 
     def mac_steps
@@ -85,38 +59,34 @@ class InstallStepsController < ApplicationController
           :create_your_first_app,
           :see_it_live]
       else
-        [ :choose_os,
-          :choose_os_version]
+        [:choose_os, :choose_os_version]
       end
     end
 
     def windows_steps
-      [ :choose_os,
-        :railsinstaller_windows,
-        text_editor_step,
-        :find_git_bash,
-        :create_your_first_app,
-        :see_it_live]
+      [:choose_os, :railsinstaller_windows, text_editor_step, :find_git_bash, :create_your_first_app, :see_it_live]
     end
 
     def ubuntu_steps
-      [:choose_os, :rails_for_linux_and_other]
+      [:choose_os, :rails_for_linux_and_other, :verify_ruby_version]
     end
 
     def text_editor_step
-      if os_version =~ /10.5/
-        :textmate
-      else
-        :sublime_text
+      case os_version
+      when /10.5/ then :textmate
+      else :sublime_text
       end
     end
 
     def finish_wizard_path
-      wizard_path(:congratulations)
+      congratulations_path
     end
 
-  private
     def user_params
       params.permit(:os, :os_version, :ruby_version, :rails_version)
+    end
+
+    def set_session
+      session[:user] = current_user.config
     end
 end

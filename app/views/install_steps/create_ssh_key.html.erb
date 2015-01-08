@@ -4,9 +4,10 @@
     <li>
       Open your terminal
       <ul>
-        <li>Open Spotlight (the little icon on the top right corner of your mac) and type "Terminal". Hit Enter.
+        <li>Open Spotlight (the little icon on the top right corner of your mac) and type "Terminal". Hit Enter.</li>
       </ul>
     </li>
+
     <li>
       In your terminal, type this:
       <pre><code>ssh-keygen -C YourEmail@example.com -t rsa</code></pre>
@@ -14,6 +15,7 @@
         <li>When prompted to enter a keyphrase simply hit the “Enter” key.</li>
       </ul>
     </li>
+
     <li>Expected result:</li>
     <pre><code>Generating public/private rsa key pair.
 Enter file in which to save the key (/Users/yourname/.ssh/id_rsa):
@@ -27,19 +29,8 @@ The key fingerprint is:
   </ol>
 </section>
 
-
-
-<section class="prompt center">
-  <%= link_to "Previous Step", previous_wizard_path, class: "option" %>
-  <button type="button" class="troubleshooting" data-toggle="collapse" data-target="#trouble">Troubleshooting</button>
-  <%= link_to "Next Step",     next_wizard_path,     class: "option"%>
-</section>
-
+<%= render partial: "layouts/step_navigation" %>
 
 <div id="trouble" class="collapse out note">
-
-  <div class="disqus">
-    <%= render 'layouts/disqus' %>
-  </div>
-
+  <%= render 'layouts/disqus' %>
 </div>

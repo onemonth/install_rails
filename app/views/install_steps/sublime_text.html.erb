@@ -1,34 +1,22 @@
 <section class="instructions">
   <h1>Install Sublime Text</h1>
-      <p>As a developer, you’ll be using your text editor quite often. A text editor is a simple program that lets you write text <i>(and by text we mean... code)</i>. Our preferred text editor is <strong>Sublime Text</strong>.</p>
-      <hr>
+  <p>As a developer, you’ll be using your text editor quite often. A text editor is a simple program that lets you write text <i>(and by text we mean... code)</i>. Our preferred text editor is <strong>Sublime Text</strong>.</p>
+  <hr>
+
   <ol>
     <li>
       <p>To download Sublime Text visit the Sublime Text site and download it to your computer (hint: click the big blue button on their homepage).</p>
-       <center>
-        <%= link_to "Visit Sublime Text & Download", 'http://www.sublimetext.com/', target: :_blank, class: "btn option" %>
-      </center>
+      <p class="text-center"><%= link_to "Visit Sublime Text & Download", 'http://www.sublimetext.com/', target: :_blank, class: "btn option" %></p>
     </li>
     <li>
-      Once the file has fully downloaded, double-click it and a new window will open. One a Mac: drag and drop <strong>Sublime Text 2</strong> into your <strong>Applications</strong> folder.
-      <%= image_tag "mac_steps/applications_folder.png", class: "list-image" %>
+      <p>Once the file has fully downloaded, double-click it and a new window will open. One a Mac: drag and drop <strong>Sublime Text 2</strong> into your <strong>Applications</strong> folder.</p>
+      <p class="text-center"><%= image_tag "mac_steps/applications_folder.png", class: "list-image" %></p>
     </li>
   </ol>
 </section>
 
-
-
-<section class="prompt center">
-  <%= link_to "Previous Step", previous_wizard_path, class: "option" %>
-  <button type="button" class="troubleshooting" data-toggle="collapse" data-target="#trouble">Troubleshooting</button>
-  <%= link_to "Next Step",     next_wizard_path,     class: "option" %>
-</section>
-
+<%= render 'layouts/step_navigation' %>
 
 <div id="trouble" class="collapse out note">
-
-  <div class="disqus">
-    <%= render 'layouts/disqus' %>
-  </div>
-
+  <%= render 'layouts/disqus' %>
 </div>
