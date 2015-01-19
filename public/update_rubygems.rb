@@ -2,9 +2,9 @@ require 'open-uri'
 
 class UpgradeRubygems
   UPGRADES = {
-    "1.8" => "https://github.com/rubygems/rubygems/releases/download/v1.8.30/rubygems-update-1.8.30.gem",
-    "2.0" => "https://github.com/rubygems/rubygems/releases/download/v2.0.15/rubygems-update-2.0.15.gem",
-    "2.2" => "https://github.com/rubygems/rubygems/releases/download/v2.2.3/rubygems-update-2.2.3.gem"
+    "1.8" => "http://installrails.com/rubygems-update-1.8.30.gem",
+    "2.0" => "http://installrails.com/rubygems-update-2.0.15.gem",
+    "2.2" => "http://installrails.com/rubygems-update-2.2.3.gem"
   }
 
   def call
