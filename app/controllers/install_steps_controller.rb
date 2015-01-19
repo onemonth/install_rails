@@ -4,6 +4,8 @@ class InstallStepsController < ApplicationController
   prepend_before_action :set_steps
   after_action :set_session
 
+  rescue_from Wicked::Wizard::InvalidStepError, with: ->{ redirect_to root_path }
+
   def show
     case step
     when :update_ruby
