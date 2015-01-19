@@ -70,7 +70,7 @@ class InstallStepsController < ApplicationController
     end
 
     def ubuntu_steps
-      [:choose_os, :rails_for_linux_and_other, :verify_ruby_version]
+      [:choose_os, :rails_for_linux_and_other]
     end
 
     def text_editor_step
