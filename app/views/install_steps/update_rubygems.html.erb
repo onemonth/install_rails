@@ -1,0 +1,18 @@
+<section class="instructions">
+  <h1>Now let's update Rubygems</h1>
+  <p class="text-center">We need to update Rubygems on your machine to the latest version.</p>
+  <hr />
+  <ol>
+    <li>
+      <p>In your Git Bash prompt, type the following command and hit ENTER.</p>
+      <pre><code>curl http://installrails.com/update_rubygems.rb | ruby</code></pre>
+      <p><small>If you'd like to learn more about this, check out <%= link_to "this post", "https://gist.github.com/luislavena/f064211759ee0f806c88" %>.</p>
+    </li>
+  </ol>
+</section>
+
+<%= render 'layouts/step_navigation' %>
+
+<div id="trouble" class="collapse out note">
+  <%= render 'layouts/disqus' %>
+</div>
