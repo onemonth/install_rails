@@ -57,6 +57,7 @@ class InstallStepsController < ApplicationController
           :configure_git,
           :install_rvm_and_ruby,
           :install_rails,
+          :install_rbenv_and_ruby,
           text_editor_step,
           :create_your_first_app,
           :see_it_live]
