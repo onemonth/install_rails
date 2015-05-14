@@ -1,0 +1,31 @@
+<section class="instructions">
+  <h1>Install rbenv and Ruby (OPTIONAL)</h1>
+  <p class="center">In contrast with RVM, rbenv is an alternative solution. This is not recommended for OSX 10.5 or below</p>
+  <hr>
+  <ol>
+    <li>To install rbenv, type this in your terminal</li>
+
+      <pre><code>brew install rbenv ruby-build</code></pre>
+
+    <li>Now install Ruby with:</li>
+
+      <pre><code>rbenv install 2.2.x
+rbenv global 2.2.x
+ruby -v</code></pre>
+    
+    <li>Now install Rails with:</li>
+
+      <pre><code>gem install rails -v 4.2.x</code></pre>
+
+    <li>Rails is now installed, but in order for us to use the <code>rails</code> executable, you need to tell <code>rbenv</code> to see it.</li>
+
+      <pre><code>rbenv rehash</code></pre>
+    
+  </ol>
+</section>
+
+<%= render 'layouts/step_navigation' %>
+
+<div id="trouble" class="collapse out note">
+  <%= render 'layouts/disqus' %>
+</div>
