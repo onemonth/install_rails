@@ -3,14 +3,11 @@
   <ol>
     <li>
       <p>Visit the site <%= link_to "Railsinstaller.com", "http://www.railsinstaller.com", target: "_blank" %> and choose from ONE of the following options to download RailsInstaller.</p>
-      <p><small>
-        <% if windows? %>
-          Please download from "Want to live on the edge?" download near the bottom.
-        <% elsif mac? %>
-          Please choose your version <%= os_version %> from the right.
-        <% end %>
-      </small></p>
-      <div class="text-center"><%= link_to image_tag("windows/install_rails_step1.png", alt: "RailsInstaller", class: "img-responsive"), "http://www.railsinstaller.com", target: "_blank" %></div>
+      <div class="row">
+        <div class="col-sm-8 col-sm-offset-2">
+          <%= link_to image_tag("windows/install_rails_step1.png", alt: "RailsInstaller", class: "img-responsive"), "http://www.railsinstaller.com", target: "_blank" %>
+        </div>
+      </div>
     </li>
 
     <li>
@@ -32,14 +29,6 @@
 <%= render partial: "layouts/step_navigation" %>
 
 <div id="trouble" class="collapse out note">
-  <% if mac? %>
-    <h4><i class="icon-warning-sign"></i> Looking for Ruby 2 and Rails 4 for Mac?</h4>
-    <h4><i class="icon-check-sign"></i>&nbsp; We'll be upgrading in the next couple of steps. Be sure to finish the whole tutorial.</h4>
-    <hr>
-    <h4><strong>Q:</strong> How do I fix the error <code>/opt/rix to rvm</code>?</h4>
-    <h4><strong>A:</strong> Restart your computer</h4>
-  <% end %>
-
   <hr><br>
 
   <%= render 'layouts/disqus' %>
