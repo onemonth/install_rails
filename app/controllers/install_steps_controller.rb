@@ -47,7 +47,7 @@ class InstallStepsController < ApplicationController
           text_editor_step,
           :create_your_first_app,
           :see_it_live]
-      when "10.10", "10.9"
+      when "10.11", "10.10", "10.9"
         [ :choose_os,
           :choose_os_version,
           :install_xcode,
