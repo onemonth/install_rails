@@ -47,7 +47,7 @@ class InstallStepsController < ApplicationController
           text_editor_step,
           :create_your_first_app,
           :see_it_live]
-      when "10.10", "10.9", "10.5 or below"
+      when "10.10", "10.9"
         [ :choose_os,
           :choose_os_version,
           :install_xcode,
@@ -74,10 +74,7 @@ class InstallStepsController < ApplicationController
     end
 
     def text_editor_step
-      case os_version
-      when /10.5/ then :textmate
-      else :sublime_text
-      end
+       :sublime_text
     end
 
     def finish_wizard_path
