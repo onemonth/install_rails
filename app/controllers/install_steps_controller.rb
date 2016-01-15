@@ -27,7 +27,7 @@ class InstallStepsController < ApplicationController
       self.steps = case
                    when mac?          then mac_steps
                    when windows?      then windows_steps
-                   when os == "Other" then ubuntu_steps
+                   when os == "Linux" then ubuntu_steps
                    else [:choose_os]
                    end
     end
