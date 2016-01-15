@@ -1,5 +1,5 @@
 <section class="instructions">
-  <h1>What version of Mac OS do you have?</h1>
+  <h1>What version of OS X do you have?</h1>
   <ol>
     <li>
       <p>Click on the &#63743; <strong>Apple</strong> logo (at the top left of your screen)<br>and select “<strong>About This Mac</strong>”</p>
@@ -12,16 +12,16 @@
 
 <div class="prompt center">
   <h2>
-    Select your version of <%= current_user.os %> OS X
+    Select your version of OS X
   </h2>
   <div class="options">
+    <%= button_to "10.11", wizard_path, name: :os_version, method: :put, class: "option" %>
     <%= button_to "10.10", wizard_path, name: :os_version, method: :put, class: "option" %>
     <%= button_to "10.9", wizard_path, name: :os_version, method: :put, class: "option" %>
-    <%= button_to "10.8", wizard_path, name: :os_version, method: :put, class: "option" %>
     <br>
+    <%= button_to "10.8", wizard_path, name: :os_version, method: :put, class: "option" %>
     <%= button_to "10.7", wizard_path, name: :os_version, method: :put, class: "option" %>
     <%= button_to "10.6", wizard_path, name: :os_version, method: :put, class: "option" %>
-    <%= button_to "10.5 or below", wizard_path, name: :os_version, method: :put, class: "option" %>
     <br>
     <%= button_tag "Troubleshooting", type: "button", class: "troubleshooting", data: {toggle: "collapse", target: "#trouble"} %>
   </div>
