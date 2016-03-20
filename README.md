@@ -8,7 +8,7 @@ Patches welcome.
 After following the instructions on [the site](http://installrails.com), run
 
 ```bash
-rvm install 2.0.0
+rvm install 2.2.0
 
 # if you don't already have MongoDB
 brew update
