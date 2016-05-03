@@ -17,8 +17,21 @@
         <h3>Notes:</h3>
         <ul>
           <li>This will install Rails and may take a while.</li>
-          <li>If Rails cannot install, try running the code below and then restarting your computer:
+          <li>If Rails cannot install, check the failure message. if it contains:
+          <pre><code>
+          -----
+          libxml2 is missing.  Please locate mkmf.log to investigate how it is failing.
+          -----
+          </code></pre>
+          and you are using OS X 10.10 or later, then run:
+          <pre><code>
+          brew install libxml2
+          env ARCHFLAGS="-arch x86_64" gem install nokogiri:1.6.4.1 -- --use-system-libraries --with-xml=/usr/local/Cellar/libxml2/
+          </code></pre>
+          to install libxml2 and nokogiri and rerun the rails instalation.
+          <p>Else, try running the code below and then restarting your computer:
             <pre><code>brew install apple-gcc42</code></pre>
+            </p>
 
             <p>If you are still stuck, try:
               <pre><code>sudo xcodebuild -license
