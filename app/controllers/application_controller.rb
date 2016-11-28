@@ -14,6 +14,7 @@ class ApplicationController < ActionController::Base
 
   def mac?; os =~ /Mac/; end
   def windows?; os =~ /Windows/; end
+  def linux?; os =~ /Linux/; end
 
   helper_method :mac?, :windows?, :current_user, :os_version
 end

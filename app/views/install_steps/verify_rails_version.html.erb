@@ -12,8 +12,9 @@
 
 <section class="prompt center">
   <h2>What version of Rails do you have?</h2>
-    <%= button_to "Rails 4.0", wizard_path, name: :rails_version, method: :put, class: "option" %>
-    <%= button_to "Rails 3.2", wizard_path, name: :rails_version, method: :put, class: "option" %>
+    <%= button_to "Rails 5", wizard_path, name: :rails_version, method: :put, class: "option" %>
+    <%= button_to "Rails 4", wizard_path, name: :rails_version, method: :put, class: "option" %>
+    <%= button_to "Rails 3", wizard_path, name: :rails_version, method: :put, class: "option" %>
     <%= button_to "Nothing! I get an error.", wizard_path, name: :rails_version, method: :put, class: "option" %>
     <button type="button" class="troubleshooting" data-toggle="collapse" data-target="#trouble">Troubleshooting</button>
 </section>

@@ -9,9 +9,9 @@ class InstallStepsController < ApplicationController
   def show
     case step
     when :update_ruby
-      skip_step if ruby_version =~ /2.0/
+      skip_step if ruby_version =~ /2/
     when :update_rails
-      skip_step if rails_version =~ /4.0/
+      skip_step if rails_version =~ /5/
     end
     render_wizard
   end
@@ -24,57 +24,59 @@ class InstallStepsController < ApplicationController
   private
 
     def set_steps
-      self.steps = case
-                   when mac?          then mac_steps
-                   when windows?      then windows_steps
-                   when os == "Linux" then ubuntu_steps
-                   else [:choose_os]
-                   end
+      self.steps = [:choose_os]
+      case
+      when mac?
+        self.steps += mac_steps
+      when windows?
+        self.steps += windows_steps
+      when linux?
+        self.steps += ubuntu_steps
+      end
     end
 
     def mac_steps
+      steps = [:choose_os_version]
       case os_version
       when "10.8", "10.7", "10.6"
-        [ :choose_os,
-          :choose_os_version,
-          :railsinstaller,
+        steps += [ :railsinstaller,
           :find_the_command_line,
           :verify_ruby_version,
           :update_ruby,
           :verify_rails_version,
           :update_rails,
           :configure_git,
-          text_editor_step,
+          :sublime_text,
           :create_your_first_app,
           :see_it_live]
-      when "10.11", "10.10", "10.9"
-        [ :choose_os,
-          :choose_os_version,
-          :install_xcode,
+      when "10.12", "10.11", "10.10", "10.9"
+        steps += [ :install_xcode,
           :find_the_command_line,
           :install_homebrew,
           :install_git,
           :configure_git,
           :install_rvm_and_ruby,
           :install_rails,
-          text_editor_step,
+          :sublime_text,
           :create_your_first_app,
           :see_it_live]
-      else
-        [:choose_os, :choose_os_version]
       end
+      return steps
     end
 
     def windows_steps
-      [:choose_os, :railsinstaller_windows, text_editor_step, :find_git_bash, :update_rubygems, :create_your_first_app, :see_it_live]
+      [ :railsinstaller_windows, 
+        :find_git_bash, 
+        :update_rubygems, 
+        :update_rails, 
+        :sublime_text, 
+        :create_your_first_app, 
+        :see_it_live
+      ]
     end
 
     def ubuntu_steps
-      [:choose_os, :rails_for_linux_and_other]
-    end
-
-    def text_editor_step
-       :sublime_text
+      [:rails_for_linux_and_other]
     end
 
     def finish_wizard_path
