@@ -66,7 +66,7 @@ file 'app/views/pages/home.html.erb', <<-CODE
     <h1>Welcome to One Month Rails!</h1>
     <p>
       You've found the home page for the
-      <%= link_to "One Month Rails", "http://onemonthrails.com" %>
+      <%= link_to "One Month Rails", "http://onemonth.com/courses/rails" %>
       application.
     </p>
     <p>
@@ -142,7 +142,7 @@ CODE
 file 'app/views/layouts/_footer.html.erb', <<-CODE
   <div class="footer">
     <small>
-      Build your own site with <%= link_to "One Month Rails", "http://onemonthrails.com" %>
+      Build your own site with <%= link_to "One Month Rails", "http://onemonth.com/courses/rails" %>
     </small>
   </div>
 CODE
