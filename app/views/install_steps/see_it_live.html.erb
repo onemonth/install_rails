@@ -11,31 +11,31 @@
     </li>
     <li>
       This command should show you:
-      <pre><code>=> Booting WEBrick
-=> Rails 4.0.0 application starting in development on http://0.0.0.0:3000
+      <pre><code>=> Booting Puma
+=> Rails 5.2.0 application starting in development
 => Run `rails server -h` for more startup options
-=> Ctrl-C to shutdown server
-[2013-08-01 16:37:03] INFO  WEBrick 1.3.1
-[2013-08-01 16:37:03] INFO  ruby 2.0.0 (2013-05-14) [x86_64-darwin12.4.0]
-[2013-08-01 16:37:03] INFO  WEBrick::HTTPServer#start: pid=12109 port=3000</code></pre>
+Puma starting in single mode...
+* Version 3.11.4 (ruby 2.5.1-p57), codename: Love Song
+* Min threads: 5, max threads: 5
+* Environment: development
+* Listening on tcp://0.0.0.0:3000
+Use Ctrl-C to stop</code></pre>
     </li>
+    <li>
+      Open up your browser and visit <%= link_to "http://localhost:3000", "http://localhost:3000", target: "_blank" %>
+    </li>
+  </ol>
+  <p>You should see your new web app!</p>
+  <hr>
 
-        <li>
-          Open up your browser and visit <%= link_to "http://localhost:3000", "http://localhost:3000", target: "_blank" %>
-        </li>
-      </ol>
-      <p>You should see your new web app!</p>
-       <hr>
-
-     <div class="row">
-            <div class="col-sm-6 note">
-            PRO TIP:<br>Whenever you run <pre><code>$ rails server</pre></code> …you’ll no longer be able to type anything in that command line window (because that window is now busy running your site).<br><br>Leaving us with two options:<br>1) When you’re coding: let this window run the server, and open another command line window to write new commands<br>2) When you’re finished: close the server by hitting “<strong>Control + C</strong>” and give yourself a pat on the back for being awesome.
-          </div>
-           <div class="col-sm-6">
-            <%= image_tag "sam.png", class: 'sam' %>
-          </div>
-
+  <div class="row">
+    <div class="col-sm-6 note">
+      PRO TIP:<br>Whenever you run <pre><code>$ rails server</pre></code> …you’ll no longer be able to type anything in that command line window (because that window is now busy running your site).<br><br>Leaving us with two options:<br>1) When you’re coding: let this window run the server, and open another command line window to write new commands<br>2) When you’re finished: close the server by hitting “<strong>Control + C</strong>” and give yourself a pat on the back for being awesome.
     </div>
+    <div class="col-sm-6">
+      <%= image_tag "sam.png", class: 'sam' %>
+    </div>
+  </div>
 </section>
 
 <%= render 'layouts/step_navigation' %>
