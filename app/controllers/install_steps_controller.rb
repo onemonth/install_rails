@@ -60,6 +60,7 @@ class InstallStepsController < ApplicationController
       :railsinstaller_windows,
       :find_git_bash,
       :update_rubygems,
+      :update_rails,
       :sublime_text,
       :create_your_first_app,
       :see_it_live
