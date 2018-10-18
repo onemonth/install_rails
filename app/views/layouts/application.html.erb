@@ -6,20 +6,17 @@
   <%= csrf_meta_tags %>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-43180860-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-43180860-1');
-</script>
-
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-43180860-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-43180860-1');
+  </script>
   <%= yield(:head) %>
 </head>
 <body class="<%= controller_name %> <%= action_name %> <%= params[:id] %>">
-
   <%= yield(:header) %>
 
   <% if content_for? :container_override? %>
@@ -38,6 +35,5 @@
       </div>
     </footer>
   <% end %>
-
 </body>
 </html>
