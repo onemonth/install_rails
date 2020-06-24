@@ -45,7 +45,7 @@ class InstallStepsController < ApplicationController
         :install_homebrew,
         :install_git,
         :configure_git,
-        :install_rvm_and_ruby,
+        :install_rbenv_and_ruby,
         :install_rails,
         :text_editor,
         # :create_your_first_app,
