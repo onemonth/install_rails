@@ -38,7 +38,7 @@ class InstallStepsController < ApplicationController
   def mac_steps
     steps = [:choose_os_version]
     case os_version
-    when "10.14", "10.13", "10.12", "10.11", "10.10", "10.9"
+    when "10.15", "10.14", "10.13", "10.12", "10.11", "10.10", "10.9"
       steps += [
         :install_xcode,
         :find_the_command_line,

@@ -15,6 +15,7 @@
     Select your version of OS X
   </h2>
   <div class="options">
+    <%= button_to "10.15", wizard_path, name: :os_version, method: :put, class: "option" %>
     <%= button_to "10.14", wizard_path, name: :os_version, method: :put, class: "option" %>
     <%= button_to "10.13", wizard_path, name: :os_version, method: :put, class: "option" %>
     <%= button_to "10.12", wizard_path, name: :os_version, method: :put, class: "option" %>
