@@ -1,0 +1,50 @@
+<section class="instructions">
+  <h1>Install Rbenv and Ruby</h1>
+  <p class="center">Rbenv is a <strong>Ruby Environment Version Manager</strong>. It makes it easy to install multiple versions of Ruby on your computer that may be required for different projects.</p>
+  <hr>
+  <ol>
+    <li>To install Rbenv, type this in your terminal</li>
+
+    <pre><code>brew install rbenv</code></pre>
+
+    <li>This may take a few minutes. When it's done, type this command</li>
+    <pre><code>nano .bash_profile</code></pre>
+
+    <li>Your terminal will display some content. We're actually editing a live file on your machine.</li>
+    <div class="text-center"><%= image_tag "mac_steps/bash_profile.png", class: "img img-responsive" %></div>
+
+    <li>Press the 'enter' key to create an empty line, then hit the 'up' arrow. Now copy/paste the following:
+      <pre><code>eval "$(rbenv init -)"</code></pre>
+    </li>
+
+    <li>Your terminal should now look something like this.</li>
+    <div class="text-center"><%= image_tag "mac_steps/bash_profile_rbenv.png", class: "img img-responsive" %></div>
+
+    <li>Now save your changes with "ctrl+X", then "y" (yes) to agree to the changes and 'enter' (key) to save.</li>
+
+    <li>Finally, apply the changes you made to your bash_profile to your current shell:
+      <pre><code>source ~/.bash_profile</code></pre>
+    </li>
+
+    <li>To verify rbenv is set up OK, try the following commands.
+      <pre><code>rbenv -v</code></pre>
+      <pre><code>type rbenv</code></pre>
+    </li>
+
+    <li>Both should return output, like "rbenv 1.1.2" or "rbenv is a function..."
+    </li>
+
+    <li>Now install Ruby with:
+      <pre><code>rbenv install 2.6.5</code></pre>
+      <p>This will install Ruby and may take a while. When it's done:</p>
+      <pre><code>rbenv global 2.6.5</code></pre>
+      <p>Now all your projects will use Ruby 2.6.5 by default, but you can still use older or newer versions on a per project basis.</p>
+    </li>
+  </ol>
+</section>
+
+<%= render 'layouts/step_navigation' %>
+
+<div id="trouble" class="collapse out note">
+  <%= render 'layouts/disqus' %>
+</div>
