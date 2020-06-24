@@ -47,9 +47,9 @@ class InstallStepsController < ApplicationController
         :configure_git,
         :install_rvm_and_ruby,
         :install_rails,
-        :sublime_text,
-        :create_your_first_app,
-        :see_it_live
+        :text_editor,
+        # :create_your_first_app,
+        # :see_it_live
       ]
     end
     return steps
@@ -61,9 +61,9 @@ class InstallStepsController < ApplicationController
       :find_git_bash,
       :update_rubygems,
       :update_rails,
-      :sublime_text,
-      :create_your_first_app,
-      :see_it_live
+      :text_editor,
+      # :create_your_first_app,
+      # :see_it_live
     ]
   end
 
