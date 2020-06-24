@@ -36,8 +36,7 @@
   <pre><code>#ERROR MESSAGE:
     Unable to download data from https://rubygems.org/ - SSL_connect returned=1 errno=0 state=SSLv3 read server certificate B: certificate verify failed (https://s3.amazonaws.com/produ...</code></pre>
    Here are the main steps that should fix it. If not, consult this guide for a few alternative fixes: <a href="http://railsapps.github.io/openssl-certificate-verify-failed.html">OpenSSL Errors and Rails Guide</a>
-  <pre><code>$ sudo rvm osx-ssl-certs cron install
-$ brew update
+  <pre><code>$ brew update
 $ brew install openssl
 $ brew link openssl --force
 $ brew install curl-ca-bundle</code></pre>

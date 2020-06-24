@@ -10,7 +10,7 @@
       <pre><code>git config --global user.email "<strong>Your Actual Email</strong>"</code></pre>
       <div class="row">
         <div class="col-sm-12 note" id="prompt" style="text-align:center;">
-          Your email address should be the same one associated with your <%= link_to "GitHub", "http://help.github.com/articles/set-up-git", target: "_blank" %> account.
+          Your email address should be the same one associated with your <%= link_to "GitHub", "http://help.github.com/articles/set-up-git", target: "_blank" %> account. If you don't have a GitHub account already, <%= link_to 'sign up', 'https://github.com' %> for free.
         </div>
       </div>
     </li>
@@ -29,13 +29,8 @@
     Git is version control software. You will use Git to track and manage your coding history as well as get into the programming community as a whole.
     </p>
     <p>
-    To put it another way, Git will allow you to make revisions of your work as well as others… this way you can feel assured that if you make an awful mistake to fix or have a solution for someone else, Git will be the best way to do it!
+    Later in the <%= link_to 'Fundamentals course', ENV['FUNDAMENTALS_COURSE_URL'], target: :_blank %> we'll provide a tutorial to get started with Git. For now, just install and forget about it.
     </p>
-
-    <div class="row">
-      <p>More information and resources on Git here: <%= link_to "Here", "http://git-scm.com/videos" %></p>
-      <p>Never used the command line? You may want to pause and take this <%= link_to "free command line tutorial", "https://onemonth.com/courses/command-line-crash-course?utm_source=installrails&utm_campaign=rails&utm_medium=installrails" %>.</p> 
-    </div>
 </section>
 
 <%= render 'layouts/step_navigation' %>
