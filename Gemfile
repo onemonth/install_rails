@@ -33,3 +33,4 @@ gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0'
 gem 'unicorn', require: false
 gem 'wicked', '~> 1.1.0'
+gem 'dotenv-rails'
