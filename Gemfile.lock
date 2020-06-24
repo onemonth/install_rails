@@ -257,7 +257,7 @@ DEPENDENCIES
   wicked (~> 1.1.0)
 
 RUBY VERSION
-   ruby 2.4.4p296
+   ruby 2.6.5p114
 
 BUNDLED WITH
-   1.16.5
+   1.17.2
