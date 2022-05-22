@@ -8,7 +8,7 @@ Patches welcome.
 1. After following the instructions on [the site](http://installrails.com), run
 
    ```bash
-   rvm install 2.4.4
+   rvm install 2.7.6
    ```
 
 2. If you don't already have MongoDB, then run:
